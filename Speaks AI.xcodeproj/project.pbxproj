@@ -1,0 +1,700 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4F0169722A7F164C0080DF70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0169712A7F164C0080DF70 /* AppDelegate.swift */; };
+		4F0169742A7F164C0080DF70 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0169732A7F164C0080DF70 /* SceneDelegate.swift */; };
+		4F0169762A7F164C0080DF70 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0169752A7F164C0080DF70 /* ViewController.swift */; };
+		4F0169792A7F164C0080DF70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F0169772A7F164C0080DF70 /* Main.storyboard */; };
+		4F01697C2A7F164C0080DF70 /* Speaks_AI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F01697A2A7F164C0080DF70 /* Speaks_AI.xcdatamodeld */; };
+		4F01697E2A7F164D0080DF70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F01697D2A7F164D0080DF70 /* Assets.xcassets */; };
+		4F0169812A7F164D0080DF70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F01697F2A7F164D0080DF70 /* LaunchScreen.storyboard */; };
+		4F01698C2A7F164D0080DF70 /* Speaks_AITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F01698B2A7F164D0080DF70 /* Speaks_AITests.swift */; };
+		4F0169962A7F164D0080DF70 /* Speaks_AIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0169952A7F164D0080DF70 /* Speaks_AIUITests.swift */; };
+		4F0169982A7F164D0080DF70 /* Speaks_AIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0169972A7F164D0080DF70 /* Speaks_AIUITestsLaunchTests.swift */; };
+		4F0169A52A7F200B0080DF70 /* ANIMATIONS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0169A42A7F200B0080DF70 /* ANIMATIONS.swift */; };
+		4F0169A72A7F20960080DF70 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0169A62A7F20960080DF70 /* Gradient.swift */; };
+		4F0169AF2A7F27E10080DF70 /* Help_Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0169AE2A7F27E10080DF70 /* Help_Page.swift */; };
+		4F0169B12A7F2A290080DF70 /* Shopping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0169B02A7F2A290080DF70 /* Shopping.swift */; };
+		4F0169B32A7F2B780080DF70 /* ComputerAlert.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F0169B22A7F2B770080DF70 /* ComputerAlert.wav */; };
+		4F0169B52A7F2D9A0080DF70 /* Who Where?.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F0169B42A7F2D9A0080DF70 /* Who Where?.mp3 */; };
+		4F0169B92A7F2DBF0080DF70 /* Chromed & Neutralized.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F0169B82A7F2DBF0080DF70 /* Chromed & Neutralized.mp3 */; };
+		4F0169BB2A7F2DF50080DF70 /* Celestial Wandering.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F0169BA2A7F2DF40080DF70 /* Celestial Wandering.mp3 */; };
+		4F0169BF2A7F2E490080DF70 /* 123 Pond.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F0169BC2A7F2E490080DF70 /* 123 Pond.mp3 */; };
+		4F0169C02A7F2E490080DF70 /* The NY rat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F0169BD2A7F2E490080DF70 /* The NY rat.mp3 */; };
+		4F0169C12A7F2E490080DF70 /* Galactic Relative.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F0169BE2A7F2E490080DF70 /* Galactic Relative.mp3 */; };
+		4F0169C32A7F2FF20080DF70 /* FART.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F0169C22A7F2FF20080DF70 /* FART.mp3 */; };
+		4F14295F2A8296BE0053E774 /* Habits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F14295E2A8296BE0053E774 /* Habits.swift */; };
+		4FAFBCA12A8189BD00F848F5 /* TAGUR_IDLE.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4FAFBCA02A8189BD00F848F5 /* TAGUR_IDLE.gif */; };
+		4FAFBCA32A818B9200F848F5 /* laser.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4FAFBCA22A818B9200F848F5 /* laser.mp3 */; };
+		4FAFBCA52A818D5300F848F5 /* CountOver.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4FAFBCA42A818D5200F848F5 /* CountOver.mp3 */; };
+		4FAFBCA72A818EF900F848F5 /* Clones_speaking.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4FAFBCA62A818EF900F848F5 /* Clones_speaking.mp3 */; };
+		4FC4995F2A8062C900ACC494 /* Scribble.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4FC4995E2A8062C900ACC494 /* Scribble.gif */; };
+		4FCFFF9A2A80141E006244BB /* Countdown.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4FCFFF992A80141E006244BB /* Countdown.wav */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4F0169882A7F164D0080DF70 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F0169662A7F164C0080DF70 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F01696D2A7F164C0080DF70;
+			remoteInfo = "Speaks AI";
+		};
+		4F0169922A7F164D0080DF70 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F0169662A7F164C0080DF70 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F01696D2A7F164C0080DF70;
+			remoteInfo = "Speaks AI";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4F01696E2A7F164C0080DF70 /* Speaks AI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Speaks AI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F0169712A7F164C0080DF70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4F0169732A7F164C0080DF70 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		4F0169752A7F164C0080DF70 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4F0169782A7F164C0080DF70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4F01697B2A7F164C0080DF70 /* Speaks_AI.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Speaks_AI.xcdatamodel; sourceTree = "<group>"; };
+		4F01697D2A7F164D0080DF70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4F0169802A7F164D0080DF70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4F0169822A7F164D0080DF70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F0169872A7F164D0080DF70 /* Speaks AITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Speaks AITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F01698B2A7F164D0080DF70 /* Speaks_AITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speaks_AITests.swift; sourceTree = "<group>"; };
+		4F0169912A7F164D0080DF70 /* Speaks AIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Speaks AIUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F0169952A7F164D0080DF70 /* Speaks_AIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speaks_AIUITests.swift; sourceTree = "<group>"; };
+		4F0169972A7F164D0080DF70 /* Speaks_AIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speaks_AIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4F0169A42A7F200B0080DF70 /* ANIMATIONS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ANIMATIONS.swift; sourceTree = "<group>"; };
+		4F0169A62A7F20960080DF70 /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
+		4F0169AE2A7F27E10080DF70 /* Help_Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Help_Page.swift; sourceTree = "<group>"; };
+		4F0169B02A7F2A290080DF70 /* Shopping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shopping.swift; sourceTree = "<group>"; };
+		4F0169B22A7F2B770080DF70 /* ComputerAlert.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = ComputerAlert.wav; path = ../../../PIXELS/ComputerAlert.wav; sourceTree = "<group>"; };
+		4F0169B42A7F2D9A0080DF70 /* Who Where?.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Who Where?.mp3"; path = "../../../PIXELS/Who Where?.mp3"; sourceTree = "<group>"; };
+		4F0169B82A7F2DBF0080DF70 /* Chromed & Neutralized.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Chromed & Neutralized.mp3"; path = "../../../PIXELS/Chromed & Neutralized.mp3"; sourceTree = "<group>"; };
+		4F0169BA2A7F2DF40080DF70 /* Celestial Wandering.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Celestial Wandering.mp3"; path = "../../../PIXELS/Celestial Wandering.mp3"; sourceTree = "<group>"; };
+		4F0169BC2A7F2E490080DF70 /* 123 Pond.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "123 Pond.mp3"; path = "../../../../Downloads/123 Pond.mp3"; sourceTree = "<group>"; };
+		4F0169BD2A7F2E490080DF70 /* The NY rat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "The NY rat.mp3"; path = "../../../../Downloads/The NY rat.mp3"; sourceTree = "<group>"; };
+		4F0169BE2A7F2E490080DF70 /* Galactic Relative.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Galactic Relative.mp3"; path = "../../../../Downloads/Galactic Relative.mp3"; sourceTree = "<group>"; };
+		4F0169C22A7F2FF20080DF70 /* FART.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = FART.mp3; path = ../../../PIXELS/FART.mp3; sourceTree = "<group>"; };
+		4F14295E2A8296BE0053E774 /* Habits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habits.swift; sourceTree = "<group>"; };
+		4FAFBCA02A8189BD00F848F5 /* TAGUR_IDLE.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = TAGUR_IDLE.gif; path = ../../../PIXELS/TAGUR_IDLE.gif; sourceTree = "<group>"; };
+		4FAFBCA22A818B9200F848F5 /* laser.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = laser.mp3; sourceTree = "<group>"; };
+		4FAFBCA42A818D5200F848F5 /* CountOver.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = CountOver.mp3; sourceTree = "<group>"; };
+		4FAFBCA62A818EF900F848F5 /* Clones_speaking.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Clones_speaking.mp3; sourceTree = "<group>"; };
+		4FC4995E2A8062C900ACC494 /* Scribble.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Scribble.gif; sourceTree = "<group>"; };
+		4FCFFF992A80141E006244BB /* Countdown.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Countdown.wav; path = "../../../Music/Media.localized/Music/Unknown Artist/Unknown Album/Countdown.wav"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4F01696B2A7F164C0080DF70 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F0169842A7F164D0080DF70 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F01698E2A7F164D0080DF70 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4F0169652A7F164C0080DF70 = {
+			isa = PBXGroup;
+			children = (
+				4F0169702A7F164C0080DF70 /* Speaks AI */,
+				4F01698A2A7F164D0080DF70 /* Speaks AITests */,
+				4F0169942A7F164D0080DF70 /* Speaks AIUITests */,
+				4F01696F2A7F164C0080DF70 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4F01696F2A7F164C0080DF70 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4F01696E2A7F164C0080DF70 /* Speaks AI.app */,
+				4F0169872A7F164D0080DF70 /* Speaks AITests.xctest */,
+				4F0169912A7F164D0080DF70 /* Speaks AIUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4F0169702A7F164C0080DF70 /* Speaks AI */ = {
+			isa = PBXGroup;
+			children = (
+				4F0169B02A7F2A290080DF70 /* Shopping.swift */,
+				4F0169A62A7F20960080DF70 /* Gradient.swift */,
+				4F0169A42A7F200B0080DF70 /* ANIMATIONS.swift */,
+				4F0169712A7F164C0080DF70 /* AppDelegate.swift */,
+				4F0169732A7F164C0080DF70 /* SceneDelegate.swift */,
+				4F0169752A7F164C0080DF70 /* ViewController.swift */,
+				4F14295E2A8296BE0053E774 /* Habits.swift */,
+				4F0169772A7F164C0080DF70 /* Main.storyboard */,
+				4F0169AE2A7F27E10080DF70 /* Help_Page.swift */,
+				4F01697D2A7F164D0080DF70 /* Assets.xcassets */,
+				4FC4995E2A8062C900ACC494 /* Scribble.gif */,
+				4FAFBCA02A8189BD00F848F5 /* TAGUR_IDLE.gif */,
+				4F0169BC2A7F2E490080DF70 /* 123 Pond.mp3 */,
+				4F0169BE2A7F2E490080DF70 /* Galactic Relative.mp3 */,
+				4F0169BD2A7F2E490080DF70 /* The NY rat.mp3 */,
+				4F0169BA2A7F2DF40080DF70 /* Celestial Wandering.mp3 */,
+				4F0169B42A7F2D9A0080DF70 /* Who Where?.mp3 */,
+				4F0169B82A7F2DBF0080DF70 /* Chromed & Neutralized.mp3 */,
+				4F0169B22A7F2B770080DF70 /* ComputerAlert.wav */,
+				4FAFBCA42A818D5200F848F5 /* CountOver.mp3 */,
+				4FAFBCA62A818EF900F848F5 /* Clones_speaking.mp3 */,
+				4FAFBCA22A818B9200F848F5 /* laser.mp3 */,
+				4F0169C22A7F2FF20080DF70 /* FART.mp3 */,
+				4FCFFF992A80141E006244BB /* Countdown.wav */,
+				4F01697F2A7F164D0080DF70 /* LaunchScreen.storyboard */,
+				4F0169822A7F164D0080DF70 /* Info.plist */,
+				4F01697A2A7F164C0080DF70 /* Speaks_AI.xcdatamodeld */,
+			);
+			path = "Speaks AI";
+			sourceTree = "<group>";
+		};
+		4F01698A2A7F164D0080DF70 /* Speaks AITests */ = {
+			isa = PBXGroup;
+			children = (
+				4F01698B2A7F164D0080DF70 /* Speaks_AITests.swift */,
+			);
+			path = "Speaks AITests";
+			sourceTree = "<group>";
+		};
+		4F0169942A7F164D0080DF70 /* Speaks AIUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4F0169952A7F164D0080DF70 /* Speaks_AIUITests.swift */,
+				4F0169972A7F164D0080DF70 /* Speaks_AIUITestsLaunchTests.swift */,
+			);
+			path = "Speaks AIUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4F01696D2A7F164C0080DF70 /* Speaks AI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F01699B2A7F164D0080DF70 /* Build configuration list for PBXNativeTarget "Speaks AI" */;
+			buildPhases = (
+				4F01696A2A7F164C0080DF70 /* Sources */,
+				4F01696B2A7F164C0080DF70 /* Frameworks */,
+				4F01696C2A7F164C0080DF70 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Speaks AI";
+			productName = "Speaks AI";
+			productReference = 4F01696E2A7F164C0080DF70 /* Speaks AI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4F0169862A7F164D0080DF70 /* Speaks AITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F01699E2A7F164D0080DF70 /* Build configuration list for PBXNativeTarget "Speaks AITests" */;
+			buildPhases = (
+				4F0169832A7F164D0080DF70 /* Sources */,
+				4F0169842A7F164D0080DF70 /* Frameworks */,
+				4F0169852A7F164D0080DF70 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4F0169892A7F164D0080DF70 /* PBXTargetDependency */,
+			);
+			name = "Speaks AITests";
+			productName = "Speaks AITests";
+			productReference = 4F0169872A7F164D0080DF70 /* Speaks AITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4F0169902A7F164D0080DF70 /* Speaks AIUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F0169A12A7F164D0080DF70 /* Build configuration list for PBXNativeTarget "Speaks AIUITests" */;
+			buildPhases = (
+				4F01698D2A7F164D0080DF70 /* Sources */,
+				4F01698E2A7F164D0080DF70 /* Frameworks */,
+				4F01698F2A7F164D0080DF70 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4F0169932A7F164D0080DF70 /* PBXTargetDependency */,
+			);
+			name = "Speaks AIUITests";
+			productName = "Speaks AIUITests";
+			productReference = 4F0169912A7F164D0080DF70 /* Speaks AIUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4F0169662A7F164C0080DF70 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					4F01696D2A7F164C0080DF70 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					4F0169862A7F164D0080DF70 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 4F01696D2A7F164C0080DF70;
+					};
+					4F0169902A7F164D0080DF70 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 4F01696D2A7F164C0080DF70;
+					};
+				};
+			};
+			buildConfigurationList = 4F0169692A7F164C0080DF70 /* Build configuration list for PBXProject "Speaks AI" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4F0169652A7F164C0080DF70;
+			productRefGroup = 4F01696F2A7F164C0080DF70 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4F01696D2A7F164C0080DF70 /* Speaks AI */,
+				4F0169862A7F164D0080DF70 /* Speaks AITests */,
+				4F0169902A7F164D0080DF70 /* Speaks AIUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4F01696C2A7F164C0080DF70 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FAFBCA52A818D5300F848F5 /* CountOver.mp3 in Resources */,
+				4F0169B92A7F2DBF0080DF70 /* Chromed & Neutralized.mp3 in Resources */,
+				4F0169B52A7F2D9A0080DF70 /* Who Where?.mp3 in Resources */,
+				4F0169BF2A7F2E490080DF70 /* 123 Pond.mp3 in Resources */,
+				4F0169C32A7F2FF20080DF70 /* FART.mp3 in Resources */,
+				4FCFFF9A2A80141E006244BB /* Countdown.wav in Resources */,
+				4FAFBCA72A818EF900F848F5 /* Clones_speaking.mp3 in Resources */,
+				4F0169BB2A7F2DF50080DF70 /* Celestial Wandering.mp3 in Resources */,
+				4F0169C12A7F2E490080DF70 /* Galactic Relative.mp3 in Resources */,
+				4FC4995F2A8062C900ACC494 /* Scribble.gif in Resources */,
+				4F0169B32A7F2B780080DF70 /* ComputerAlert.wav in Resources */,
+				4F0169812A7F164D0080DF70 /* LaunchScreen.storyboard in Resources */,
+				4F01697E2A7F164D0080DF70 /* Assets.xcassets in Resources */,
+				4F0169792A7F164C0080DF70 /* Main.storyboard in Resources */,
+				4FAFBCA12A8189BD00F848F5 /* TAGUR_IDLE.gif in Resources */,
+				4F0169C02A7F2E490080DF70 /* The NY rat.mp3 in Resources */,
+				4FAFBCA32A818B9200F848F5 /* laser.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F0169852A7F164D0080DF70 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F01698F2A7F164D0080DF70 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4F01696A2A7F164C0080DF70 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F0169762A7F164C0080DF70 /* ViewController.swift in Sources */,
+				4F0169B12A7F2A290080DF70 /* Shopping.swift in Sources */,
+				4F14295F2A8296BE0053E774 /* Habits.swift in Sources */,
+				4F0169722A7F164C0080DF70 /* AppDelegate.swift in Sources */,
+				4F0169AF2A7F27E10080DF70 /* Help_Page.swift in Sources */,
+				4F01697C2A7F164C0080DF70 /* Speaks_AI.xcdatamodeld in Sources */,
+				4F0169A52A7F200B0080DF70 /* ANIMATIONS.swift in Sources */,
+				4F0169742A7F164C0080DF70 /* SceneDelegate.swift in Sources */,
+				4F0169A72A7F20960080DF70 /* Gradient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F0169832A7F164D0080DF70 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F01698C2A7F164D0080DF70 /* Speaks_AITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F01698D2A7F164D0080DF70 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F0169962A7F164D0080DF70 /* Speaks_AIUITests.swift in Sources */,
+				4F0169982A7F164D0080DF70 /* Speaks_AIUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4F0169892A7F164D0080DF70 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4F01696D2A7F164C0080DF70 /* Speaks AI */;
+			targetProxy = 4F0169882A7F164D0080DF70 /* PBXContainerItemProxy */;
+		};
+		4F0169932A7F164D0080DF70 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4F01696D2A7F164C0080DF70 /* Speaks AI */;
+			targetProxy = 4F0169922A7F164D0080DF70 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4F0169772A7F164C0080DF70 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F0169782A7F164C0080DF70 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4F01697F2A7F164D0080DF70 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F0169802A7F164D0080DF70 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4F0169992A7F164D0080DF70 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4F01699A2A7F164D0080DF70 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4F01699C2A7F164D0080DF70 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 66TT6FTG36;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Speaks AI/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Speaks AI";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "NextGenELU.Speaks-AI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4F01699D2A7F164D0080DF70 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 66TT6FTG36;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Speaks AI/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Speaks AI";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "NextGenELU.Speaks-AI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4F01699F2A7F164D0080DF70 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "NextGen.Speaks-AITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Speaks AI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Speaks AI";
+			};
+			name = Debug;
+		};
+		4F0169A02A7F164D0080DF70 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "NextGen.Speaks-AITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Speaks AI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Speaks AI";
+			};
+			name = Release;
+		};
+		4F0169A22A7F164D0080DF70 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 66TT6FTG36;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "NextGen.Speaks-AIUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Speaks AI";
+			};
+			name = Debug;
+		};
+		4F0169A32A7F164D0080DF70 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 66TT6FTG36;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "NextGen.Speaks-AIUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Speaks AI";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4F0169692A7F164C0080DF70 /* Build configuration list for PBXProject "Speaks AI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F0169992A7F164D0080DF70 /* Debug */,
+				4F01699A2A7F164D0080DF70 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F01699B2A7F164D0080DF70 /* Build configuration list for PBXNativeTarget "Speaks AI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F01699C2A7F164D0080DF70 /* Debug */,
+				4F01699D2A7F164D0080DF70 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F01699E2A7F164D0080DF70 /* Build configuration list for PBXNativeTarget "Speaks AITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F01699F2A7F164D0080DF70 /* Debug */,
+				4F0169A02A7F164D0080DF70 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F0169A12A7F164D0080DF70 /* Build configuration list for PBXNativeTarget "Speaks AIUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F0169A22A7F164D0080DF70 /* Debug */,
+				4F0169A32A7F164D0080DF70 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4F01697A2A7F164C0080DF70 /* Speaks_AI.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4F01697B2A7F164C0080DF70 /* Speaks_AI.xcdatamodel */,
+			);
+			currentVersion = 4F01697B2A7F164C0080DF70 /* Speaks_AI.xcdatamodel */;
+			path = Speaks_AI.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 4F0169662A7F164C0080DF70 /* Project object */;
+}
