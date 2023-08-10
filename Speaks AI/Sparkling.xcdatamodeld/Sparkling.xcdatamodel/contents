@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22522" systemVersion="23B92" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Entity" representedClassName="Entity" syncable="YES" codeGenerationType="class"/>
+    <entity name="Font_Entity" representedClassName="Font_Entity" syncable="YES" codeGenerationType="class">
+        <attribute name="font" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Gradient" representedClassName="Gradient" syncable="YES" codeGenerationType="class">
+        <attribute name="currentEndColor" optional="YES" attributeType="String"/>
+        <attribute name="currentStartColor" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="MissionEntity" representedClassName="MissionEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="mission_1" optional="YES" attributeType="String"/>
+        <attribute name="mission_2" optional="YES" attributeType="String"/>
+        <attribute name="mission_3" optional="YES" attributeType="String"/>
+        <attribute name="mission_4" optional="YES" attributeType="String"/>
+        <attribute name="mission_5" optional="YES" attributeType="String"/>
+    </entity>
+</model>

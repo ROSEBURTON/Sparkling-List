@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22F82" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22522" systemVersion="23B92" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Customer" representedClassName="Customer" syncable="YES" codeGenerationType="class">
         <attribute name="status" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
     </entity>
+    <entity name="Entity" representedClassName="Entity" syncable="YES" codeGenerationType="class"/>
     <entity name="Font_Entity" representedClassName="Font_Entity" syncable="YES" codeGenerationType="class"/>
     <entity name="Gradient" representedClassName="Gradient" syncable="YES" codeGenerationType="class">
         <attribute name="currentEndColor" optional="YES" attributeType="String"/>
         <attribute name="currentStartColor" optional="YES" attributeType="String"/>
     </entity>
     <entity name="MissionEntity" representedClassName="MissionEntity" syncable="YES" codeGenerationType="class">
-        <attribute name="habit_1" optional="YES" attributeType="String"/>
-        <attribute name="habit_2" optional="YES" attributeType="String"/>
-        <attribute name="habit_3" optional="YES" attributeType="String"/>
-        <attribute name="habit_4" optional="YES" attributeType="String"/>
-        <attribute name="habit_5" optional="YES" attributeType="String"/>
         <attribute name="mission_1" optional="YES" attributeType="String"/>
         <attribute name="mission_2" optional="YES" attributeType="String"/>
         <attribute name="mission_3" optional="YES" attributeType="String"/>
         <attribute name="mission_4" optional="YES" attributeType="String"/>
         <attribute name="mission_5" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="RepeatEntity" representedClassName="RepeatEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="repeat_section" optional="YES" attributeType="String"/>
     </entity>
 </model>

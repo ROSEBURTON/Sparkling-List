@@ -1,0 +1,1136 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4F0169722A7F164C0080DF70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0169712A7F164C0080DF70 /* AppDelegate.swift */; };
+		4F0169742A7F164C0080DF70 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0169732A7F164C0080DF70 /* SceneDelegate.swift */; };
+		4F0169762A7F164C0080DF70 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0169752A7F164C0080DF70 /* Main.swift */; };
+		4F0169792A7F164C0080DF70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F0169772A7F164C0080DF70 /* Main.storyboard */; };
+		4F01697E2A7F164D0080DF70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F01697D2A7F164D0080DF70 /* Assets.xcassets */; };
+		4F0169812A7F164D0080DF70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F01697F2A7F164D0080DF70 /* LaunchScreen.storyboard */; };
+		4F01698C2A7F164D0080DF70 /* Speaks_AITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F01698B2A7F164D0080DF70 /* Speaks_AITests.swift */; };
+		4F0169962A7F164D0080DF70 /* Speaks_AIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0169952A7F164D0080DF70 /* Speaks_AIUITests.swift */; };
+		4F0169982A7F164D0080DF70 /* Speaks_AIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0169972A7F164D0080DF70 /* Speaks_AIUITestsLaunchTests.swift */; };
+		4F0169A52A7F200B0080DF70 /* Animated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0169A42A7F200B0080DF70 /* Animated.swift */; };
+		4F0169A72A7F20960080DF70 /* Background_Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0169A62A7F20960080DF70 /* Background_Gradient.swift */; };
+		4F0169B12A7F2A290080DF70 /* Shopping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0169B02A7F2A290080DF70 /* Shopping.swift */; };
+		4F018C5A2B55863700AA9AAD /* Aflame Procrasination.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F018C592B55863700AA9AAD /* Aflame Procrasination.wav */; };
+		4F073E442AF319CE00623681 /* Omit.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F073E432AF319CE00623681 /* Omit.wav */; };
+		4F073E542AF31D3600623681 /* ATL Night Rain.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F073E532AF31D3600623681 /* ATL Night Rain.wav */; };
+		4F073E582AF31E3500623681 /* Missile Hit.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F073E572AF31E3500623681 /* Missile Hit.wav */; };
+		4F073E602AF3207900623681 /* Vegan Muncher.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F073E5F2AF3207900623681 /* Vegan Muncher.wav */; };
+		4F073E622AF323B800623681 /* Nuclear Ending.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F073E612AF323B800623681 /* Nuclear Ending.wav */; };
+		4F073E642AF3241900623681 /* Sea Mine.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F073E632AF3241900623681 /* Sea Mine.wav */; };
+		4F0931252A8570E0007B782A /* Selected.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F0931242A8570E0007B782A /* Selected.wav */; };
+		4F12A2C72B53106500509DEA /* SketchesLogo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F12A2C62B53106500509DEA /* SketchesLogo.gif */; };
+		4F12A2CB2B53110700509DEA /* ComputerAlert.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F12A2CA2B53110700509DEA /* ComputerAlert.wav */; };
+		4F12A2CF2B53119D00509DEA /* TAGUR_zero.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F12A2CE2B53119D00509DEA /* TAGUR_zero.gif */; };
+		4F12A2D72B53132200509DEA /* Southern Dark N' Oily.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F12A2D12B53132200509DEA /* Southern Dark N' Oily.mp3 */; };
+		4F12A2DA2B53132200509DEA /* Distraught Commander.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F12A2D42B53132200509DEA /* Distraught Commander.mp3 */; };
+		4F12A2DB2B53132200509DEA /* Chromed & Neutralized.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F12A2D52B53132200509DEA /* Chromed & Neutralized.mp3 */; };
+		4F15CFC62AA938A100525964 /* Volume.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F15CFC52AA938A100525964 /* Volume.gif */; };
+		4F18CAD12B8B8BC700DE53F5 /* Morning Hit.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F18CAD02B8B8BC700DE53F5 /* Morning Hit.wav */; };
+		4F18CAD52B8B97BF00DE53F5 /* Fart.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F18CAD42B8B97BF00DE53F5 /* Fart.mp3 */; };
+		4F18CAD72B8BD48200DE53F5 /* Buzzed Up.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F18CAD62B8BD48200DE53F5 /* Buzzed Up.wav */; };
+		4F18CAD92B8BD80D00DE53F5 /* Space Race.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F18CAD82B8BD80D00DE53F5 /* Space Race.mp3 */; };
+		4F1E37882B681D8A006DC211 /* SketchesRED.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F1E37862B681D8A006DC211 /* SketchesRED.gif */; };
+		4F1E37892B681D8A006DC211 /* Sketches_Valid.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F1E37872B681D8A006DC211 /* Sketches_Valid.gif */; };
+		4F1E378B2B6822AD006DC211 /* Glass Shatter.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F1E378A2B6822AD006DC211 /* Glass Shatter.wav */; };
+		4F1E378D2B682389006DC211 /* Dealt With.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F1E378C2B682389006DC211 /* Dealt With.wav */; };
+		4F1E378F2B684D00006DC211 /* TagurLogo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F1E378E2B684D00006DC211 /* TagurLogo.gif */; };
+		4F206EA52B88421100F8C61B /* Blue Waters.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F206EA42B88421000F8C61B /* Blue Waters.mp3 */; };
+		4F20DA612B89901E00131EA3 /* Pour Drank.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F20DA602B89901E00131EA3 /* Pour Drank.wav */; };
+		4F20DA632B89905500131EA3 /* Ice.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F20DA622B89905500131EA3 /* Ice.wav */; };
+		4F20DA652B89929A00131EA3 /* Gyat Chonki-Lonki.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F20DA642B89929A00131EA3 /* Gyat Chonki-Lonki.wav */; };
+		4F20DA672B89935300131EA3 /* 1970s Transmitter.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F20DA662B89935300131EA3 /* 1970s Transmitter.wav */; };
+		4F20DA692B8993BF00131EA3 /* Coming Near You.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F20DA682B8993BF00131EA3 /* Coming Near You.wav */; };
+		4F20DA6B2B89944600131EA3 /* PB & J.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F20DA6A2B89944600131EA3 /* PB & J.wav */; };
+		4F20DA6F2B8995FC00131EA3 /* Big Purr.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F20DA6E2B8995FC00131EA3 /* Big Purr.wav */; };
+		4F20DA732B89973800131EA3 /* Productivit-Yee-Yee.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F20DA722B89973800131EA3 /* Productivit-Yee-Yee.wav */; };
+		4F3A6BA22B8A3AD800BCD616 /* GoReady.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F3A6BA12B8A3AD800BCD616 /* GoReady.wav */; };
+		4F4FCF672AFBDB4C0011E62B /* Disco.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F4FCF662AFBDB4C0011E62B /* Disco.gif */; };
+		4F5398CB2B61922600918955 /* Repeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5398CA2B61922600918955 /* Repeat.swift */; };
+		4F5F49BA2B4C959800530610 /* Speaks_AI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F5F49B82B4C959700530610 /* Speaks_AI.xcdatamodeld */; };
+		4F6372B52B955130005E493C /* Starship & TORQ.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F6372B42B955130005E493C /* Starship & TORQ.gif */; };
+		4F6D3AAE2B8EDE170000BEC0 /* Night Snow Cleats.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F6D3AAD2B8EDE170000BEC0 /* Night Snow Cleats.mp3 */; };
+		4F6D3AB02B8EDE5C0000BEC0 /* VIBROV.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F6D3AAF2B8EDE5C0000BEC0 /* VIBROV.mp3 */; };
+		4F77421A2AF81E8C00466505 /* Mantid's Observation.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F7742192AF81E8C00466505 /* Mantid's Observation.wav */; };
+		4F77421E2AF81F0000466505 /* Submerge.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F77421D2AF81F0000466505 /* Submerge.wav */; };
+		4F7742222AF820F300466505 /* Loading Productive Ammo.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F7742212AF820F200466505 /* Loading Productive Ammo.wav */; };
+		4F7742242AF8215800466505 /* Assimilation.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F7742232AF8215700466505 /* Assimilation.wav */; };
+		4F77422A2AF8228600466505 /* Ready for Takeoff.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F7742292AF8228600466505 /* Ready for Takeoff.wav */; };
+		4F77422C2AF8234400466505 /* Барыня.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F77422B2AF8234400466505 /* Барыня.wav */; };
+		4F82876E2B961E1E00651F85 /* Coin Type.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F82876D2B961E1E00651F85 /* Coin Type.wav */; };
+		4F8287712B976E3500651F85 /* Artificials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8287702B976E3500651F85 /* Artificials.swift */; };
+		4F87BB332B8597FB00DD093B /* shuffle.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F87BB322B8597FB00DD093B /* shuffle.wav */; };
+		4F9309482AB0EB2C00E9BFAB /* Telepathy.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F9309472AB0EB2B00E9BFAB /* Telepathy.wav */; };
+		4FA089852B8C35920086E37D /* LIFI PowerPod.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4FA089842B8C35920086E37D /* LIFI PowerPod.mp3 */; };
+		4FA93FD82B8259C7000CA4C4 /* Type Ship.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4FA93FD72B8259C7000CA4C4 /* Type Ship.wav */; };
+		4FA93FDA2B825A6F000CA4C4 /* Deep Space.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4FA93FD92B825A6F000CA4C4 /* Deep Space.mp3 */; };
+		4FAFBCA32A818B9200F848F5 /* Laser.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4FAFBCA22A818B9200F848F5 /* Laser.mp3 */; };
+		4FB0B8922B94D00C0081326E /* Starship & TORQ Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FB0B8912B94D00C0081326E /* Starship & TORQ Logo.png */; };
+		4FB2AAA32B117D42003D336C /* The Primal Dexxacon.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4FB2AAA22B117D42003D336C /* The Primal Dexxacon.gif */; };
+		4FBB654C2B8A78D00075EBB0 /* Noted.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4FBB654B2B8A78D00075EBB0 /* Noted.wav */; };
+		4FBB654E2B8A79EC0075EBB0 /* Productive Prep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4FBB654D2B8A79EC0075EBB0 /* Productive Prep.mp3 */; };
+		4FBB65502B8A7AED0075EBB0 /* Water Lurk.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4FBB654F2B8A7AED0075EBB0 /* Water Lurk.wav */; };
+		4FBD77032B50B2CC00DB7DF5 /* Seductress.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4FBD77022B50B2CB00DB7DF5 /* Seductress.gif */; };
+		4FC156062AAFF2CA00CE18E3 /* TAGUR_Low.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4FC156052AAFF2CA00CE18E3 /* TAGUR_Low.gif */; };
+		4FC156082AAFF2EA00CE18E3 /* TAGUR_Steady.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4FC156072AAFF2EA00CE18E3 /* TAGUR_Steady.gif */; };
+		4FC1560A2AAFF30E00CE18E3 /* TAGUR_Rising.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4FC156092AAFF30E00CE18E3 /* TAGUR_Rising.gif */; };
+		4FC1560C2AAFF33000CE18E3 /* TAGUR_Optimal.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4FC1560B2AAFF33000CE18E3 /* TAGUR_Optimal.gif */; };
+		4FC4995F2A8062C900ACC494 /* Scribble.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4FC4995E2A8062C900ACC494 /* Scribble.gif */; };
+		4FC994002B5197E900C53D0E /* Chalkboard.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4FC993FF2B5197E900C53D0E /* Chalkboard.wav */; };
+		4FD5E8182B8D583600558742 /* Sunday.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4FD5E8172B8D583600558742 /* Sunday.gif */; };
+		4FEA9FFE2AFA94B700FFBDC8 /* DiscoDimeLogo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4FEA9FFD2AFA94B700FFBDC8 /* DiscoDimeLogo.gif */; };
+		4FED9B112AB8ED3300B84552 /* Lost Signal.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4FED9B102AB8ED3300B84552 /* Lost Signal.mp3 */; };
+		4FED9B192AB8FB1700B84552 /* Signal.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4FED9B182AB8FB1700B84552 /* Signal.mp3 */; };
+		4FED9B232AB905FD00B84552 /* Miss Computer Email.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4FED9B222AB905FD00B84552 /* Miss Computer Email.mp3 */; };
+		4FED9B252AB9068C00B84552 /* Cybernetic Models.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4FED9B242AB9068C00B84552 /* Cybernetic Models.mp3 */; };
+		4FEFED732B20C407003B44A7 /* Rewiring.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4FEFED722B20C407003B44A7 /* Rewiring.wav */; };
+		4FEFED772B20C518003B44A7 /* @*!+-R.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4FEFED762B20C517003B44A7 /* @*!+-R.wav */; };
+		4FF8123C2B64074A002781C3 /* Static.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4FF8123B2B64074A002781C3 /* Static.wav */; };
+		4FFF11F52B49E6AF0023D1E3 /* Pleased Watching Mantid.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4FFF11F42B49E6AF0023D1E3 /* Pleased Watching Mantid.wav */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4F0169882A7F164D0080DF70 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F0169662A7F164C0080DF70 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F01696D2A7F164C0080DF70;
+			remoteInfo = "Speaks AI";
+		};
+		4F0169922A7F164D0080DF70 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F0169662A7F164C0080DF70 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F01696D2A7F164C0080DF70;
+			remoteInfo = "Speaks AI";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4F01696E2A7F164C0080DF70 /* Sparkling List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sparkling List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F0169712A7F164C0080DF70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4F0169732A7F164C0080DF70 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		4F0169752A7F164C0080DF70 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
+		4F0169782A7F164C0080DF70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4F01697D2A7F164D0080DF70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4F0169802A7F164D0080DF70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4F0169822A7F164D0080DF70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F0169872A7F164D0080DF70 /* Sparkling ListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sparkling ListTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F01698B2A7F164D0080DF70 /* Speaks_AITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speaks_AITests.swift; sourceTree = "<group>"; };
+		4F0169912A7F164D0080DF70 /* Sparkling ListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sparkling ListUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F0169952A7F164D0080DF70 /* Speaks_AIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speaks_AIUITests.swift; sourceTree = "<group>"; };
+		4F0169972A7F164D0080DF70 /* Speaks_AIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speaks_AIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4F0169A42A7F200B0080DF70 /* Animated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animated.swift; sourceTree = "<group>"; };
+		4F0169A62A7F20960080DF70 /* Background_Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background_Gradient.swift; sourceTree = "<group>"; };
+		4F0169B02A7F2A290080DF70 /* Shopping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shopping.swift; sourceTree = "<group>"; };
+		4F018C592B55863700AA9AAD /* Aflame Procrasination.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Aflame Procrasination.wav"; sourceTree = "<group>"; };
+		4F073E432AF319CE00623681 /* Omit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Omit.wav; sourceTree = "<group>"; };
+		4F073E532AF31D3600623681 /* ATL Night Rain.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "ATL Night Rain.wav"; sourceTree = "<group>"; };
+		4F073E572AF31E3500623681 /* Missile Hit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Missile Hit.wav"; sourceTree = "<group>"; };
+		4F073E5F2AF3207900623681 /* Vegan Muncher.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Vegan Muncher.wav"; sourceTree = "<group>"; };
+		4F073E612AF323B800623681 /* Nuclear Ending.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Nuclear Ending.wav"; sourceTree = "<group>"; };
+		4F073E632AF3241900623681 /* Sea Mine.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Sea Mine.wav"; sourceTree = "<group>"; };
+		4F0931242A8570E0007B782A /* Selected.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Selected.wav; sourceTree = "<group>"; };
+		4F12A2C62B53106500509DEA /* SketchesLogo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SketchesLogo.gif; sourceTree = "<group>"; };
+		4F12A2CA2B53110700509DEA /* ComputerAlert.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ComputerAlert.wav; sourceTree = "<group>"; };
+		4F12A2CE2B53119D00509DEA /* TAGUR_zero.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = TAGUR_zero.gif; sourceTree = "<group>"; };
+		4F12A2D12B53132200509DEA /* Southern Dark N' Oily.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Southern Dark N' Oily.mp3"; sourceTree = "<group>"; };
+		4F12A2D42B53132200509DEA /* Distraught Commander.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Distraught Commander.mp3"; sourceTree = "<group>"; };
+		4F12A2D52B53132200509DEA /* Chromed & Neutralized.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Chromed & Neutralized.mp3"; sourceTree = "<group>"; };
+		4F15CFC52AA938A100525964 /* Volume.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Volume.gif; sourceTree = "<group>"; };
+		4F18CAD02B8B8BC700DE53F5 /* Morning Hit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Morning Hit.wav"; sourceTree = "<group>"; };
+		4F18CAD42B8B97BF00DE53F5 /* Fart.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Fart.mp3; path = "Speaks AI/Sparkling List/Fart.mp3"; sourceTree = SOURCE_ROOT; };
+		4F18CAD62B8BD48200DE53F5 /* Buzzed Up.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Buzzed Up.wav"; sourceTree = "<group>"; };
+		4F18CAD82B8BD80D00DE53F5 /* Space Race.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Space Race.mp3"; sourceTree = "<group>"; };
+		4F1E37862B681D8A006DC211 /* SketchesRED.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SketchesRED.gif; sourceTree = "<group>"; };
+		4F1E37872B681D8A006DC211 /* Sketches_Valid.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Sketches_Valid.gif; sourceTree = "<group>"; };
+		4F1E378A2B6822AD006DC211 /* Glass Shatter.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Glass Shatter.wav"; sourceTree = "<group>"; };
+		4F1E378C2B682389006DC211 /* Dealt With.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Dealt With.wav"; sourceTree = "<group>"; };
+		4F1E378E2B684D00006DC211 /* TagurLogo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = TagurLogo.gif; sourceTree = "<group>"; };
+		4F1E37902B685AF0006DC211 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		4F206EA42B88421000F8C61B /* Blue Waters.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Blue Waters.mp3"; sourceTree = "<group>"; };
+		4F20DA602B89901E00131EA3 /* Pour Drank.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Pour Drank.wav"; sourceTree = "<group>"; };
+		4F20DA622B89905500131EA3 /* Ice.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Ice.wav; sourceTree = "<group>"; };
+		4F20DA642B89929A00131EA3 /* Gyat Chonki-Lonki.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Gyat Chonki-Lonki.wav"; sourceTree = "<group>"; };
+		4F20DA662B89935300131EA3 /* 1970s Transmitter.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "1970s Transmitter.wav"; sourceTree = "<group>"; };
+		4F20DA682B8993BF00131EA3 /* Coming Near You.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Coming Near You.wav"; sourceTree = "<group>"; };
+		4F20DA6A2B89944600131EA3 /* PB & J.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "PB & J.wav"; sourceTree = "<group>"; };
+		4F20DA6E2B8995FC00131EA3 /* Big Purr.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Big Purr.wav"; sourceTree = "<group>"; };
+		4F20DA722B89973800131EA3 /* Productivit-Yee-Yee.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Productivit-Yee-Yee.wav"; sourceTree = "<group>"; };
+		4F3A6BA12B8A3AD800BCD616 /* GoReady.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = GoReady.wav; sourceTree = "<group>"; };
+		4F438C6C2A97C4860084319E /* Visual AssistExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Visual AssistExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F4FCF662AFBDB4C0011E62B /* Disco.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Disco.gif; sourceTree = "<group>"; };
+		4F5398CA2B61922600918955 /* Repeat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repeat.swift; sourceTree = "<group>"; };
+		4F5F49B92B4C959700530610 /* Speaks_AI.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Speaks_AI.xcdatamodel; sourceTree = "<group>"; };
+		4F6372B42B955130005E493C /* Starship & TORQ.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Starship & TORQ.gif"; sourceTree = "<group>"; };
+		4F6D3AAD2B8EDE170000BEC0 /* Night Snow Cleats.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Night Snow Cleats.mp3"; sourceTree = "<group>"; };
+		4F6D3AAF2B8EDE5C0000BEC0 /* VIBROV.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = VIBROV.mp3; sourceTree = "<group>"; };
+		4F7742192AF81E8C00466505 /* Mantid's Observation.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Mantid's Observation.wav"; sourceTree = "<group>"; };
+		4F77421D2AF81F0000466505 /* Submerge.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Submerge.wav; sourceTree = "<group>"; };
+		4F7742212AF820F200466505 /* Loading Productive Ammo.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Loading Productive Ammo.wav"; sourceTree = "<group>"; };
+		4F7742232AF8215700466505 /* Assimilation.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Assimilation.wav; sourceTree = "<group>"; };
+		4F7742292AF8228600466505 /* Ready for Takeoff.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Ready for Takeoff.wav"; sourceTree = "<group>"; };
+		4F77422B2AF8234400466505 /* Барыня.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Барыня.wav"; sourceTree = "<group>"; };
+		4F82876D2B961E1E00651F85 /* Coin Type.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Coin Type.wav"; sourceTree = "<group>"; };
+		4F8287702B976E3500651F85 /* Artificials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artificials.swift; sourceTree = "<group>"; };
+		4F87BB322B8597FB00DD093B /* shuffle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shuffle.wav; sourceTree = "<group>"; };
+		4F9309472AB0EB2B00E9BFAB /* Telepathy.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Telepathy.wav; sourceTree = "<group>"; };
+		4FA089842B8C35920086E37D /* LIFI PowerPod.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "LIFI PowerPod.mp3"; sourceTree = "<group>"; };
+		4FA93FD72B8259C7000CA4C4 /* Type Ship.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Type Ship.wav"; sourceTree = "<group>"; };
+		4FA93FD92B825A6F000CA4C4 /* Deep Space.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Deep Space.mp3"; sourceTree = "<group>"; };
+		4FAFBCA22A818B9200F848F5 /* Laser.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Laser.mp3; sourceTree = "<group>"; };
+		4FB0B8912B94D00C0081326E /* Starship & TORQ Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Starship & TORQ Logo.png"; sourceTree = "<group>"; };
+		4FB2AAA22B117D42003D336C /* The Primal Dexxacon.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "The Primal Dexxacon.gif"; sourceTree = "<group>"; };
+		4FBB654B2B8A78D00075EBB0 /* Noted.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Noted.wav; sourceTree = "<group>"; };
+		4FBB654D2B8A79EC0075EBB0 /* Productive Prep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Productive Prep.mp3"; sourceTree = "<group>"; };
+		4FBB654F2B8A7AED0075EBB0 /* Water Lurk.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Water Lurk.wav"; sourceTree = "<group>"; };
+		4FBD77022B50B2CB00DB7DF5 /* Seductress.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Seductress.gif; sourceTree = "<group>"; };
+		4FC156052AAFF2CA00CE18E3 /* TAGUR_Low.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = TAGUR_Low.gif; sourceTree = "<group>"; };
+		4FC156072AAFF2EA00CE18E3 /* TAGUR_Steady.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = TAGUR_Steady.gif; sourceTree = "<group>"; };
+		4FC156092AAFF30E00CE18E3 /* TAGUR_Rising.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = TAGUR_Rising.gif; sourceTree = "<group>"; };
+		4FC1560B2AAFF33000CE18E3 /* TAGUR_Optimal.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = TAGUR_Optimal.gif; sourceTree = "<group>"; };
+		4FC4995E2A8062C900ACC494 /* Scribble.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Scribble.gif; sourceTree = "<group>"; };
+		4FC993FF2B5197E900C53D0E /* Chalkboard.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Chalkboard.wav; sourceTree = "<group>"; };
+		4FD479742AFDAF0B001D7848 /* Speaks AI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Speaks AI.entitlements"; sourceTree = "<group>"; };
+		4FD5E8172B8D583600558742 /* Sunday.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = Sunday.gif; path = ../../../../PIXELS/Sunday.gif; sourceTree = "<group>"; };
+		4FEA9FFD2AFA94B700FFBDC8 /* DiscoDimeLogo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = DiscoDimeLogo.gif; sourceTree = "<group>"; };
+		4FED9B102AB8ED3300B84552 /* Lost Signal.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Lost Signal.mp3"; sourceTree = "<group>"; };
+		4FED9B182AB8FB1700B84552 /* Signal.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Signal.mp3; sourceTree = "<group>"; };
+		4FED9B222AB905FD00B84552 /* Miss Computer Email.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Miss Computer Email.mp3"; sourceTree = "<group>"; };
+		4FED9B242AB9068C00B84552 /* Cybernetic Models.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Cybernetic Models.mp3"; sourceTree = "<group>"; };
+		4FEFED722B20C407003B44A7 /* Rewiring.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Rewiring.wav; sourceTree = "<group>"; };
+		4FEFED762B20C517003B44A7 /* @*!+-R.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "@*!+-R.wav"; sourceTree = "<group>"; };
+		4FF8123B2B64074A002781C3 /* Static.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Static.wav; sourceTree = "<group>"; };
+		4FFF11F42B49E6AF0023D1E3 /* Pleased Watching Mantid.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Pleased Watching Mantid.wav"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4F01696B2A7F164C0080DF70 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F0169842A7F164D0080DF70 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F01698E2A7F164D0080DF70 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F438C692A97C4860084319E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4F0169652A7F164C0080DF70 = {
+			isa = PBXGroup;
+			children = (
+				4F0169702A7F164C0080DF70 /* Speaks AI */,
+				4F01698A2A7F164D0080DF70 /* Speaks AITests */,
+				4F0169942A7F164D0080DF70 /* Speaks AIUITests */,
+				4F01696F2A7F164C0080DF70 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4F01696F2A7F164C0080DF70 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4F01696E2A7F164C0080DF70 /* Sparkling List.app */,
+				4F0169872A7F164D0080DF70 /* Sparkling ListTests.xctest */,
+				4F0169912A7F164D0080DF70 /* Sparkling ListUITests.xctest */,
+				4F438C6C2A97C4860084319E /* Visual AssistExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4F0169702A7F164C0080DF70 /* Speaks AI */ = {
+			isa = PBXGroup;
+			children = (
+				4F5398C92B618CE400918955 /* Code Logic */,
+				4FE1FC6A2B5301AD00F81903 /* Deletion Sounds */,
+				4FE1FC642B53015D00F81903 /* Soundtrack */,
+				4FE1FC6D2B5301F900F81903 /* Visuals */,
+				4F2A98152B696FC700BF2B97 /* EXTRAS */,
+				4F0169822A7F164D0080DF70 /* Info.plist */,
+				4F01697D2A7F164D0080DF70 /* Assets.xcassets */,
+				4F5F49B82B4C959700530610 /* Speaks_AI.xcdatamodeld */,
+			);
+			path = "Speaks AI";
+			sourceTree = "<group>";
+		};
+		4F01698A2A7F164D0080DF70 /* Speaks AITests */ = {
+			isa = PBXGroup;
+			children = (
+				4F01698B2A7F164D0080DF70 /* Speaks_AITests.swift */,
+			);
+			path = "Speaks AITests";
+			sourceTree = "<group>";
+		};
+		4F0169942A7F164D0080DF70 /* Speaks AIUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4F1E37902B685AF0006DC211 /* SwiftUI.framework */,
+				4F0169952A7F164D0080DF70 /* Speaks_AIUITests.swift */,
+				4F0169972A7F164D0080DF70 /* Speaks_AIUITestsLaunchTests.swift */,
+			);
+			path = "Speaks AIUITests";
+			sourceTree = "<group>";
+		};
+		4F2A98152B696FC700BF2B97 /* EXTRAS */ = {
+			isa = PBXGroup;
+			children = (
+				4F0169772A7F164C0080DF70 /* Main.storyboard */,
+				4F01697F2A7F164D0080DF70 /* LaunchScreen.storyboard */,
+				4FD479742AFDAF0B001D7848 /* Speaks AI.entitlements */,
+			);
+			path = EXTRAS;
+			sourceTree = "<group>";
+		};
+		4F5398C92B618CE400918955 /* Code Logic */ = {
+			isa = PBXGroup;
+			children = (
+				4F8287702B976E3500651F85 /* Artificials.swift */,
+				4F0169A42A7F200B0080DF70 /* Animated.swift */,
+				4F0169712A7F164C0080DF70 /* AppDelegate.swift */,
+				4F0169A62A7F20960080DF70 /* Background_Gradient.swift */,
+				4F0169752A7F164C0080DF70 /* Main.swift */,
+				4F5398CA2B61922600918955 /* Repeat.swift */,
+				4F0169732A7F164C0080DF70 /* SceneDelegate.swift */,
+				4F0169B02A7F2A290080DF70 /* Shopping.swift */,
+			);
+			path = "Code Logic";
+			sourceTree = "<group>";
+		};
+		4FE1FC642B53015D00F81903 /* Soundtrack */ = {
+			isa = PBXGroup;
+			children = (
+				4F6D3AAF2B8EDE5C0000BEC0 /* VIBROV.mp3 */,
+				4F6D3AAD2B8EDE170000BEC0 /* Night Snow Cleats.mp3 */,
+				4FA089842B8C35920086E37D /* LIFI PowerPod.mp3 */,
+				4F18CAD82B8BD80D00DE53F5 /* Space Race.mp3 */,
+				4F206EA42B88421000F8C61B /* Blue Waters.mp3 */,
+				4F12A2D52B53132200509DEA /* Chromed & Neutralized.mp3 */,
+				4F12A2D42B53132200509DEA /* Distraught Commander.mp3 */,
+				4F12A2D12B53132200509DEA /* Southern Dark N' Oily.mp3 */,
+			);
+			path = Soundtrack;
+			sourceTree = "<group>";
+		};
+		4FE1FC6A2B5301AD00F81903 /* Deletion Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				4F82876D2B961E1E00651F85 /* Coin Type.wav */,
+				4F18CAD62B8BD48200DE53F5 /* Buzzed Up.wav */,
+				4F18CAD42B8B97BF00DE53F5 /* Fart.mp3 */,
+				4F18CAD02B8B8BC700DE53F5 /* Morning Hit.wav */,
+				4FBB654F2B8A7AED0075EBB0 /* Water Lurk.wav */,
+				4FBB654D2B8A79EC0075EBB0 /* Productive Prep.mp3 */,
+				4FBB654B2B8A78D00075EBB0 /* Noted.wav */,
+				4F3A6BA12B8A3AD800BCD616 /* GoReady.wav */,
+				4F20DA722B89973800131EA3 /* Productivit-Yee-Yee.wav */,
+				4F20DA6E2B8995FC00131EA3 /* Big Purr.wav */,
+				4F20DA6A2B89944600131EA3 /* PB & J.wav */,
+				4F20DA682B8993BF00131EA3 /* Coming Near You.wav */,
+				4F20DA662B89935300131EA3 /* 1970s Transmitter.wav */,
+				4F20DA642B89929A00131EA3 /* Gyat Chonki-Lonki.wav */,
+				4F20DA622B89905500131EA3 /* Ice.wav */,
+				4F20DA602B89901E00131EA3 /* Pour Drank.wav */,
+				4F87BB322B8597FB00DD093B /* shuffle.wav */,
+				4F1E378C2B682389006DC211 /* Dealt With.wav */,
+				4F1E378A2B6822AD006DC211 /* Glass Shatter.wav */,
+				4FF8123B2B64074A002781C3 /* Static.wav */,
+				4F12A2CA2B53110700509DEA /* ComputerAlert.wav */,
+				4F9309472AB0EB2B00E9BFAB /* Telepathy.wav */,
+				4F0931242A8570E0007B782A /* Selected.wav */,
+				4F073E532AF31D3600623681 /* ATL Night Rain.wav */,
+				4F018C592B55863700AA9AAD /* Aflame Procrasination.wav */,
+				4F7742232AF8215700466505 /* Assimilation.wav */,
+				4FEFED762B20C517003B44A7 /* @*!+-R.wav */,
+				4FC993FF2B5197E900C53D0E /* Chalkboard.wav */,
+				4FED9B242AB9068C00B84552 /* Cybernetic Models.mp3 */,
+				4FA93FD92B825A6F000CA4C4 /* Deep Space.mp3 */,
+				4F7742192AF81E8C00466505 /* Mantid's Observation.wav */,
+				4FAFBCA22A818B9200F848F5 /* Laser.mp3 */,
+				4FED9B102AB8ED3300B84552 /* Lost Signal.mp3 */,
+				4F7742212AF820F200466505 /* Loading Productive Ammo.wav */,
+				4FED9B222AB905FD00B84552 /* Miss Computer Email.mp3 */,
+				4F073E572AF31E3500623681 /* Missile Hit.wav */,
+				4F073E612AF323B800623681 /* Nuclear Ending.wav */,
+				4F073E432AF319CE00623681 /* Omit.wav */,
+				4FFF11F42B49E6AF0023D1E3 /* Pleased Watching Mantid.wav */,
+				4F7742292AF8228600466505 /* Ready for Takeoff.wav */,
+				4FEFED722B20C407003B44A7 /* Rewiring.wav */,
+				4F073E632AF3241900623681 /* Sea Mine.wav */,
+				4FED9B182AB8FB1700B84552 /* Signal.mp3 */,
+				4F77421D2AF81F0000466505 /* Submerge.wav */,
+				4F073E5F2AF3207900623681 /* Vegan Muncher.wav */,
+				4F77422B2AF8234400466505 /* Барыня.wav */,
+				4FA93FD72B8259C7000CA4C4 /* Type Ship.wav */,
+			);
+			path = "Deletion Sounds";
+			sourceTree = "<group>";
+		};
+		4FE1FC6D2B5301F900F81903 /* Visuals */ = {
+			isa = PBXGroup;
+			children = (
+				4F6372B42B955130005E493C /* Starship & TORQ.gif */,
+				4FB0B8912B94D00C0081326E /* Starship & TORQ Logo.png */,
+				4FD5E8172B8D583600558742 /* Sunday.gif */,
+				4F1E37872B681D8A006DC211 /* Sketches_Valid.gif */,
+				4F1E37862B681D8A006DC211 /* SketchesRED.gif */,
+				4F1E378E2B684D00006DC211 /* TagurLogo.gif */,
+				4F4FCF662AFBDB4C0011E62B /* Disco.gif */,
+				4FBD77022B50B2CB00DB7DF5 /* Seductress.gif */,
+				4FEA9FFD2AFA94B700FFBDC8 /* DiscoDimeLogo.gif */,
+				4FB2AAA22B117D42003D336C /* The Primal Dexxacon.gif */,
+				4FC1560B2AAFF33000CE18E3 /* TAGUR_Optimal.gif */,
+				4FC156092AAFF30E00CE18E3 /* TAGUR_Rising.gif */,
+				4FC156072AAFF2EA00CE18E3 /* TAGUR_Steady.gif */,
+				4FC156052AAFF2CA00CE18E3 /* TAGUR_Low.gif */,
+				4F12A2CE2B53119D00509DEA /* TAGUR_zero.gif */,
+				4FC4995E2A8062C900ACC494 /* Scribble.gif */,
+				4F15CFC52AA938A100525964 /* Volume.gif */,
+				4F12A2C62B53106500509DEA /* SketchesLogo.gif */,
+			);
+			path = Visuals;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4F01696D2A7F164C0080DF70 /* Sparkling List */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F01699B2A7F164D0080DF70 /* Build configuration list for PBXNativeTarget "Sparkling List" */;
+			buildPhases = (
+				4F01696A2A7F164C0080DF70 /* Sources */,
+				4F01696B2A7F164C0080DF70 /* Frameworks */,
+				4F01696C2A7F164C0080DF70 /* Resources */,
+				4F82876F2B97665000651F85 /* Run Script */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Sparkling List";
+			packageProductDependencies = (
+			);
+			productName = "Speaks AI";
+			productReference = 4F01696E2A7F164C0080DF70 /* Sparkling List.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4F0169862A7F164D0080DF70 /* Sparkling ListTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F01699E2A7F164D0080DF70 /* Build configuration list for PBXNativeTarget "Sparkling ListTests" */;
+			buildPhases = (
+				4F0169832A7F164D0080DF70 /* Sources */,
+				4F0169842A7F164D0080DF70 /* Frameworks */,
+				4F0169852A7F164D0080DF70 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4F0169892A7F164D0080DF70 /* PBXTargetDependency */,
+			);
+			name = "Sparkling ListTests";
+			productName = "Speaks AITests";
+			productReference = 4F0169872A7F164D0080DF70 /* Sparkling ListTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4F0169902A7F164D0080DF70 /* Sparkling ListUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F0169A12A7F164D0080DF70 /* Build configuration list for PBXNativeTarget "Sparkling ListUITests" */;
+			buildPhases = (
+				4F01698D2A7F164D0080DF70 /* Sources */,
+				4F01698E2A7F164D0080DF70 /* Frameworks */,
+				4F01698F2A7F164D0080DF70 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4F0169932A7F164D0080DF70 /* PBXTargetDependency */,
+			);
+			name = "Sparkling ListUITests";
+			productName = "Speaks AIUITests";
+			productReference = 4F0169912A7F164D0080DF70 /* Sparkling ListUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		4F438C6B2A97C4860084319E /* Visual AssistExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F438C852A97C4880084319E /* Build configuration list for PBXNativeTarget "Visual AssistExtension" */;
+			buildPhases = (
+				4F438C682A97C4860084319E /* Sources */,
+				4F438C692A97C4860084319E /* Frameworks */,
+				4F438C6A2A97C4860084319E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Visual AssistExtension";
+			productName = "Visual AssistExtension";
+			productReference = 4F438C6C2A97C4860084319E /* Visual AssistExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4F0169662A7F164C0080DF70 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					4F01696D2A7F164C0080DF70 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					4F0169862A7F164D0080DF70 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 4F01696D2A7F164C0080DF70;
+					};
+					4F0169902A7F164D0080DF70 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 4F01696D2A7F164C0080DF70;
+					};
+					4F438C6B2A97C4860084319E = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 4F0169692A7F164C0080DF70 /* Build configuration list for PBXProject "Sparkling List" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4F0169652A7F164C0080DF70;
+			packageReferences = (
+			);
+			productRefGroup = 4F01696F2A7F164C0080DF70 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4F01696D2A7F164C0080DF70 /* Sparkling List */,
+				4F0169862A7F164D0080DF70 /* Sparkling ListTests */,
+				4F0169902A7F164D0080DF70 /* Sparkling ListUITests */,
+				4F438C6B2A97C4860084319E /* Visual AssistExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4F01696C2A7F164C0080DF70 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F20DA612B89901E00131EA3 /* Pour Drank.wav in Resources */,
+				4F7742222AF820F300466505 /* Loading Productive Ammo.wav in Resources */,
+				4F6D3AB02B8EDE5C0000BEC0 /* VIBROV.mp3 in Resources */,
+				4FB2AAA32B117D42003D336C /* The Primal Dexxacon.gif in Resources */,
+				4F20DA692B8993BF00131EA3 /* Coming Near You.wav in Resources */,
+				4F073E602AF3207900623681 /* Vegan Muncher.wav in Resources */,
+				4FED9B112AB8ED3300B84552 /* Lost Signal.mp3 in Resources */,
+				4F12A2D72B53132200509DEA /* Southern Dark N' Oily.mp3 in Resources */,
+				4F1E378F2B684D00006DC211 /* TagurLogo.gif in Resources */,
+				4F4FCF672AFBDB4C0011E62B /* Disco.gif in Resources */,
+				4FED9B252AB9068C00B84552 /* Cybernetic Models.mp3 in Resources */,
+				4F12A2CB2B53110700509DEA /* ComputerAlert.wav in Resources */,
+				4FFF11F52B49E6AF0023D1E3 /* Pleased Watching Mantid.wav in Resources */,
+				4F9309482AB0EB2C00E9BFAB /* Telepathy.wav in Resources */,
+				4F77422A2AF8228600466505 /* Ready for Takeoff.wav in Resources */,
+				4FC156062AAFF2CA00CE18E3 /* TAGUR_Low.gif in Resources */,
+				4F77421E2AF81F0000466505 /* Submerge.wav in Resources */,
+				4F15CFC62AA938A100525964 /* Volume.gif in Resources */,
+				4F18CAD12B8B8BC700DE53F5 /* Morning Hit.wav in Resources */,
+				4FBB65502B8A7AED0075EBB0 /* Water Lurk.wav in Resources */,
+				4F20DA672B89935300131EA3 /* 1970s Transmitter.wav in Resources */,
+				4F12A2CF2B53119D00509DEA /* TAGUR_zero.gif in Resources */,
+				4F1E37882B681D8A006DC211 /* SketchesRED.gif in Resources */,
+				4F77422C2AF8234400466505 /* Барыня.wav in Resources */,
+				4F0931252A8570E0007B782A /* Selected.wav in Resources */,
+				4F12A2DA2B53132200509DEA /* Distraught Commander.mp3 in Resources */,
+				4FBD77032B50B2CC00DB7DF5 /* Seductress.gif in Resources */,
+				4F18CAD52B8B97BF00DE53F5 /* Fart.mp3 in Resources */,
+				4FC4995F2A8062C900ACC494 /* Scribble.gif in Resources */,
+				4F87BB332B8597FB00DD093B /* shuffle.wav in Resources */,
+				4F20DA6B2B89944600131EA3 /* PB & J.wav in Resources */,
+				4F073E582AF31E3500623681 /* Missile Hit.wav in Resources */,
+				4F073E622AF323B800623681 /* Nuclear Ending.wav in Resources */,
+				4FED9B232AB905FD00B84552 /* Miss Computer Email.mp3 in Resources */,
+				4FED9B192AB8FB1700B84552 /* Signal.mp3 in Resources */,
+				4F073E442AF319CE00623681 /* Omit.wav in Resources */,
+				4F018C5A2B55863700AA9AAD /* Aflame Procrasination.wav in Resources */,
+				4F20DA6F2B8995FC00131EA3 /* Big Purr.wav in Resources */,
+				4F20DA732B89973800131EA3 /* Productivit-Yee-Yee.wav in Resources */,
+				4F3A6BA22B8A3AD800BCD616 /* GoReady.wav in Resources */,
+				4F073E542AF31D3600623681 /* ATL Night Rain.wav in Resources */,
+				4F0169812A7F164D0080DF70 /* LaunchScreen.storyboard in Resources */,
+				4F12A2C72B53106500509DEA /* SketchesLogo.gif in Resources */,
+				4FEFED732B20C407003B44A7 /* Rewiring.wav in Resources */,
+				4F82876E2B961E1E00651F85 /* Coin Type.wav in Resources */,
+				4FBB654C2B8A78D00075EBB0 /* Noted.wav in Resources */,
+				4F01697E2A7F164D0080DF70 /* Assets.xcassets in Resources */,
+				4F12A2DB2B53132200509DEA /* Chromed & Neutralized.mp3 in Resources */,
+				4FA089852B8C35920086E37D /* LIFI PowerPod.mp3 in Resources */,
+				4F6372B52B955130005E493C /* Starship & TORQ.gif in Resources */,
+				4F18CAD72B8BD48200DE53F5 /* Buzzed Up.wav in Resources */,
+				4F0169792A7F164C0080DF70 /* Main.storyboard in Resources */,
+				4FB0B8922B94D00C0081326E /* Starship & TORQ Logo.png in Resources */,
+				4F1E378B2B6822AD006DC211 /* Glass Shatter.wav in Resources */,
+				4FA93FD82B8259C7000CA4C4 /* Type Ship.wav in Resources */,
+				4FBB654E2B8A79EC0075EBB0 /* Productive Prep.mp3 in Resources */,
+				4FD5E8182B8D583600558742 /* Sunday.gif in Resources */,
+				4FC1560A2AAFF30E00CE18E3 /* TAGUR_Rising.gif in Resources */,
+				4F7742242AF8215800466505 /* Assimilation.wav in Resources */,
+				4FAFBCA32A818B9200F848F5 /* Laser.mp3 in Resources */,
+				4FEA9FFE2AFA94B700FFBDC8 /* DiscoDimeLogo.gif in Resources */,
+				4F206EA52B88421100F8C61B /* Blue Waters.mp3 in Resources */,
+				4F20DA652B89929A00131EA3 /* Gyat Chonki-Lonki.wav in Resources */,
+				4FC1560C2AAFF33000CE18E3 /* TAGUR_Optimal.gif in Resources */,
+				4F073E642AF3241900623681 /* Sea Mine.wav in Resources */,
+				4FC156082AAFF2EA00CE18E3 /* TAGUR_Steady.gif in Resources */,
+				4FC994002B5197E900C53D0E /* Chalkboard.wav in Resources */,
+				4F1E378D2B682389006DC211 /* Dealt With.wav in Resources */,
+				4FEFED772B20C518003B44A7 /* @*!+-R.wav in Resources */,
+				4F77421A2AF81E8C00466505 /* Mantid's Observation.wav in Resources */,
+				4F18CAD92B8BD80D00DE53F5 /* Space Race.mp3 in Resources */,
+				4FA93FDA2B825A6F000CA4C4 /* Deep Space.mp3 in Resources */,
+				4F1E37892B681D8A006DC211 /* Sketches_Valid.gif in Resources */,
+				4F6D3AAE2B8EDE170000BEC0 /* Night Snow Cleats.mp3 in Resources */,
+				4F20DA632B89905500131EA3 /* Ice.wav in Resources */,
+				4FF8123C2B64074A002781C3 /* Static.wav in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F0169852A7F164D0080DF70 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F01698F2A7F164D0080DF70 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F438C6A2A97C4860084319E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4F82876F2B97665000651F85 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/Users/ialvector/Desktop/Speaks AI/Speaks AI/Sparkling_List.py\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4F01696A2A7F164C0080DF70 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F5398CB2B61922600918955 /* Repeat.swift in Sources */,
+				4F5F49BA2B4C959800530610 /* Speaks_AI.xcdatamodeld in Sources */,
+				4F0169762A7F164C0080DF70 /* Main.swift in Sources */,
+				4F0169B12A7F2A290080DF70 /* Shopping.swift in Sources */,
+				4F0169722A7F164C0080DF70 /* AppDelegate.swift in Sources */,
+				4F0169A52A7F200B0080DF70 /* Animated.swift in Sources */,
+				4F0169742A7F164C0080DF70 /* SceneDelegate.swift in Sources */,
+				4F8287712B976E3500651F85 /* Artificials.swift in Sources */,
+				4F0169A72A7F20960080DF70 /* Background_Gradient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F0169832A7F164D0080DF70 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F01698C2A7F164D0080DF70 /* Speaks_AITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F01698D2A7F164D0080DF70 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F0169962A7F164D0080DF70 /* Speaks_AIUITests.swift in Sources */,
+				4F0169982A7F164D0080DF70 /* Speaks_AIUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F438C682A97C4860084319E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4F0169892A7F164D0080DF70 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4F01696D2A7F164C0080DF70 /* Sparkling List */;
+			targetProxy = 4F0169882A7F164D0080DF70 /* PBXContainerItemProxy */;
+		};
+		4F0169932A7F164D0080DF70 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4F01696D2A7F164C0080DF70 /* Sparkling List */;
+			targetProxy = 4F0169922A7F164D0080DF70 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4F0169772A7F164C0080DF70 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F0169782A7F164C0080DF70 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4F01697F2A7F164D0080DF70 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F0169802A7F164D0080DF70 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4F0169992A7F164D0080DF70 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4F01699A2A7F164D0080DF70 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4F01699C2A7F164D0080DF70 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5GXCSWGLQN;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Speaks AI/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Sparkling List";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSCameraUsageDescription = "\"Allow camera permissions to take pictures of event of meetings to auto upload to calendar\"";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "NextGenELU.Speaks-AI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4F01699D2A7F164D0080DF70 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5GXCSWGLQN;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Speaks AI/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Sparkling List";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSCameraUsageDescription = "\"Allow camera permissions to take pictures of event of meetings to auto upload to calendar\"";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "NextGenELU.Speaks-AI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4F01699F2A7F164D0080DF70 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 66TT6FTG36;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "NextGen.Speaks-AITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sparkling List.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Sparkling List";
+			};
+			name = Debug;
+		};
+		4F0169A02A7F164D0080DF70 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 66TT6FTG36;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "NextGen.Speaks-AITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sparkling List.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Sparkling List";
+			};
+			name = Release;
+		};
+		4F0169A22A7F164D0080DF70 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 66TT6FTG36;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "NextGen.Speaks-AIUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Speaks AI";
+			};
+			name = Debug;
+		};
+		4F0169A32A7F164D0080DF70 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 66TT6FTG36;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "NextGen.Speaks-AIUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Speaks AI";
+			};
+			name = Release;
+		};
+		4F438C832A97C4880084319E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 66TT6FTG36;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Visual Assist/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Visual Assist";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "NextGenELU.Speaks-AI.Visual-Assist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4F438C842A97C4880084319E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 66TT6FTG36;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Visual Assist/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Visual Assist";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "NextGenELU.Speaks-AI.Visual-Assist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4F0169692A7F164C0080DF70 /* Build configuration list for PBXProject "Sparkling List" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F0169992A7F164D0080DF70 /* Debug */,
+				4F01699A2A7F164D0080DF70 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F01699B2A7F164D0080DF70 /* Build configuration list for PBXNativeTarget "Sparkling List" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F01699C2A7F164D0080DF70 /* Debug */,
+				4F01699D2A7F164D0080DF70 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F01699E2A7F164D0080DF70 /* Build configuration list for PBXNativeTarget "Sparkling ListTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F01699F2A7F164D0080DF70 /* Debug */,
+				4F0169A02A7F164D0080DF70 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F0169A12A7F164D0080DF70 /* Build configuration list for PBXNativeTarget "Sparkling ListUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F0169A22A7F164D0080DF70 /* Debug */,
+				4F0169A32A7F164D0080DF70 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F438C852A97C4880084319E /* Build configuration list for PBXNativeTarget "Visual AssistExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F438C832A97C4880084319E /* Debug */,
+				4F438C842A97C4880084319E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4F5F49B82B4C959700530610 /* Speaks_AI.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4F5F49B92B4C959700530610 /* Speaks_AI.xcdatamodel */,
+			);
+			currentVersion = 4F5F49B92B4C959700530610 /* Speaks_AI.xcdatamodel */;
+			path = Speaks_AI.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 4F0169662A7F164C0080DF70 /* Project object */;
+}
