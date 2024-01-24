@@ -2,121 +2,98 @@ import UIKit
 import CoreData
 import AVFoundation
 import UserNotifications
-//Scroll Store:
-// scroll view at 0 , 0 , 0 , 0. Add 4 constraints
-
-// mini view contraints 0 , 0 , 0 , 0, specify height of SHOP. Add 5 constraints
-
-// mini view control drag to main view , equal widths, equal heights
-// 1800
-var habits: [String] = []
 
 
-
-class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterDelegate {
-    @IBOutlet weak var New_Years_Label: UILabel!
-    @IBOutlet weak var Notify_Message_Outlet: UITextField!
-
-    @IBOutlet weak var Repeat_Cell_1: UITextField!
-    
-    func Load_Repeats() {
-        guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else {
-            return
-        }
-        let fetchRequest: NSFetchRequest<RepeatEntity> = RepeatEntity.fetchRequest()
-        do {
-            let existingEntities = try context.fetch(fetchRequest)
-
-            if let existingEntity = existingEntities.first {
-                Repeat_Cell_1.text = existingEntity.repeat_1
-            }
-        } catch let error as NSError {
-            print("Error fetching data: \(error.localizedDescription)")
+class Repeat_Cells: UITableViewCell {
+    func configure(with repeatEntity: RepeatEntity) {
+        self.layer.cornerRadius = 20
+        self.layer.masksToBounds = true
+        self.textLabel?.text = repeatEntity.repeat_section
+        self.textLabel?.adjustsFontSizeToFitWidth = true
+        if let selectedFont = UserDefaults.standard.string(forKey: "SelectedFont") {
+            let customFont = UIFont(name: selectedFont, size: 15.0)
+            self.textLabel?.font = customFont
+        } else {
+            self.textLabel?.font = UIFont(name: "Chalkduster", size: 15.0)
         }
     }
+}
 
-
-//    @IBAction func Repeat_Cell_1(_ sender: UITextField) {
-//        guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else {
-//            return
-//        }
-//
-//        let fetchRequest: NSFetchRequest<RepeatEntity> = RepeatEntity.fetchRequest()
-//
-//        do {
-//            let existingEntities = try context.fetch(fetchRequest)
-//
-//            if let existingEntity = existingEntities.first {
-//                // Update the existing entity
-//                existingEntity.repeat_1 = sender.text
-//            } else {
-//                // Create a new entity if it doesn't exist
-//                let newEntity = RepeatEntity(context: context)
-//                newEntity.repeat_1 = sender.text
-//            }
-//
-//            // Save the context
-//            try context.save()
-//            print("Data saved successfully.")
-//
-//            // Update UI with the saved text
-//            //Load_Repeats()
-//
-//
-//
-//        } catch let error as NSError {
-//            print("Error saving data: \(error.localizedDescription)")
-//        }
-//    }
-
-    var audioPlayer: AVAudioPlayer?
+class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterDelegate, UITableViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
+    var selectedDeleteSoundIndex = 0
+    var notifier_timeInterval: TimeInterval =  60
+    var startColor: UIColor = .systemCyan
+    var endColor: UIColor = .systemPurple
+    var repeatEntities: [RepeatEntity] = []
+    var Combined_missions: [MissionEntity] = []
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var managedContext: NSManagedObjectContext!
+    var timer: Timer?
+    var years_actions_goal = 18250
+    @IBOutlet weak var Duration_Display: UILabel!
+    @IBOutlet weak var Type_Notify_Message: UITextField!
+    @IBOutlet weak var Repeat_tableview: UITableView!
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        duration_levels.count
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        return repeatEntities.count
     }
     
-    class Habit_Cell: UITableViewCell {
-    @IBOutlet weak var habit1Label: UILabel!
-    @IBOutlet weak var habit2Label: UILabel!
-    @IBOutlet weak var habit3Label: UILabel!
-    @IBOutlet weak var habit4Label: UILabel!
-    @IBOutlet weak var habit5Label: UILabel!
-}
+    var day_actions_goal: Int {
+        let calendar = Calendar.current
+        let currentDayOfYear = calendar.ordinality(of: .day, in: .year, for: Date()) ?? 1
+        let remainingDays = 365 - currentDayOfYear
+        return calculateDayActions_to_meet_goal(newYearActions: UserDefaults.standard.integer(forKey: "New_Year_Actions"), remainingDays: remainingDays)
+    }
     
+    func calculateDayActions_to_meet_goal(newYearActions: Int, remainingDays: Int) -> Int {
+        let remainingActions = max(years_actions_goal - newYearActions, 0)
+        return remainingActions / max(remainingDays, 1)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        MainView?.fetchData()
+
+
+        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.auto_add_repeating_cells), userInfo: nil, repeats: true)
+
+    }
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        if let message = Notify_Message_Outlet.text, !message.isEmpty {
+        if let message = Type_Notify_Message.text, !message.isEmpty {
             UserDefaults.standard.set(message, forKey: "notificationText")
             let content = UNMutableNotificationContent()
-            
             let emojis = ["⚡", "⛈️", "🦋", "🛸", "🎉", "💎", "👽", "🥷", "🪐", "🧧", "✈️", "🛩️"]
             let randomLeftEmoji = emojis.randomElement() ?? ""
             let randomRightEmoji = emojis.randomElement() ?? ""
-
             if let dailyInteger = UserDefaults.standard.value(forKey: "points") as? Int {
                 content.title = "Prune and Embed:"
-
-                let wrappedMessage = " \(randomLeftEmoji)\(dailyInteger)/\(day_actions_max): \(message)\(randomRightEmoji) "
+                let wrappedMessage = " \(randomLeftEmoji)\(dailyInteger)/\(day_actions_goal): \(message)\(randomRightEmoji) "
                 content.body = wrappedMessage
-
             } else {
                 print("No value or invalid value for key 'points'")
             }
-
-            
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: true)
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: notifier_timeInterval, repeats: true)
             let request = UNNotificationRequest(identifier: "messageNotification", content: content, trigger: trigger)
-            let nextRepetitionTime = Date().addingTimeInterval(timeInterval)
+            let nextRepetitionTime = Date().addingTimeInterval(notifier_timeInterval)
             let formatter = DateFormatter()
             formatter.dateFormat = "mm:ss"
             let nextRepetitionTimeString = formatter.string(from: nextRepetitionTime)
-
             UNUserNotificationCenter.current().add(request) { (error) in
                 if let error = error {
                     print("Error scheduling notification: \(error.localizedDescription)")
                 } else {
                     if let dailyInteger = UserDefaults.standard.value(forKey: "points") as? Int {
-                        let wrappedMessage = " \(randomLeftEmoji)\(dailyInteger)/\(day_actions_max): \(message)\(randomRightEmoji) "
+                        let wrappedMessage = " \(randomLeftEmoji)\(dailyInteger)/\(self.day_actions_goal): \(message)\(randomRightEmoji) "
                         print("Notification scheduled successfully. Message: \(wrappedMessage) Next Repetition Time: \(nextRepetitionTimeString) seconds")
                     }
                 }
@@ -127,33 +104,143 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
     func Clicky() {
         guard let soundURL = Bundle.main.url(forResource: "Selected", withExtension: "wav") else { return }
         do {
-            audioPlayer = try AVAudioPlayer(contentsOf: soundURL)
-            audioPlayer?.prepareToPlay()
-            audioPlayer?.volume = 0.7 // Adjust volume here
-            audioPlayer?.play()
+            Extra_sounds = try AVAudioPlayer(contentsOf: soundURL)
+            Extra_sounds?.prepareToPlay()
+            Extra_sounds?.volume = 0.35
+            Extra_sounds?.play()
         } catch {
             print("Error loading sound file: \(error.localizedDescription)")
         }
     }
     
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return duration_levels[row]
+    }
     
-    var timeInterval: TimeInterval = 60
-    @IBAction func Minutely(_ sender: UIButton) {
+    @IBAction func Increase_notifier(_ sender: UIButton) {
         Clicky()
-        timeInterval = 60
+        medium_haptic.impactOccurred()
+        if currentDurationIndex < duration_levels.count - 1 {
+            currentDurationIndex += 1
+            Notifier_Time_Interval()
+        }
     }
 
-    @IBAction func Hourly(_ sender: UIButton) {
+    var currentDurationIndex: Int {
+        get {
+            return UserDefaults.standard.integer(forKey: "currentDurationIndex")
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "currentDurationIndex")
+        }
+    }
+    
+    @IBAction func Decrease_notifier(_ sender: UIButton) {
         Clicky()
-        timeInterval = 60 * 3
+        medium_haptic.impactOccurred()
+        if currentDurationIndex > 0 {
+            currentDurationIndex -= 1
+            Notifier_Time_Interval()
+        }
+    }
+    
+    func FART() {
+        guard let soundURL = Bundle.main.url(forResource: "Fart", withExtension: "mp3") else { return }
+        do {
+            Extra_sounds = try AVAudioPlayer(contentsOf: soundURL)
+            Extra_sounds?.prepareToPlay()
+            Extra_sounds?.volume = 0.7
+            Extra_sounds?.play()
+        } catch {
+        }
+    }
+    
+    let font = UIFont(name: selectedFont ?? "Chalkduster", size: 20)
+    func randomPastelColor() -> UIColor {
+        let hue = CGFloat(arc4random() % 256) / 256.0
+        let saturation = CGFloat(arc4random() % 128) / 256.0 + 0.5
+        let brightness = CGFloat(arc4random() % 128) / 256.0 + 0.5
+        return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 1)
+    }
+    
+    func add_logic_nonbutton( // // Adds repeats to main list
+        mission1: String = "",
+                          context: NSManagedObjectContext) {
+        heavy_haptic.impactOccurred()
+        guard let entityDescription = NSEntityDescription.entity(forEntityName: "MissionEntity", in: context) else {
+            fatalError("Entity description not found!")
+        }
+        let new_todo = MissionEntity(entity: entityDescription, insertInto: context)
+        if !mission1.isEmpty {
+            new_todo.mission_1 = mission1
+        }
+                              MainView?.tableView.reloadData()
+        FART()
+    }
+    
+    var MainView: Main?
+
+    @IBAction func Add_Repeat_Button(_ sender: UIButton) {
+        Clicky()
+        medium_haptic.impactOccurred()
+        let alert = UIAlertController(title: "Select Duration", message: "\n\n\n\n\n", preferredStyle: .alert)
+        let pickerView = UIPickerView(frame: CGRect(x: 0, y: 40, width: 260, height: 110))
+        pickerView.dataSource = self
+        pickerView.delegate = self
+        let middleGreen = UIColor(red: 0, green: 0.75, blue: 0, alpha: 1.0)
+        alert.view.addSubview(pickerView)
+        alert.addTextField { (textField) in
+            textField.font = self.font
+            textField.textColor = self.randomPastelColor()
+            textField.delegate = self
+            textField.textAlignment = .center
+            textField.placeholder = "Type a task that will repeat in your to do list"
+            textField.frame.origin.y += 150
+            textField.autocorrectionType = .yes
+            textField.spellCheckingType = .yes
+            textField.adjustsFontSizeToFitWidth = true
+            textField.minimumFontSize = 9
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+        let addAction = UIAlertAction(title: "Add", style: .default) { (action) in
+            if let text = alert.textFields?.first?.text {
+                let selectedDurationIndex = pickerView.selectedRow(inComponent: 0)
+                let selectedDuration = self.duration_levels[selectedDurationIndex]
+                let newText = "\(text) Repeats every: \(selectedDuration)"
+                let newRepeatEntity = RepeatEntity(context: CoreDataStack.shared.persistentContainer.viewContext)
+                var missions: [String] = []
+                if (alert.textFields?.first?.text) != nil {
+                    missions.append(newText)
+                    self.add_logic_nonbutton(mission1: newText, context: self.context)
+                }
+                self.add_logic_nonbutton(mission1: newText, context: self.context)
+                newRepeatEntity.repeat_section = newText
+                CoreDataStack.shared.saveContext()
+                self.repeatEntities.append(newRepeatEntity)
+                
+                self.saveData()
+            }
+        }
+        alert.addAction(cancelAction)
+        alert.addAction(addAction)
+        self.present(alert, animated: true, completion: nil)
     }
 
-    @IBAction func Daily(_ sender: UIButton) {
-        Clicky()
-        timeInterval = 60 * 5
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if !string.isEmpty {
+            playTypingSound()
+        }
+        return true
     }
     
-    
+    func playTypingSound() {
+        medium_haptic.impactOccurred()
+        list_deletion_sound?.stop()
+        list_deletion_sound?.currentTime = 0
+        list_deletion_sound?.play()
+        list_deletion_sound?.volume = 0.3
+    }
+
     @IBAction func Notify_Message(_ sender: UITextField) {
         guard let message = sender.text, !message.isEmpty else {
             return
@@ -161,15 +248,12 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
         let content = UNMutableNotificationContent()
         content.title = "Prune and Embed:"
         content.body = message
-
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: true)
-
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: notifier_timeInterval, repeats: true)
         let request = UNNotificationRequest(identifier: "messageNotification", content: content, trigger: trigger)
-        let nextRepetitionTime = Date().addingTimeInterval(timeInterval)
+        let nextRepetitionTime = Date().addingTimeInterval(notifier_timeInterval)
         let formatter = DateFormatter()
         formatter.dateFormat = "mm:ss"
         let nextRepetitionTimeString = formatter.string(from: nextRepetitionTime)
-
         UNUserNotificationCenter.current().add(request) { (error) in
             if let error = error {
                 print("Error scheduling notification: \(error.localizedDescription)")
@@ -179,117 +263,118 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
         }
     }
 
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MissionCell", for: indexPath) as? Habit_Cell ?? UITableViewCell()
-        guard indexPath.row < habits.count else {
-            cell.textLabel?.text = "Invalid Habit"
-            return cell
+    func setColors() {
+        if let storedStartColorData = UserDefaults.standard.data(forKey: "startColor"),
+           let storedEndColorData = UserDefaults.standard.data(forKey: "endColor"),
+           let storedStartColor = try? NSKeyedUnarchiver.unarchivedObject(ofClass: UIColor.self, from: storedStartColorData),
+           let storedEndColor = try? NSKeyedUnarchiver.unarchivedObject(ofClass: UIColor.self, from: storedEndColorData) {
+            self.startColor = storedStartColor
+            self.endColor = storedEndColor
+            Repeat_tableview.reloadData()
         }
-
-        let habit = habits[indexPath.row]
-        cell.textLabel?.text = habit
-        
-        return cell
     }
 
-
-    
-    @IBOutlet weak var Habit_1_Textfield: UITextField!
-    @IBOutlet weak var Habit_2_Textfield: UITextField!
-    @IBOutlet weak var Habit_3_Textfield: UITextField!
-    @IBOutlet weak var Habit_4_Textfield: UITextField!
-    @IBOutlet weak var Habit_5_Textfield: UITextField!
-    @IBOutlet weak var Habit_Tableview: UITableView!
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    var managedContext: NSManagedObjectContext!
-    
-    @IBAction func showAlertButtonPressed(_ sender: UIButton) {
-        let alertController = UIAlertController(title: "Enter Text", message: nil, preferredStyle: .alert)
-
-        alertController.addTextField { (textField) in
-            textField.placeholder = "Enter text here"
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = Repeat_tableview.dequeueReusableCell(withIdentifier: "Repeat_Cell", for: indexPath) as! Repeat_Cells
+        cell.layer.cornerRadius = 20
+        cell.textLabel?.numberOfLines = 0
+        cell.layer.masksToBounds = true
+        cell.textLabel?.adjustsFontSizeToFitWidth = true
+        if indexPath.row < repeatEntities.count {
+            let repeatEntity = repeatEntities[indexPath.row]
+            cell.configure(with: repeatEntity)
+        } else {
+            print("Index out of range: \(indexPath.row)")
         }
-
-        let saveAction = UIAlertAction(title: "Save", style: .default) { (_) in
-            if let textField = alertController.textFields?.first {
-                if let newText = textField.text {
-                    UserDefaults.standard.set(newText, forKey: "NewYearsText")
-                    self.New_Years_Label.text = newText
+        var colorProgress: CGFloat = 0.0
+        let progress = (CGFloat(indexPath.row) / CGFloat(repeatEntities.count) + colorProgress).truncatingRemainder(dividingBy: 1.3)
+        if let topColorData = UserDefaults.standard.data(forKey: "topColor"),
+           let bottomColorData = UserDefaults.standard.data(forKey: "bottomColor"),
+           let Top_Background_Color_Data = UserDefaults.standard.data(forKey: "Top_selected_Background"),
+           let Bottom_Background_Color_Data = UserDefaults.standard.data(forKey: "Bottom_selected_Background"),
+            let topColor = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(topColorData) as? UIColor,
+           let bottomColor = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(bottomColorData) as? UIColor {
+            setColors()
+            let textColor = topColor.interpolateColorTo(bottomColor, fraction: progress)
+            cell.textLabel?.textColor = textColor
+            let topBackgroundColor = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(Top_Background_Color_Data) as? UIColor
+            let bottomBackgroundColor = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(Bottom_Background_Color_Data) as? UIColor
+            if let topBackgroundColor = topBackgroundColor, let bottomBackgroundColor = bottomBackgroundColor {
+                let Gradient_Changing_Background_Cells = topBackgroundColor.interpolateColorTo(bottomBackgroundColor, fraction: progress)
+                cell.backgroundColor = Gradient_Changing_Background_Cells
+            }
+        }
+        return cell
+    }
+    
+    class CoreDataStack {
+        static let shared = CoreDataStack()
+        lazy var persistentContainer: NSPersistentContainer = {
+            let container = NSPersistentContainer(name: "Speaks_AI")
+            container.loadPersistentStores(completionHandler: { (_, error) in
+                if let error = error as NSError? {
+                    fatalError("Unresolved error \(error), \(error.userInfo)")
+                }
+            })
+            return container
+        }()
+        func saveContext() {
+            let context = persistentContainer.viewContext
+            if context.hasChanges {
+                do {
+                    try context.save()
+                } catch {
+                    let nserror = error as NSError
+                    fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
                 }
             }
         }
-
+    }
+    
+    @IBAction func showAlertButtonPressed(_ sender: UIButton) {
+        let alertController = UIAlertController(title: "Enter Text", message: nil, preferredStyle: .alert)
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Enter text here"
+        }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-
-        alertController.addAction(saveAction)
         alertController.addAction(cancelAction)
-
+        let middleGreen = UIColor(red: 0, green: 0.75, blue: 0, alpha: 1.0)
+        alertController.actions[0].setValue(middleGreen, forKey: "titleTextColor")
+        alertController.actions[1].setValue(UIColor.red, forKey: "titleTextColor")
         present(alertController, animated: true, completion: nil)
     }
     
-    @IBAction func steps(_ sender: UITextField) {
-        sender.keyboardType = .numberPad
-    }
-    
-    var List_Deletion_Voicebox: AVAudioPlayer?
-
-    
-
-    
-    var currentNumber = 0
-    @IBOutlet weak var Duolingo: UILabel!
-    @IBOutlet weak var Duo_Progress: UIProgressView!
-    @IBAction func Duo_Submit(_ sender: UIButton) {
-        incrementAndUpdate(label: Duolingo, progressView: Duo_Progress, key: "DUO_CurrentNumber", labelText: "DUO", max_limit: 1)
-    }
-
-    @IBOutlet weak var EMBEDDER: UILabel!
-    @IBOutlet weak var EMBED_Progress: UIProgressView!
-    @IBAction func EMBED_Submit(_ sender: UIButton) {
-        incrementAndUpdate(label: EMBEDDER, progressView: EMBED_Progress, key: "EMBED_CurrentNumber", labelText: "EMBEDDER", max_limit: 500)
-    }
-    
-    
-    @IBOutlet weak var COURSES: UILabel!
-    @IBOutlet weak var Courses_Progress: UIProgressView!
-    @IBAction func Courses_Submit(_ sender: UIButton) {
-        incrementAndUpdate(label: COURSES, progressView: Courses_Progress, key: "Courses_CurrentNumber", labelText: "PROFESSIONAL CERTIFICATE", max_limit: 1)
-    }
-    
-    
-    @IBOutlet weak var Loom_DS: UILabel!
-    @IBOutlet weak var Loom_Progress: UIProgressView!
-    @IBAction func Loom_Submit(_ sender: UIButton) {
-        incrementAndUpdate(label: Loom_DS, progressView: Loom_Progress, key: "Loom_CurrentNumber", labelText: "Running 1=1,000", max_limit: 21000)
-    }
-    
-    
-    @IBOutlet weak var DS_Apply: UILabel!
-    @IBOutlet weak var DS_Apply_Progress: UIProgressView!
-    @IBAction func DS_Apply_Submit(_ sender: UIButton) {
-        incrementAndUpdate(label: DS_Apply, progressView: DS_Apply_Progress, key: "DS_APPLY_CurrentNumber", labelText: "For 10-10", max_limit: 20)
-    }
-    
-    
-    @IBOutlet weak var Textbook: UILabel!
-    @IBOutlet weak var Textbook_Progress: UIProgressView!
-    @IBAction func Textbook_Submit(_ sender: UIButton) {
-        incrementAndUpdate(label: Textbook, progressView: Textbook_Progress, key: "Textbook_CurrentNumber", labelText: "Textbook", max_limit: 1)
-    }
-    
-    
-    @IBOutlet weak var FS_Assignments: UILabel!
-    @IBOutlet weak var FS_Progress: UIProgressView!
-    @IBAction func FS_Submit(_ sender: UIButton) {
-        incrementAndUpdate(label: FS_Assignments, progressView: FS_Progress, key: "FS_CurrentNumber", labelText: "FS HW", max_limit: 10)
-    }
-    
-    
-    @IBOutlet weak var Elubatel_Apply: UILabel!
-    @IBOutlet weak var Elubatel_Progress: UIProgressView!
-    @IBAction func Elubatel_Apply_Submit(_ sender: UIButton) {
-        incrementAndUpdate(label: Elubatel_Apply, progressView: Elubatel_Progress, key: "ELUBATEL_WORSHIP_CurrentNumber", labelText: "Easily Apply", max_limit: 40)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        heavy_haptic.impactOccurred()
+        UserDefaults.standard.set(selectedDeleteSoundIndex, forKey: "selectedDeleteSoundIndex")
+        if let mp3URL = Bundle.main.url(forResource: list_sound, withExtension: "mp3") {
+            do {
+                list_deletion_sound = try AVAudioPlayer(contentsOf: mp3URL)
+                   list_deletion_sound?.prepareToPlay()
+                   list_deletion_sound?.volume = 0.3
+                   list_deletion_sound?.rate = Float.random(in: 0.1...2.0)
+                   list_deletion_sound?.enableRate = true
+                   list_deletion_sound?.play()
+            } catch {
+            }
+        } else if let wavURL = Bundle.main.url(forResource: list_sound, withExtension: "wav") {
+            do {
+                   list_deletion_sound = try AVAudioPlayer(contentsOf: wavURL)
+                   list_deletion_sound?.prepareToPlay()
+                   list_deletion_sound?.volume = 0.3
+                   list_deletion_sound?.rate = Float.random(in: 0.1...2.0)
+                   list_deletion_sound?.enableRate = true
+                   list_deletion_sound?.play()
+            } catch {
+            }
+        }
+        Repeat_tableview.deselectRow(at: indexPath, animated: true)
+        let repeatEntity = repeatEntities[indexPath.row]
+        let context = CoreDataStack.shared.persistentContainer.viewContext
+        context.delete(repeatEntity)
+        repeatEntities.remove(at: indexPath.row)
+        CoreDataStack.shared.saveContext()
+        Repeat_tableview.reloadData()
     }
     
     func PlayListSoundEffects() {
@@ -301,81 +386,135 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
         }
         if let finalSoundURL = soundURL {
             do {
-                audioPlayer = try AVAudioPlayer(contentsOf: finalSoundURL)
-                audioPlayer?.prepareToPlay()
-                audioPlayer?.volume = 0.7
-                audioPlayer?.play()
+                Extra_sounds = try AVAudioPlayer(contentsOf: finalSoundURL)
+                Extra_sounds?.prepareToPlay()
+                Extra_sounds?.volume = 0.7
+                Extra_sounds?.play()
             } catch {
             }
         }
     }
     
-    func incrementAndUpdate(label: UILabel, progressView: UIProgressView, key: String, labelText: String, max_limit: Int) {
-        PlayListSoundEffects()
-        currentNumber = UserDefaults.standard.integer(forKey: key)
-        currentNumber += 1
-        currentNumber = max(0, min(currentNumber, max_limit))
-        UserDefaults.standard.set(currentNumber, forKey: key)
-        label.text = "\(labelText) \(currentNumber)/\(max_limit)"
-        progressView.progress = Float(currentNumber) / Float(max_limit)
-    }
-    
-    func updateFunctionality(label: UILabel, progressView: UIProgressView, key: String, labelText: String, max_limit: Int) {
-        currentNumber = UserDefaults.standard.integer(forKey: key)
-        label.text = "\(labelText) \(currentNumber)/\(max_limit)"
-        progressView.progress = Float(currentNumber) / Float(max_limit)
+    func getSelectedDuration(from text: String) -> String? {
+        guard let range = text.range(of: "Repeats every: ") else {
+            return nil
+        }
+        
+        let selectedDuration = text[range.upperBound...]
+        return String(selectedDuration)
     }
 
-    @objc func Resetter() {
-        // Reset values immediately
-        UserDefaults.standard.set(0, forKey: "EMBED_CurrentNumber")
-        UserDefaults.standard.set(0, forKey: "DUO_CurrentNumber")
-        UserDefaults.standard.set(0, forKey: "Courses_CurrentNumber")
-        UserDefaults.standard.set(0, forKey: "Loom_CurrentNumber")
-        UserDefaults.standard.set(0, forKey: "DS_APPLY_CurrentNumber")
-        UserDefaults.standard.set(0, forKey: "Textbook_CurrentNumber")
-        UserDefaults.standard.set(0, forKey: "FS_CurrentNumber")
-        UserDefaults.standard.set(0, forKey: "ELUBATEL_WORSHIP_CurrentNumber")
+    func convertDurationToSeconds(_ duration: String?) -> Int {
+        guard let duration = duration else {
+            return 0
+        }
+        return 0
+    }
 
-        // Set up a Timer to trigger every Monday at 12:00 AM
-        let calendar = Calendar.current
-        var components = DateComponents()
-        components.weekday = 2
-        components.hour = 0
-        components.minute = 0
+    func calculateExecutionTime(_ selectedDurationInSeconds: Int) -> String {
+        let currentDate = Date()
+        let executionDate = currentDate.addingTimeInterval(TimeInterval(selectedDurationInSeconds))
+        let formatter = DateFormatter()
+        formatter.dateFormat = "mm:ss"
+        return formatter.string(from: executionDate)
+    }
 
-        if let nextMonday = calendar.nextDate(after: Date(), matching: components, matchingPolicy: .nextTime) {
-            let timer = Timer(fireAt: nextMonday, interval: TimeInterval(7 * 24 * 60 * 60), target: self, selector: #selector(Resetter), userInfo: nil, repeats: true)
-            RunLoop.main.add(timer, forMode: .common)
+    func calculateRemainingTime(_ selectedDurationInSeconds: Int) -> String {
+        let currentDate = Date()
+        let executionDate = currentDate.addingTimeInterval(TimeInterval(selectedDurationInSeconds))
+        let remainingTimeInSeconds = max(0, executionDate.timeIntervalSinceNow)
+        let minutes = Int(remainingTimeInSeconds) / 60
+        let seconds = Int(remainingTimeInSeconds) % 60
+        return String(format: "%02d:%02d", minutes, seconds)
+    }
+
+    var duration_levels = ["1-Minute", "3-Minutes", "5-Minutes", "10-Minutes", "20-Minutes", "30-Minutes", "1-Hour", "3-Hours", "5-Hours", "1-Day", "1-Week"]
+
+    @objc func auto_add_repeating_cells() {
+        let defaults = UserDefaults.standard
+        
+        for repeatEntity in self.repeatEntities {
+            if let section = repeatEntity.repeat_section {
+                let repeat_cell_says = "\(section)"
+                print("✨✨✨✨✨✨✨✨✨✨✨✨✨✨")
+
+                if repeat_cell_says.contains("1-Minute") {
+                    if let lastSavedTime = UserDefaults.standard.object(forKey: "1-Minute") as? Date {
+                        let timeDifference = -Int(lastSavedTime.timeIntervalSinceNow)
+                        
+                        // Check if the user default is not set or if it's more than 60 seconds from the current time
+                        if lastSavedTime == nil || timeDifference > 60 {
+                            print("Executing \(repeat_cell_says) for \(lastSavedTime) on \(Date())")
+                            
+                            // Update the user default with the current time
+                            defaults.set(Date(), forKey: "1-Minute")
+                            MainView?.saveData()
+                            FART()
+
+                            guard let entityDescription = NSEntityDescription.entity(forEntityName: "MissionEntity", in: context) else {
+                                fatalError("Entity description not found!")
+                            }
+                            let new_todo = MissionEntity(entity: entityDescription, insertInto: context)
+                            new_todo.mission_1 = repeat_cell_says
+
+                            MainView?.tableView.reloadData()
+                            MainView?.tableView.register(Shopping_Cells.self, forCellReuseIdentifier: "Repeat_Cell")
+                            MainView?.tableView.register(Shopping_Cells.self, forCellReuseIdentifier: "MissionCell")
+                            MainView?.saveData()
+                            MainView?.fetchData()
+
+
+                            // Add cell to MissionEntity if needed
+                            if let entityDescription = NSEntityDescription.entity(forEntityName: "MissionEntity", in: context) {
+                                let new_todo = MissionEntity(entity: entityDescription, insertInto: context)
+                                new_todo.mission_1 = repeat_cell_says
+
+                                MainView?.tableView.reloadData()
+                                // Your logic to add the cell to MissionEntity
+                            }
+                        } else {
+                            // Print the time difference
+                            print("Skipping \(repeat_cell_says) as it's been \(timeDifference) seconds than 60 since the last execution.")
+                        }
+                    } else {
+                        // If the user default is nil, set the current time
+//                        defaults.set(Date(), forKey: "1-Minute")
+//                        print("Executing \(repeat_cell_says) for the first time.")
+                    }
+                }
+            }
         }
     }
 
+
+            
+
+//        In my Repeat_tableview I have cells that end withd with one of the strings in the list above:duration_levels. Organize the cells by their duration_levels and create user defaults in the same of that duration so for example forKey: 1-Minute and forKeys for every duration within duration_levels. Set next_minute defaults.object(forKey: "") as? Date for all of these keys and if any are nil then add Calendar.current.date(byAdding: .hour, value: ?, to: Date())! with the value: being equal to the correct duration. Also for every if statement for those duration_levels but a print statement that says what that if statement will execute in this format: "EEEE, MMM d, 'at' h:mm a". You are only executing the repeats that belong to the proper if statement so if a cell contains the string 1-Minute that cell should only append itself into guard let entityDescription = NSEntityDescription.entity(forEntityName: "MissionEntity", in: context) in a minute.
+        //
+        
+
     
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Resetter()
-        updateFunctionality(label: Duolingo, progressView: Duo_Progress, key: "DUO_CurrentNumber", labelText: "DUO", max_limit: 1)
-        updateFunctionality(label: EMBEDDER, progressView: EMBED_Progress, key: "EMBED_CurrentNumber", labelText: "EMBEDDER", max_limit: 500)
-        updateFunctionality(label: COURSES, progressView: Courses_Progress, key: "Courses_CurrentNumber", labelText: "Courses", max_limit: 4)
-        updateFunctionality(label: Loom_DS, progressView: Loom_Progress, key: "Loom_CurrentNumber", labelText: "Loom Demos", max_limit: 2)
-        updateFunctionality(label: DS_Apply, progressView: DS_Apply_Progress, key: "DS_APPLY_CurrentNumber", labelText: "For 10-10", max_limit: 20)
-        updateFunctionality(label: Textbook, progressView: Textbook_Progress, key: "Textbook_CurrentNumber", labelText: "Textbook", max_limit: 1)
-        updateFunctionality(label: FS_Assignments, progressView: FS_Progress, key: "FS_CurrentNumber", labelText: "FS HW", max_limit: 10)
-        updateFunctionality(label: Elubatel_Apply, progressView: Elubatel_Progress, key: "ELUBATEL_WORSHIP_CurrentNumber", labelText: "Easily Apply", max_limit: 40)
-
-
-
-        
-        
-        
-        
-        
-        
-        Notify_Message_Outlet.delegate = self
-        if let savedMessage = UserDefaults.standard.string(forKey: "notificationText") {
-            Notify_Message_Outlet.text = savedMessage
+        let fetchRequest: NSFetchRequest<RepeatEntity> = RepeatEntity.fetchRequest()
+        do {
+            repeatEntities = try CoreDataStack.shared.persistentContainer.viewContext.fetch(fetchRequest)
+            Repeat_tableview.reloadData()
+        } catch {
+            print("Error fetching data: \(error)")
         }
-        
+
+        Notifier_Time_Interval()
+        Repeat_tableview.dataSource = self
+        Repeat_tableview.delegate = self
+        Repeat_tableview.backgroundColor = UIColor.clear
+        Type_Notify_Message.delegate = self
+        Type_Notify_Message.adjustsFontSizeToFitWidth = true
+        if let savedMessage = UserDefaults.standard.string(forKey: "notificationText") {
+            Type_Notify_Message.text = savedMessage
+        }
         let center = UNUserNotificationCenter.current()
         center.delegate = self
         center.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
@@ -387,28 +526,21 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
                 } else {
                     DispatchQueue.main.async {
                         let alertController = UIAlertController(title: "Notification Permission Denied",
-                                                                message: "You can enable it in the settings: Settings > Speaks AI > Notifications.",
+                                                                message: "You can enable it in the settings: Settings > Sparkling List > Notifications.",
                                                                 preferredStyle: .alert)
-                        
                         let settingsAction = UIAlertAction(title: "Open Settings", style: .default) { (_) in
                             if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
                                 UIApplication.shared.open(settingsURL)
                             }
                         }
-                        
                         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-                        
                         alertController.addAction(settingsAction)
                         alertController.addAction(cancelAction)
-                        
                         self.present(alertController, animated: true, completion: nil)
                     }
                 }
             }
         }
-
-
-
         center.getNotificationSettings { settings in
             if settings.authorizationStatus == .authorized {
                 DispatchQueue.main.async {
@@ -416,41 +548,41 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
                 }
             }
         }
-        
-        if let savedText = UserDefaults.standard.string(forKey: "NewYearsText") {
-            New_Years_Label.text = savedText
-        }
-        
         let gradientView = GradientView(frame: view.bounds)
         gradientView.layer.zPosition = -1
         view.addSubview(gradientView)
         gradientView.isUserInteractionEnabled = false
-
     }
-
 
     func saveHabits() {
         do {
             let request: NSFetchRequest<MissionEntity> = MissionEntity.fetchRequest()
                 try context.save()
-            
         } catch {
             print("Error saving habits: \(error)")
         }
     }
 
-    // Implement UITextFieldDelegate methods to save data when text field values change
     func textFieldDidEndEditing(_ textField: UITextField) {
         saveHabits()
     }
-
     
+
     func saveData() {
         do {
             try context.save()
         } catch {
-            print("Error saving data: \(error)")
+
         }
+        
+        let fetchRequest: NSFetchRequest<MissionEntity> = MissionEntity.fetchRequest()
+        do {
+            let missions = try context.fetch(fetchRequest)
+        } catch {
+            print("Problem fetching missions: \(error)")
+        }
+        Repeat_tableview.reloadData()
+        MainView?.tableView.reloadData()
     }
 
     func fetchMissionEntity() -> MissionEntity? {
@@ -463,6 +595,38 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
             return nil
         }
     }
+    
+    func Notifier_Time_Interval() {
+        let selectedDuration = duration_levels[currentDurationIndex]
+        Duration_Display.text = selectedDuration
+        if selectedDuration == "1-Minute" {
+            notifier_timeInterval = 60
+        } else if selectedDuration == "3-Minutes" {
+            notifier_timeInterval = 180
+        } else if selectedDuration == "5-Minutes" {
+            notifier_timeInterval = 300
+        } else if selectedDuration == "10-Minutes" {
+            notifier_timeInterval = 600
+        } else if selectedDuration == "20-Minutes" {
+            notifier_timeInterval = 1200
+        } else if selectedDuration == "30-Minutes" {
+            notifier_timeInterval = 1800
+        } else if selectedDuration == "1-Hour" {
+            notifier_timeInterval = 3600
+        } else if selectedDuration == "3-Hours" {
+            notifier_timeInterval = 10800
+        } else if selectedDuration == "5-Hours" {
+            notifier_timeInterval = 18000
+        } else if selectedDuration == "1-Day" {
+            notifier_timeInterval = 86400
+        } else if selectedDuration == "1-Week" {
+            notifier_timeInterval = 604800
+        }
+        else {
+            notifier_timeInterval = 60
+        }
+    }
+    
 }
 
 extension Repeat: UITextFieldDelegate {
