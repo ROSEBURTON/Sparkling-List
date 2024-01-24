@@ -5,6 +5,8 @@ class GradientView: UIView {
     
     private let gradientLayer = CAGradientLayer()
     private let timingFunction = CAMediaTimingFunction(name: .linear)
+    private var currentGradientIndex = 0
+    private var nextGradientIndex = 1
     private let gradientAnimationKey = "gradientAnimation"
     private var isAnimating = true
     
@@ -19,8 +21,7 @@ class GradientView: UIView {
         }
         return gradientColors
     }()
-    private var currentGradientIndex = 0
-    private var nextGradientIndex = 1
+
     private var currentGradient: [CGColor] {
         return gradients[currentGradientIndex]
     }
@@ -37,7 +38,6 @@ class GradientView: UIView {
         super.init(coder: aDecoder)
         setupGradient()
     }
-
 
     private func animateToNextGradient() {
         isAnimating = true
@@ -57,22 +57,18 @@ class GradientView: UIView {
         gradientAnimation.timingFunction = timingFunction
         gradientLayer.add(gradientAnimation, forKey: gradientAnimationKey)
     }
-
     
     private func setupGradient() {
         layer.addSublayer(gradientLayer)
         gradientLayer.colors = currentGradient
-
         gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
         gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
-
         let startPointAnimation = CABasicAnimation(keyPath: "startPoint")
         startPointAnimation.fromValue = gradientLayer.startPoint
         startPointAnimation.repeatCount = .infinity
         gradientLayer.add(startPointAnimation, forKey: nil)
         animateToNextGradient()
     }
-
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -80,15 +76,12 @@ class GradientView: UIView {
     }
 }
 
-
 extension GradientView: CAAnimationDelegate {
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-
             let tempIndex = currentGradientIndex
             currentGradientIndex = nextGradientIndex
             nextGradientIndex = tempIndex
             animateToNextGradient()
-
     }
 }
 

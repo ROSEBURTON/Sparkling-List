@@ -5,12 +5,24 @@ import CoreData
 import StoreKit
 import AdSupport
 import HealthKit
+import AVFoundation
+
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+        }
+        application.registerForRemoteNotifications()
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback)
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch {
+            print(error)
+        }
         return true
     }
 
@@ -26,7 +38,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let alert = UIAlertController(title: "New Day", message: "Points have been reset.", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alert.addAction(okAction)
-            UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
         }
         completionHandler(.newData)
     }
@@ -37,6 +48,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
+    }
+    
+    func triggerHapticFeedback() {
+        heavy_haptic.impactOccurred()
+        heavy_haptic.impactOccurred()
+        heavy_haptic.impactOccurred()
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
+        // Handle the received remote notification, including triggering haptic feedback
+        if let aps = userInfo["aps"] as? [String: Any], let alert = aps["alert"] as? String {
+            // Trigger haptic feedback here
+            triggerHapticFeedback()
+
+            // Handle other notification content
+        }
     }
     
     lazy var persistentContainer: NSPersistentContainer = {
@@ -78,39 +105,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-            }
-        }
-    }
-}
-extension AppDelegate: SKPaymentTransactionObserver {
-    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
-        let context = persistentContainer.viewContext
-        for transaction in transactions {
-            switch transaction.transactionState {
-            case .purchased:
-                SKPaymentQueue.default().finishTransaction(transaction)
-                print("You are now a customer 💳")
-                let idfa = ASIdentifierManager.shared().advertisingIdentifier.uuidString
-                
-                // Fetch the customer based on IDFA
-
-
-            case .failed:
-                SKPaymentQueue.default().finishTransaction(transaction)
-                print("Purchase did not go through")
-                
-                // Fetch the advertising identifier (IDFA)
-                let idfa = ASIdentifierManager.shared().advertisingIdentifier.uuidString
-                
-                // Fetch the customer based on IDFA
-
-
-            case .restored:
-                SKPaymentQueue.default().finishTransaction(transaction)
-                print("You have paid in the past")
-
-            default:
-                print("You have not been requested to pay")
             }
         }
     }
