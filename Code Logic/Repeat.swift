@@ -29,6 +29,7 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var managedContext: NSManagedObjectContext!
     var timer: Timer?
+    @IBOutlet weak var Repeat_Counter: UILabel!
     var years_actions_goal = 18250
     @IBOutlet weak var Duration_Display: UILabel!
     @IBOutlet weak var Type_Notify_Message: UITextField!
@@ -43,6 +44,10 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        Repeat_Counter.text = "\(repeatEntities.count) Repeats"
+        Repeat_Counter.textColor = UIColor.blue
+        Repeat_Counter.font = UIFont.boldSystemFont(ofSize:
+        Repeat_Counter.font.pointSize)
         return repeatEntities.count
     }
     
@@ -60,11 +65,7 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        MainView?.fetchData()
-
-
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.auto_add_repeating_cells), userInfo: nil, repeats: true)
-
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -163,20 +164,7 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
         return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 1)
     }
     
-    func add_logic_nonbutton( // // Adds repeats to main list
-        mission1: String = "",
-                          context: NSManagedObjectContext) {
-        heavy_haptic.impactOccurred()
-        guard let entityDescription = NSEntityDescription.entity(forEntityName: "MissionEntity", in: context) else {
-            fatalError("Entity description not found!")
-        }
-        let new_todo = MissionEntity(entity: entityDescription, insertInto: context)
-        if !mission1.isEmpty {
-            new_todo.mission_1 = mission1
-        }
-                              MainView?.tableView.reloadData()
-        FART()
-    }
+
     
     var MainView: Main?
 
@@ -213,11 +201,11 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
                     missions.append(newText)
                     self.add_logic_nonbutton(mission1: newText, context: self.context)
                 }
-                self.add_logic_nonbutton(mission1: newText, context: self.context)
                 newRepeatEntity.repeat_section = newText
                 CoreDataStack.shared.saveContext()
                 self.repeatEntities.append(newRepeatEntity)
-                
+                self.Repeat_tableview.reloadData()
+                self.MainView?.tableView.reloadData()
                 self.saveData()
             }
         }
@@ -429,62 +417,76 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
     }
 
     var duration_levels = ["1-Minute", "3-Minutes", "5-Minutes", "10-Minutes", "20-Minutes", "30-Minutes", "1-Hour", "3-Hours", "5-Hours", "1-Day", "1-Week"]
-
-    @objc func auto_add_repeating_cells() {
-        let defaults = UserDefaults.standard
-        
+    
+    func add_logic_nonbutton(
+                          mission1: String = "",
+                          context: NSManagedObjectContext) {
+        guard let entityDescription = NSEntityDescription.entity(forEntityName: "MissionEntity", in: context) else {
+            fatalError("Entity description not found!")
+        }
+        let new_todo = MissionEntity(entity: entityDescription, insertInto: context)
+        if !mission1.isEmpty {
+            new_todo.mission_1 = mission1
+        }
+    }
+    
+//    func addXXXXXCell() {
+//        CoreDataStack.shared.saveContext()
+//        repeatEntities.append("XXXXX")
+//        Repeat_tableview.reloadData()
+//        MainView?.tableView.reloadData()
+//        saveData()
+//        MainView?.tableView.reloadData()
+//    }
+    
+    func executeForTimeInterval(_ timeInterval: TimeInterval, key: String) {
         for repeatEntity in self.repeatEntities {
-            if let section = repeatEntity.repeat_section {
-                let repeat_cell_says = "\(section)"
-                print("✨✨✨✨✨✨✨✨✨✨✨✨✨✨")
-
-                if repeat_cell_says.contains("1-Minute") {
-                    if let lastSavedTime = UserDefaults.standard.object(forKey: "1-Minute") as? Date {
-                        let timeDifference = -Int(lastSavedTime.timeIntervalSinceNow)
+            var section = repeatEntity.repeat_section
+            let repeat_cell_says = "\(section ?? "default")"
+            print("✨✨✨✨✨✨✨✨✨✨✨✨✨✨")
+            if repeat_cell_says.contains(key) {
+                if let lastSavedTime = UserDefaults.standard.object(forKey: key) as? Date {
+                    let timeDifference = -Int(lastSavedTime.timeIntervalSinceNow)
+                    if lastSavedTime == nil || timeDifference > Int(timeInterval) {
+                        print("Executing \(repeat_cell_says) for \(lastSavedTime) on \(Date())")
                         
-                        // Check if the user default is not set or if it's more than 60 seconds from the current time
-                        if lastSavedTime == nil || timeDifference > 60 {
-                            print("Executing \(repeat_cell_says) for \(lastSavedTime) on \(Date())")
-                            
-                            // Update the user default with the current time
-                            defaults.set(Date(), forKey: "1-Minute")
-                            MainView?.saveData()
-                            FART()
-
-                            guard let entityDescription = NSEntityDescription.entity(forEntityName: "MissionEntity", in: context) else {
-                                fatalError("Entity description not found!")
-                            }
-                            let new_todo = MissionEntity(entity: entityDescription, insertInto: context)
-                            new_todo.mission_1 = repeat_cell_says
-
-                            MainView?.tableView.reloadData()
-                            MainView?.tableView.register(Shopping_Cells.self, forCellReuseIdentifier: "Repeat_Cell")
-                            MainView?.tableView.register(Shopping_Cells.self, forCellReuseIdentifier: "MissionCell")
-                            MainView?.saveData()
-                            MainView?.fetchData()
-
-
-                            // Add cell to MissionEntity if needed
-                            if let entityDescription = NSEntityDescription.entity(forEntityName: "MissionEntity", in: context) {
-                                let new_todo = MissionEntity(entity: entityDescription, insertInto: context)
-                                new_todo.mission_1 = repeat_cell_says
-
-                                MainView?.tableView.reloadData()
-                                // Your logic to add the cell to MissionEntity
-                            }
-                        } else {
-                            // Print the time difference
-                            print("Skipping \(repeat_cell_says) as it's been \(timeDifference) seconds than 60 since the last execution.")
+                        UserDefaults.standard.set(Date(), forKey: key)
+                        guard let entityDescription = NSEntityDescription.entity(forEntityName: "MissionEntity", in: context) else {
+                            fatalError("Entity description not found!")
                         }
-                    } else {
-                        // If the user default is nil, set the current time
-//                        defaults.set(Date(), forKey: "1-Minute")
-//                        print("Executing \(repeat_cell_says) for the first time.")
+                        
+                        let new_todo = MissionEntity(entity: entityDescription, insertInto: context)
+                        new_todo.mission_1 = repeat_cell_says
+                        self.add_logic_nonbutton(mission1: repeat_cell_says, context: self.context)
                     }
                 }
             }
         }
     }
+
+    // Usage:
+
+
+    @objc func auto_add_repeating_cells() {
+        executeForTimeInterval(60, key: "1-Minute")
+        executeForTimeInterval(180, key: "3-Minutes")
+
+    }
+    
+    // else {
+    //print("Skipping \(repeat_cell_says) as it's less than \(timeDifference) seconds since the last execution.")
+//}
+
+    
+    @objc func fetchData() {
+        do {
+            Combined_missions = try context.fetch(MissionEntity.fetchRequest())
+            self.MainView?.tableView.reloadData()
+        } catch _ as NSError {
+        }
+        Combined_missions.shuffle()
+    }
+
 
 
             
@@ -572,9 +574,7 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
         do {
             try context.save()
         } catch {
-
         }
-        
         let fetchRequest: NSFetchRequest<MissionEntity> = MissionEntity.fetchRequest()
         do {
             let missions = try context.fetch(fetchRequest)
