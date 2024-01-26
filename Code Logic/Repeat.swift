@@ -29,47 +29,65 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var managedContext: NSManagedObjectContext!
     var timer: Timer?
-    @IBOutlet weak var Repeat_Counter: UILabel!
     var years_actions_goal = 18250
     @IBOutlet weak var Duration_Display: UILabel!
     @IBOutlet weak var Type_Notify_Message: UITextField!
     @IBOutlet weak var Repeat_tableview: UITableView!
+    @IBOutlet weak var Repeat_Counter: UILabel!
+    
+    @IBOutlet weak var Type_Resolution_One: UITextField!
+    @IBOutlet weak var Type_Resolution_Two: UITextField!
+    @IBOutlet weak var Type_Resolution_Three: UITextField!
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         1
     }
-    
+
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         duration_levels.count
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        Repeat_Counter.text = "\(repeatEntities.count) Repeats"
+        Repeat_Counter.text = "\(repeatEntities.count) missions"
         Repeat_Counter.textColor = UIColor.blue
         Repeat_Counter.font = UIFont.boldSystemFont(ofSize:
         Repeat_Counter.font.pointSize)
         return repeatEntities.count
     }
-    
+
     var day_actions_goal: Int {
         let calendar = Calendar.current
         let currentDayOfYear = calendar.ordinality(of: .day, in: .year, for: Date()) ?? 1
         let remainingDays = 365 - currentDayOfYear
         return calculateDayActions_to_meet_goal(newYearActions: UserDefaults.standard.integer(forKey: "New_Year_Actions"), remainingDays: remainingDays)
     }
-    
+
     func calculateDayActions_to_meet_goal(newYearActions: Int, remainingDays: Int) -> Int {
         let remainingActions = max(years_actions_goal - newYearActions, 0)
         return remainingActions / max(remainingDays, 1)
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        MainView?.fetchData()
+
+
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.auto_add_repeating_cells), userInfo: nil, repeats: true)
+
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        if let resolution_one = Type_Resolution_One.text, !resolution_one.isEmpty {
+            UserDefaults.standard.set(resolution_one, forKey: "1st goal")
+        }
+        if let resolution_two = Type_Resolution_Two.text, !resolution_two.isEmpty {
+            UserDefaults.standard.set(resolution_two, forKey: "2nd goal")
+        }
+        if let resolution_three = Type_Resolution_Three.text, !resolution_three.isEmpty {
+            UserDefaults.standard.set(resolution_three, forKey: "3rd goal")
+        }
+        
         if let message = Type_Notify_Message.text, !message.isEmpty {
             UserDefaults.standard.set(message, forKey: "notificationText")
             let content = UNMutableNotificationContent()
@@ -101,7 +119,7 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
             }
         }
     }
-    
+
     func Clicky() {
         guard let soundURL = Bundle.main.url(forResource: "Selected", withExtension: "wav") else { return }
         do {
@@ -113,11 +131,11 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
             print("Error loading sound file: \(error.localizedDescription)")
         }
     }
-    
+
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return duration_levels[row]
     }
-    
+
     @IBAction func Increase_notifier(_ sender: UIButton) {
         Clicky()
         medium_haptic.impactOccurred()
@@ -135,7 +153,7 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
             UserDefaults.standard.set(newValue, forKey: "currentDurationIndex")
         }
     }
-    
+
     @IBAction func Decrease_notifier(_ sender: UIButton) {
         Clicky()
         medium_haptic.impactOccurred()
@@ -144,7 +162,7 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
             Notifier_Time_Interval()
         }
     }
-    
+
     func FART() {
         guard let soundURL = Bundle.main.url(forResource: "Fart", withExtension: "mp3") else { return }
         do {
@@ -155,7 +173,7 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
         } catch {
         }
     }
-    
+
     let font = UIFont(name: selectedFont ?? "Chalkduster", size: 20)
     func randomPastelColor() -> UIColor {
         let hue = CGFloat(arc4random() % 256) / 256.0
@@ -163,9 +181,21 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
         let brightness = CGFloat(arc4random() % 128) / 256.0 + 0.5
         return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 1)
     }
-    
 
-    
+    func add_logic_nonbutton( // // Adds repeats to main list
+        mission1: String = "",
+                          context: NSManagedObjectContext) {
+        heavy_haptic.impactOccurred()
+        guard let entityDescription = NSEntityDescription.entity(forEntityName: "MissionEntity", in: context) else {
+            fatalError("Entity description not found!")
+        }
+        let new_todo = MissionEntity(entity: entityDescription, insertInto: context)
+        if !mission1.isEmpty {
+            new_todo.mission_1 = mission1
+        }
+        MainView?.tableView.reloadData()
+    }
+
     var MainView: Main?
 
     @IBAction func Add_Repeat_Button(_ sender: UIButton) {
@@ -201,11 +231,11 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
                     missions.append(newText)
                     self.add_logic_nonbutton(mission1: newText, context: self.context)
                 }
+                self.add_logic_nonbutton(mission1: newText, context: self.context)
                 newRepeatEntity.repeat_section = newText
                 CoreDataStack.shared.saveContext()
                 self.repeatEntities.append(newRepeatEntity)
-                self.Repeat_tableview.reloadData()
-                self.MainView?.tableView.reloadData()
+
                 self.saveData()
             }
         }
@@ -220,7 +250,7 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
         }
         return true
     }
-    
+
     func playTypingSound() {
         medium_haptic.impactOccurred()
         list_deletion_sound?.stop()
@@ -294,7 +324,7 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
         }
         return cell
     }
-    
+
     class CoreDataStack {
         static let shared = CoreDataStack()
         lazy var persistentContainer: NSPersistentContainer = {
@@ -318,7 +348,7 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
             }
         }
     }
-    
+
     @IBAction func showAlertButtonPressed(_ sender: UIButton) {
         let alertController = UIAlertController(title: "Enter Text", message: nil, preferredStyle: .alert)
         alertController.addTextField { (textField) in
@@ -331,7 +361,7 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
         alertController.actions[1].setValue(UIColor.red, forKey: "titleTextColor")
         present(alertController, animated: true, completion: nil)
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         heavy_haptic.impactOccurred()
         UserDefaults.standard.set(selectedDeleteSoundIndex, forKey: "selectedDeleteSoundIndex")
@@ -364,7 +394,7 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
         CoreDataStack.shared.saveContext()
         Repeat_tableview.reloadData()
     }
-    
+
     func PlayListSoundEffects() {
         var soundURL: URL?
         if let wavURL = Bundle.main.url(forResource: list_sound, withExtension: "wav") {
@@ -382,12 +412,12 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
             }
         }
     }
-    
+
     func getSelectedDuration(from text: String) -> String? {
         guard let range = text.range(of: "Repeats every: ") else {
             return nil
         }
-        
+
         let selectedDuration = text[range.upperBound...]
         return String(selectedDuration)
     }
@@ -417,85 +447,355 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
     }
 
     var duration_levels = ["1-Minute", "3-Minutes", "5-Minutes", "10-Minutes", "20-Minutes", "30-Minutes", "1-Hour", "3-Hours", "5-Hours", "1-Day", "1-Week"]
-    
-    func add_logic_nonbutton(
-                          mission1: String = "",
-                          context: NSManagedObjectContext) {
-        guard let entityDescription = NSEntityDescription.entity(forEntityName: "MissionEntity", in: context) else {
-            fatalError("Entity description not found!")
-        }
-        let new_todo = MissionEntity(entity: entityDescription, insertInto: context)
-        if !mission1.isEmpty {
-            new_todo.mission_1 = mission1
-        }
-    }
-    
-//    func addXXXXXCell() {
-//        CoreDataStack.shared.saveContext()
-//        repeatEntities.append("XXXXX")
-//        Repeat_tableview.reloadData()
-//        MainView?.tableView.reloadData()
-//        saveData()
-//        MainView?.tableView.reloadData()
-//    }
-    
-    func executeForTimeInterval(_ timeInterval: TimeInterval, key: String) {
+    func duration_math() {
+        let defaults = UserDefaults.standard
+
         for repeatEntity in self.repeatEntities {
-            var section = repeatEntity.repeat_section
-            let repeat_cell_says = "\(section ?? "default")"
-            print("✨✨✨✨✨✨✨✨✨✨✨✨✨✨")
-            if repeat_cell_says.contains(key) {
-                if let lastSavedTime = UserDefaults.standard.object(forKey: key) as? Date {
-                    let timeDifference = -Int(lastSavedTime.timeIntervalSinceNow)
-                    if lastSavedTime == nil || timeDifference > Int(timeInterval) {
-                        print("Executing \(repeat_cell_says) for \(lastSavedTime) on \(Date())")
-                        
-                        UserDefaults.standard.set(Date(), forKey: key)
-                        guard let entityDescription = NSEntityDescription.entity(forEntityName: "MissionEntity", in: context) else {
-                            fatalError("Entity description not found!")
+            if let section = repeatEntity.repeat_section {
+                let repeat_cell_says = "\(section)"
+                print("✨✨✨✨✨✨✨✨✨✨✨✨✨✨")
+
+                if repeat_cell_says.contains("1-Minute") {
+                    if let lastSavedTime = UserDefaults.standard.object(forKey: "1-Minute") as? Date {
+                        let timeDifference = -Int(lastSavedTime.timeIntervalSinceNow)
+                        if timeDifference > 60 {
+                            print("Executing \(repeat_cell_says) for \(lastSavedTime) on \(Date())")
+                            defaults.set(Date(), forKey: "1-Minute")
+
+                            guard let entityDescription = NSEntityDescription.entity(forEntityName: "MissionEntity", in: context) else {
+                                fatalError("Entity description not found!")
+                            }
+                            let new_todo = MissionEntity(entity: entityDescription, insertInto: context)
+                            new_todo.mission_1 = repeat_cell_says
+
+                            MainView?.tableView.reloadData()
+                        } else {
+                            print("Skipping \(repeat_cell_says) as it's been \(timeDifference) seconds than 60 since the last execution.")
                         }
-                        
-                        let new_todo = MissionEntity(entity: entityDescription, insertInto: context)
-                        new_todo.mission_1 = repeat_cell_says
-                        self.add_logic_nonbutton(mission1: repeat_cell_says, context: self.context)
                     }
                 }
+                
+                if UserDefaults.standard.object(forKey: "3-Minutes") == nil {
+                    UserDefaults.standard.set(Date(), forKey: "3-Minutes")
+                    UserDefaults.standard.synchronize()
+                }
+
+                if repeat_cell_says.contains("3-Minutes") {
+                    //print(repeat_cell_says)
+                    
+                    if let lastSavedTime = UserDefaults.standard.object(forKey: "3-Minutes") as? Date {
+                        //print("lastSavedTime: \(lastSavedTime)")
+                        
+                        let timeDifference = -Int(lastSavedTime.timeIntervalSinceNow)
+                        if timeDifference > 180 {
+                            print("Executing \(repeat_cell_says) for \(lastSavedTime) on \(Date())")
+                            defaults.set(Date(), forKey: "3-Minutes")
+                            
+                            guard let entityDescription = NSEntityDescription.entity(forEntityName: "MissionEntity", in: context) else {
+                                fatalError("Entity description not found!")
+                            }
+                            let new_todo = MissionEntity(entity: entityDescription, insertInto: context)
+                            new_todo.mission_1 = repeat_cell_says
+                            
+                            if let entityDescription = NSEntityDescription.entity(forEntityName: "MissionEntity", in: context) {
+                                let new_todo = MissionEntity(entity: entityDescription, insertInto: context)
+                                new_todo.mission_1 = repeat_cell_says
+                                
+                                MainView?.tableView.reloadData()
+                            }
+                        } else {
+                            print("Skipping \(repeat_cell_says) as it's been \(timeDifference) seconds than 180 since the last execution.")
+                        }
+                    } else {
+                        print("Condition not satisfied")
+                        let savedValue = UserDefaults.standard.object(forKey: "3-Minutes")
+                        print("Value in UserDefaults: \(savedValue as Any)")
+                    }
+                }
+
+
+                if UserDefaults.standard.object(forKey: "5-Minutes") == nil {
+                    UserDefaults.standard.set(Date(), forKey: "5-Minutes")
+                    UserDefaults.standard.synchronize()
+                }
+                if repeat_cell_says.contains("5-Minutes") {
+                    if let lastSavedTime = UserDefaults.standard.object(forKey: "5-Minutes") as? Date {
+                        let timeDifference = -Int(lastSavedTime.timeIntervalSinceNow)
+                        if lastSavedTime == nil || timeDifference > 300 {
+                            print("Executing \(repeat_cell_says) for \(lastSavedTime) on \(Date())")
+                            defaults.set(Date(), forKey: "5-Minutes")
+
+                            guard let entityDescription = NSEntityDescription.entity(forEntityName: "MissionEntity", in: context) else {
+                                fatalError("Entity description not found!")
+                            }
+                            let new_todo = MissionEntity(entity: entityDescription, insertInto: context)
+                            new_todo.mission_1 = repeat_cell_says
+
+                            if let entityDescription = NSEntityDescription.entity(forEntityName: "MissionEntity", in: context) {
+                                let new_todo = MissionEntity(entity: entityDescription, insertInto: context)
+                                new_todo.mission_1 = repeat_cell_says
+
+                                MainView?.tableView.reloadData()
+                            }
+                        } else {
+                            print("Skipping \(repeat_cell_says) as it's been \(timeDifference) seconds than 300 since the last execution.")
+                        }
+                    }
+                }
+                
+
+                if UserDefaults.standard.object(forKey: "10-Minutes") == nil {
+                    UserDefaults.standard.set(Date(), forKey: "10-Minutes")
+                    UserDefaults.standard.synchronize()
+                }
+                if repeat_cell_says.contains("10-Minutes") {
+                    if let lastSavedTime = UserDefaults.standard.object(forKey: "10-Minutes") as? Date {
+                        let timeDifference = -Int(lastSavedTime.timeIntervalSinceNow)
+                        if lastSavedTime == nil || timeDifference > 600 {
+                            print("Executing \(repeat_cell_says) for \(lastSavedTime) on \(Date())")
+                            defaults.set(Date(), forKey: "10-Minutes")
+
+                            guard let entityDescription = NSEntityDescription.entity(forEntityName: "MissionEntity", in: context) else {
+                                fatalError("Entity description not found!")
+                            }
+                            let new_todo = MissionEntity(entity: entityDescription, insertInto: context)
+                            new_todo.mission_1 = repeat_cell_says
+
+                            if let entityDescription = NSEntityDescription.entity(forEntityName: "MissionEntity", in: context) {
+                                let new_todo = MissionEntity(entity: entityDescription, insertInto: context)
+                                new_todo.mission_1 = repeat_cell_says
+
+                                MainView?.tableView.reloadData()
+                            }
+                        } else {
+                            print("Skipping \(repeat_cell_says) as it's been \(timeDifference) seconds than 600 since the last execution.")
+                        }
+                    }
+                }
+                
+                if UserDefaults.standard.object(forKey: "20-Minutes") == nil {
+                    UserDefaults.standard.set(Date(), forKey: "20-Minutes")
+                    UserDefaults.standard.synchronize()
+                }
+                if repeat_cell_says.contains("20-Minutes") {
+                    if let lastSavedTime = UserDefaults.standard.object(forKey: "20-Minutes") as? Date {
+                        let timeDifference = -Int(lastSavedTime.timeIntervalSinceNow)
+                        if lastSavedTime == nil || timeDifference > 1200 {
+                            print("Executing \(repeat_cell_says) for \(lastSavedTime) on \(Date())")
+                            defaults.set(Date(), forKey: "20-Minutes")
+
+                            guard let entityDescription = NSEntityDescription.entity(forEntityName: "MissionEntity", in: context) else {
+                                fatalError("Entity description not found!")
+                            }
+                            let new_todo = MissionEntity(entity: entityDescription, insertInto: context)
+                            new_todo.mission_1 = repeat_cell_says
+
+                            if let entityDescription = NSEntityDescription.entity(forEntityName: "MissionEntity", in: context) {
+                                let new_todo = MissionEntity(entity: entityDescription, insertInto: context)
+                                new_todo.mission_1 = repeat_cell_says
+
+                                MainView?.tableView.reloadData()
+                            }
+                        } else {
+                            print("Skipping \(repeat_cell_says) as it's been \(timeDifference) seconds than 1200 since the last execution.")
+                        }
+                    }
+                }
+                
+                if UserDefaults.standard.object(forKey: "30-Minutes") == nil {
+                    UserDefaults.standard.set(Date(), forKey: "30-Minutes")
+                    UserDefaults.standard.synchronize()
+                }
+                if repeat_cell_says.contains("30-Minutes") {
+                    if let lastSavedTime = UserDefaults.standard.object(forKey: "30-Minutes") as? Date {
+                        let timeDifference = -Int(lastSavedTime.timeIntervalSinceNow)
+                        if lastSavedTime == nil || timeDifference > 1800 {
+                            print("Executing \(repeat_cell_says) for \(lastSavedTime) on \(Date())")
+                            defaults.set(Date(), forKey: "30-Minutes")
+
+                            guard let entityDescription = NSEntityDescription.entity(forEntityName: "MissionEntity", in: context) else {
+                                fatalError("Entity description not found!")
+                            }
+                            let new_todo = MissionEntity(entity: entityDescription, insertInto: context)
+                            new_todo.mission_1 = repeat_cell_says
+
+                            if let entityDescription = NSEntityDescription.entity(forEntityName: "MissionEntity", in: context) {
+                                let new_todo = MissionEntity(entity: entityDescription, insertInto: context)
+                                new_todo.mission_1 = repeat_cell_says
+
+                                MainView?.tableView.reloadData()
+                            }
+                        } else {
+                            print("Skipping \(repeat_cell_says) as it's been \(timeDifference) seconds than 1800 since the last execution.")
+                        }
+                    }
+                }
+                
+                if UserDefaults.standard.object(forKey: "1-Hour") == nil {
+                    UserDefaults.standard.set(Date(), forKey: "1-Hour")
+                    UserDefaults.standard.synchronize()
+                }
+                if repeat_cell_says.contains("1-Hour") {
+                    if let lastSavedTime = UserDefaults.standard.object(forKey: "1-Hour") as? Date {
+                        let timeDifference = -Int(lastSavedTime.timeIntervalSinceNow)
+                        if lastSavedTime == nil || timeDifference > 3600 {
+                            print("Executing \(repeat_cell_says) for \(lastSavedTime) on \(Date())")
+                            defaults.set(Date(), forKey: "1-Hour")
+
+                            guard let entityDescription = NSEntityDescription.entity(forEntityName: "MissionEntity", in: context) else {
+                                fatalError("Entity description not found!")
+                            }
+                            let new_todo = MissionEntity(entity: entityDescription, insertInto: context)
+                            new_todo.mission_1 = repeat_cell_says
+
+                            if let entityDescription = NSEntityDescription.entity(forEntityName: "MissionEntity", in: context) {
+                                let new_todo = MissionEntity(entity: entityDescription, insertInto: context)
+                                new_todo.mission_1 = repeat_cell_says
+
+                                MainView?.tableView.reloadData()
+                            }
+                        } else {
+                            print("Skipping \(repeat_cell_says) as it's been \(timeDifference) seconds than 3600 since the last execution.")
+                        }
+                    }
+                }
+                
+                if UserDefaults.standard.object(forKey: "3-Hours") == nil {
+                    UserDefaults.standard.set(Date(), forKey: "3-Hours")
+                    UserDefaults.standard.synchronize()
+                }
+                if repeat_cell_says.contains("3-Hours") {
+                    if let lastSavedTime = UserDefaults.standard.object(forKey: "3-Hours") as? Date {
+                        let timeDifference = -Int(lastSavedTime.timeIntervalSinceNow)
+                        if lastSavedTime == nil || timeDifference > 10800 {
+                            print("Executing \(repeat_cell_says) for \(lastSavedTime) on \(Date())")
+                            defaults.set(Date(), forKey: "3-Hours")
+
+                            guard let entityDescription = NSEntityDescription.entity(forEntityName: "MissionEntity", in: context) else {
+                                fatalError("Entity description not found!")
+                            }
+                            let new_todo = MissionEntity(entity: entityDescription, insertInto: context)
+                            new_todo.mission_1 = repeat_cell_says
+
+                            if let entityDescription = NSEntityDescription.entity(forEntityName: "MissionEntity", in: context) {
+                                let new_todo = MissionEntity(entity: entityDescription, insertInto: context)
+                                new_todo.mission_1 = repeat_cell_says
+
+                                MainView?.tableView.reloadData()
+                            }
+                        } else {
+                            print("Skipping \(repeat_cell_says) as it's been \(timeDifference) seconds than 10800 since the last execution.")
+                        }
+                    }
+                }
+                
+                if UserDefaults.standard.object(forKey: "5-Hours") == nil {
+                    UserDefaults.standard.set(Date(), forKey: "5-Hours")
+                    UserDefaults.standard.synchronize()
+                }
+                if repeat_cell_says.contains("5-Hours") {
+                    if let lastSavedTime = UserDefaults.standard.object(forKey: "5-Hours") as? Date {
+                        let timeDifference = -Int(lastSavedTime.timeIntervalSinceNow)
+                        if lastSavedTime == nil || timeDifference > 18000 {
+                            print("Executing \(repeat_cell_says) for \(lastSavedTime) on \(Date())")
+                            defaults.set(Date(), forKey: "5-Hours")
+
+                            guard let entityDescription = NSEntityDescription.entity(forEntityName: "MissionEntity", in: context) else {
+                                fatalError("Entity description not found!")
+                            }
+                            let new_todo = MissionEntity(entity: entityDescription, insertInto: context)
+                            new_todo.mission_1 = repeat_cell_says
+
+                            if let entityDescription = NSEntityDescription.entity(forEntityName: "MissionEntity", in: context) {
+                                let new_todo = MissionEntity(entity: entityDescription, insertInto: context)
+                                new_todo.mission_1 = repeat_cell_says
+
+                                MainView?.tableView.reloadData()
+                            }
+                        } else {
+                            print("Skipping \(repeat_cell_says) as it's been \(timeDifference) seconds than 18000 since the last execution.")
+                        }
+                    }
+                }
+                
+                if UserDefaults.standard.object(forKey: "1-Day") == nil {
+                    UserDefaults.standard.set(Date(), forKey: "1-Day")
+                    UserDefaults.standard.synchronize()
+                }
+                if repeat_cell_says.contains("1-Day") {
+                    if let lastSavedTime = UserDefaults.standard.object(forKey: "1-Day") as? Date {
+                        let timeDifference = -Int(lastSavedTime.timeIntervalSinceNow)
+                        if lastSavedTime == nil || timeDifference > 86400 {
+                            print("Executing \(repeat_cell_says) for \(lastSavedTime) on \(Date())")
+                            defaults.set(Date(), forKey: "1-Day")
+
+                            guard let entityDescription = NSEntityDescription.entity(forEntityName: "MissionEntity", in: context) else {
+                                fatalError("Entity description not found!")
+                            }
+                            let new_todo = MissionEntity(entity: entityDescription, insertInto: context)
+                            new_todo.mission_1 = repeat_cell_says
+
+                            if let entityDescription = NSEntityDescription.entity(forEntityName: "MissionEntity", in: context) {
+                                let new_todo = MissionEntity(entity: entityDescription, insertInto: context)
+                                new_todo.mission_1 = repeat_cell_says
+
+                                MainView?.tableView.reloadData()
+                            }
+                        } else {
+                            print("Skipping \(repeat_cell_says) as it's been \(timeDifference) seconds than 86400 since the last execution.")
+                        }
+                    }
+                }
+                
+                if UserDefaults.standard.object(forKey: "1-Week") == nil {
+                    UserDefaults.standard.set(Date(), forKey: "1-Week")
+                    UserDefaults.standard.synchronize()
+                }
+                if repeat_cell_says.contains("1-Week") {
+                    if let lastSavedTime = UserDefaults.standard.object(forKey: "1-Week") as? Date {
+                        let timeDifference = -Int(lastSavedTime.timeIntervalSinceNow)
+                        if lastSavedTime == nil || timeDifference > 604800 {
+                            print("Executing \(repeat_cell_says) for \(lastSavedTime) on \(Date())")
+                            defaults.set(Date(), forKey: "1-Week")
+
+                            guard let entityDescription = NSEntityDescription.entity(forEntityName: "MissionEntity", in: context) else {
+                                fatalError("Entity description not found!")
+                            }
+                            let new_todo = MissionEntity(entity: entityDescription, insertInto: context)
+                            new_todo.mission_1 = repeat_cell_says
+
+                            if let entityDescription = NSEntityDescription.entity(forEntityName: "MissionEntity", in: context) {
+                                let new_todo = MissionEntity(entity: entityDescription, insertInto: context)
+                                new_todo.mission_1 = repeat_cell_says
+
+                                MainView?.tableView.reloadData()
+                            }
+                        } else {
+                            print("Skipping \(repeat_cell_says) as it's been \(timeDifference) seconds than 604800 since the last execution.")
+                        }
+                    }
+                }
+
+                //FART() Uncomment me and I'll let your I am checking for repeats to add correctly
+                
+ 
             }
         }
+        
     }
-
-    // Usage:
-
 
     @objc func auto_add_repeating_cells() {
-        executeForTimeInterval(60, key: "1-Minute")
-        executeForTimeInterval(180, key: "3-Minutes")
-
-    }
-    
-    // else {
-    //print("Skipping \(repeat_cell_says) as it's less than \(timeDifference) seconds since the last execution.")
-//}
-
-    
-    @objc func fetchData() {
-        do {
-            Combined_missions = try context.fetch(MissionEntity.fetchRequest())
-            self.MainView?.tableView.reloadData()
-        } catch _ as NSError {
-        }
-        Combined_missions.shuffle()
+        duration_math()
     }
 
 
 
-            
 
 //        In my Repeat_tableview I have cells that end withd with one of the strings in the list above:duration_levels. Organize the cells by their duration_levels and create user defaults in the same of that duration so for example forKey: 1-Minute and forKeys for every duration within duration_levels. Set next_minute defaults.object(forKey: "") as? Date for all of these keys and if any are nil then add Calendar.current.date(byAdding: .hour, value: ?, to: Date())! with the value: being equal to the correct duration. Also for every if statement for those duration_levels but a print statement that says what that if statement will execute in this format: "EEEE, MMM d, 'at' h:mm a". You are only executing the repeats that belong to the proper if statement so if a cell contains the string 1-Minute that cell should only append itself into guard let entityDescription = NSEntityDescription.entity(forEntityName: "MissionEntity", in: context) in a minute.
         //
-        
 
-    
+
+
 
 
     override func viewDidLoad() {
@@ -517,6 +817,28 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
         if let savedMessage = UserDefaults.standard.string(forKey: "notificationText") {
             Type_Notify_Message.text = savedMessage
         }
+
+
+        Type_Resolution_One.delegate = self
+        Type_Resolution_One.adjustsFontSizeToFitWidth = true
+        if let savedMessage1 = UserDefaults.standard.string(forKey: "1st goal") {
+            Type_Resolution_One.text = savedMessage1
+        }
+        
+        Type_Resolution_Two.delegate = self
+        Type_Resolution_Two.adjustsFontSizeToFitWidth = true
+        if let savedMessage2 = UserDefaults.standard.string(forKey: "2nd goal") {
+            Type_Resolution_Two.text = savedMessage2
+        }
+        
+        Type_Resolution_Three.delegate = self
+        Type_Resolution_Three.adjustsFontSizeToFitWidth = true
+        if let savedMessage3 = UserDefaults.standard.string(forKey: "3rd goal") {
+            Type_Resolution_Three.text = savedMessage3
+        }
+        
+        
+        
         let center = UNUserNotificationCenter.current()
         center.delegate = self
         center.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
@@ -568,13 +890,15 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
     func textFieldDidEndEditing(_ textField: UITextField) {
         saveHabits()
     }
-    
+
 
     func saveData() {
         do {
             try context.save()
         } catch {
+
         }
+
         let fetchRequest: NSFetchRequest<MissionEntity> = MissionEntity.fetchRequest()
         do {
             let missions = try context.fetch(fetchRequest)
@@ -595,7 +919,7 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
             return nil
         }
     }
-    
+
     func Notifier_Time_Interval() {
         let selectedDuration = duration_levels[currentDurationIndex]
         Duration_Display.text = selectedDuration
@@ -626,7 +950,7 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
             notifier_timeInterval = 60
         }
     }
-    
+
 }
 
 extension Repeat: UITextFieldDelegate {
