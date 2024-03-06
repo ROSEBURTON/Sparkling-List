@@ -126,11 +126,6 @@
                                     <action selector="Repeat_View_Trigger:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YL1-zZ-KCs"/>
                                 </connections>
                             </button>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" id="WzS-lH-K9K">
-                                <rect key="frame" x="17" y="492" width="358" height="4"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.0" green="0.78297543690000004" blue="0.84491784790000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </progressView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wl6-F4-xdb">
                                 <rect key="frame" x="316" y="431" width="59" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -168,7 +163,6 @@
                         <outlet property="The_Primal_Dexxacon" destination="ayR-m1-e5E" id="zeQ-os-bg0"/>
                         <outlet property="Volume_Bars" destination="DmS-Ey-OiU" id="yEA-J8-hfW"/>
                         <outlet property="day_goal" destination="N2c-jj-Tog" id="I4r-3q-TZE"/>
-                        <outlet property="progressBar" destination="WzS-lH-K9K" id="Sjo-Ul-sAn"/>
                         <outlet property="tableView" destination="j1S-tz-trz" id="GSv-M2-VK9"/>
                     </connections>
                 </viewController>
