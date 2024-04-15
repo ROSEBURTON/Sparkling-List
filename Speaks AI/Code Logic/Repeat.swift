@@ -1,4 +1,5 @@
 import UIKit
+import WebKit
 import CoreData
 import AVFoundation
 import UserNotifications
@@ -19,7 +20,7 @@ class Repeat_Cells: UITableViewCell {
     }
 }
 
-class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterDelegate, UITableViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
+class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterDelegate, UITableViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate, WKNavigationDelegate {
     var selectedDeleteSoundIndex = 0
     var notifier_timeInterval: TimeInterval =  60
     var startColor: UIColor = .systemCyan
@@ -37,10 +38,9 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
     @IBOutlet weak var Type_Resolution_One: UITextField!
     @IBOutlet weak var Type_Resolution_Two: UITextField!
     @IBOutlet weak var Type_Resolution_Three: UITextField!
-    @IBOutlet weak var New_Years_Label: UILabel!
+    @IBOutlet weak var New_Years_Resolutions_Label: UILabel!
     @IBOutlet weak var Reminder_Label: UILabel!
     @IBOutlet weak var Duration_Label: UILabel!
-    
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         1
@@ -82,26 +82,55 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
         return repeatEntities.count
     }
 
-    var day_actions_goal: Int {
+    func calculateDayActions_to_meet_goal(newYearActions: Int, remainingDays: Int) -> Int {
+        let remainingActions = max(years_actions_goal - newYearActions, 0)
+        return remainingActions / max(remainingDays, 1)
+    }
+    
+    var day_actions_goal_50: Int {
         let calendar = Calendar.current
         let currentDayOfYear = calendar.ordinality(of: .day, in: .year, for: Date()) ?? 1
         let remainingDays = 365 - currentDayOfYear
         return calculateDayActions_to_meet_goal(newYearActions: UserDefaults.standard.integer(forKey: "New_Year_Actions"), remainingDays: remainingDays)
     }
-
-    func calculateDayActions_to_meet_goal(newYearActions: Int, remainingDays: Int) -> Int {
-        let remainingActions = max(years_actions_goal - newYearActions, 0)
-        return remainingActions / max(remainingDays, 1)
+    
+    var you_should_be_at_goal: Int {
+        let installationDate = UserDefaults.standard.object(forKey: "InstallationDate") as? Date ?? Date()
+        let daysSinceInstallation = Calendar.current.dateComponents([.day], from: installationDate, to: Date()).day ?? 0
+        let day_actions_goal = self.day_actions_goal_50
+        return day_actions_goal * daysSinceInstallation
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         MainView?.fetchData()
-
-
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.auto_add_repeating_cells), userInfo: nil, repeats: true)
-
     }
+    
+    
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // MARK: SODA
+        // ===========================================================
+        DispatchQueue.main.async {
+            let gradientView = SodaGradientView(frame: self.view.bounds)
+            gradientView.layer.opacity = Float(opacity)
+            gradientView.layer.zPosition = -2
+            gradientView.isUserInteractionEnabled = false
+            self.view.addSubview(gradientView)
+        }
+        
+        if day_actions_goal == 0 {
+            opacity = 0
+        } else {
+            opacity = 100
+        }
+        let opacityPercentage = Int(opacity * 100)
+        print("\n\n\n\n** Soda Gradient at 100% soda here")
+        //===========================================================
+    }
+    
+    
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -139,7 +168,7 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
                     print("Error scheduling notification: \(error.localizedDescription)")
                 } else {
                     if let dailyInteger = UserDefaults.standard.value(forKey: "points") as? Int {
-                        let wrappedMessage = " \(randomLeftEmoji)\(dailyInteger)/\(self.day_actions_goal): \(message)\(randomRightEmoji) "
+                        let wrappedMessage = " \(randomLeftEmoji)\(dailyInteger)/\(self.you_should_be_at_goal): \(message)\(randomRightEmoji) "
                         print("Notification scheduled successfully. Message: \(wrappedMessage) Next Repetition Time: \(nextRepetitionTimeString) seconds")
                     }
                 }
@@ -209,7 +238,7 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
         return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 1)
     }
 
-    func add_logic_nonbutton( // // Adds repeats to main list
+    func add_logic_nonbutton(
         mission1: String = "",
                           context: NSManagedObjectContext) {
         heavy_haptic.impactOccurred()
@@ -228,7 +257,7 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
     @IBAction func Add_Repeat_Button(_ sender: UIButton) {
         Clicky()
         medium_haptic.impactOccurred()
-        let alert = UIAlertController(title: "Select Duration", message: "\n\n\n\n\n", preferredStyle: .alert)
+        let alert = UIAlertController(title: "How frequent should this task regenerate?", message: "\n\n\n\n\n", preferredStyle: .alert)
         let pickerView = UIPickerView(frame: CGRect(x: 0, y: 40, width: 260, height: 110))
         pickerView.dataSource = self
         pickerView.delegate = self
@@ -262,7 +291,8 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
                 newRepeatEntity.repeat_section = newText
                 CoreDataStack.shared.saveContext()
                 self.repeatEntities.append(newRepeatEntity)
-
+                self.FART()
+                
                 self.saveData()
             }
         }
@@ -473,8 +503,9 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
         return String(format: "%02d:%02d", minutes, seconds)
     }
 
-    var duration_levels = ["1-Minute", "2-Minutes", "3-Minutes", "5-Minutes", "10-Minutes", "20-Minutes", "30-Minutes", "1-Hour", "3-Hours", "5-Hours", "1-Day", "2-Days", "3-Days",  "1-Week"]
+    var duration_levels = ["1-Minute", "2-Minutes", "3-Minutes", "5-Minutes", "10-Minutes", "20-Minutes", "30-Minutes", "1-Hour", "3-Hours", "5-Hours", "9-Hours", "1-Day", "2-Days", "3-Days",  "1-Week"]
     func duration_math() {
+        print("Triggered there")
         let defaults = UserDefaults.standard
 
         for repeatEntity in self.repeatEntities {
@@ -524,8 +555,6 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
                     }
                 }
                 
-                
-                
                 if UserDefaults.standard.object(forKey: "3-Minutes") == nil {
                     UserDefaults.standard.set(Date(), forKey: "3-Minutes")
                     UserDefaults.standard.synchronize()
@@ -537,19 +566,16 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
                         if timeDifference > 180 {
                             print("Executing \(repeat_cell_says) for \(lastSavedTime) on \(Date())")
                             defaults.set(Date(), forKey: repeat_cell_says)
-
                             guard let entityDescription = NSEntityDescription.entity(forEntityName: "MissionEntity", in: context) else {
                                 fatalError("Entity description not found!")
                             }
                             let new_todo = MissionEntity(entity: entityDescription, insertInto: context)
                             new_todo.mission_1 = repeat_cell_says
-
                         } else {
                             print("Skipping \(repeat_cell_says) as it's been \(timeDifference) seconds than 180 since the last execution.")
                         }
                     }
                 }
-
 
                 if UserDefaults.standard.object(forKey: "5-Minutes") == nil {
                     UserDefaults.standard.set(Date(), forKey: "5-Minutes")
@@ -573,7 +599,6 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
                         }
                     }
                 }
-                
 
                 if UserDefaults.standard.object(forKey: "10-Minutes") == nil {
                     UserDefaults.standard.set(Date(), forKey: "10-Minutes")
@@ -712,6 +737,26 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
                     }
                 }
                 
+                if repeat_cell_says.contains("9-Hours") {
+                    if let lastSavedTime = UserDefaults.standard.object(forKey: repeat_cell_says) as? Date {
+                        let timeDifference = -Int(lastSavedTime.timeIntervalSinceNow)
+                        if timeDifference > 32400 {
+                            print("Executing \(repeat_cell_says) for \(lastSavedTime) on \(Date())")
+                            defaults.set(Date(), forKey: repeat_cell_says)
+
+                            guard let entityDescription = NSEntityDescription.entity(forEntityName: "MissionEntity", in: context) else {
+                                fatalError("Entity description not found!")
+                            }
+                            let new_todo = MissionEntity(entity: entityDescription, insertInto: context)
+                            new_todo.mission_1 = repeat_cell_says
+
+                        } else {
+                            print("Skipping \(repeat_cell_says) as it's been \(timeDifference) seconds than 32,400 since the last execution.")
+                        }
+                    }
+                }
+
+                
                 if UserDefaults.standard.object(forKey: "1-Day") == nil {
                     UserDefaults.standard.set(Date(), forKey: "1-Day")
                     UserDefaults.standard.synchronize()
@@ -804,10 +849,6 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
                         }
                     }
                 }
-
-
-                
-                //FART() Uncomment me and I'll let you know I am checking for repeats to add correctly
             }
         }
         
@@ -817,17 +858,18 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
         duration_math()
     }
     
-    @IBAction func LinkedIn(_ sender: UIButton) {
+
+    
+    @IBAction func Technologies(_ sender: UIButton) {
         medium_haptic.impactOccurred()
         Clicky()
-        if let url = URL(string: "https://www.linkedin.com/in/orioncait/details/skills/") {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        }
     }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+
         let footerView = UIView(frame: CGRect(x: 0, y: 0, width: Repeat_tableview.frame.width, height: 20))
         footerView.backgroundColor = .clear
         Repeat_tableview.tableFooterView = footerView
@@ -872,9 +914,9 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
         Reminder_Label.adjustsFontSizeToFitWidth = true
 
         
-        New_Years_Label.font = UIFont(name: selectedFont ?? "Chalkduster", size: 24.0)
-        New_Years_Label.textColor = UIColor.blue
-        New_Years_Label.adjustsFontSizeToFitWidth = true
+        New_Years_Resolutions_Label.font = UIFont(name: selectedFont ?? "Chalkduster", size: 24.0)
+        New_Years_Resolutions_Label.textColor = UIColor.blue
+        New_Years_Resolutions_Label.adjustsFontSizeToFitWidth = true
 
 
         Type_Resolution_One.delegate = self
@@ -936,7 +978,7 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
                 }
             }
         }
-        let gradientView = GradientView(frame: view.bounds)
+        let gradientView = SodaGradientView(frame: view.bounds)
         gradientView.layer.zPosition = -1
         view.addSubview(gradientView)
         gradientView.isUserInteractionEnabled = false
@@ -1006,8 +1048,10 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
         } else if selectedDuration == "3-Hours" {
             notifier_timeInterval = 10800
         } else if selectedDuration == "5-Hours" {
-            notifier_timeInterval = 18000
-        } else if selectedDuration == "1-Day" {
+        notifier_timeInterval = 18000
+    }  else if selectedDuration == "9-Hours" {
+        notifier_timeInterval = 32400
+    } else if selectedDuration == "1-Day" {
             notifier_timeInterval = 86400
         }  else if selectedDuration == "2-Days" {
             notifier_timeInterval = 172800
