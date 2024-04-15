@@ -16,8 +16,15 @@ import AVFoundation
 // mini view control drag to main view , equal widths, equal heights (MINI DRAG)
 // 1800
 
-// App to App Store
-
+// Commit a Project to Github:
+/*
+ Sparkling List.xcodeproj
+ git init
+ git add .
+ git commit -m "Submitting this code"
+ git remote add origin https://github.com/ROSEBURTON/Sparkling-List-Gold.git
+ git push -u origin main
+ */
 var opacity: CGFloat = 100
 class Main_Cells: UITableViewCell {
 }
