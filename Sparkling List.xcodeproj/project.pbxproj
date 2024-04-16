@@ -402,7 +402,6 @@
 				4F01696A2A7F164C0080DF70 /* Sources */,
 				4F01696B2A7F164C0080DF70 /* Frameworks */,
 				4F01696C2A7F164C0080DF70 /* Resources */,
-				4F82876F2B97665000651F85 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -619,27 +618,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		4F82876F2B97665000651F85 /* Run Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Run Script";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/Users/ialvector/Desktop/Speaks AI/Speaks AI/Sparkling_List.py\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4F01696A2A7F164C0080DF70 /* Sources */ = {

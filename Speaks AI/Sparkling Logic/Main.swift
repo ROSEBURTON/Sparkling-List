@@ -25,6 +25,8 @@ import AVFoundation
  git remote add origin https://github.com/ROSEBURTON/Sparkling-List-Gold.git
  git push -u origin main
  */
+
+// Remove the script
 var opacity: CGFloat = 100
 class Main_Cells: UITableViewCell {
 }
