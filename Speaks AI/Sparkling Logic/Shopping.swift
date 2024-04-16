@@ -164,7 +164,6 @@ public class SHOP: UIViewController, UIPickerViewDataSource, UIPickerViewDelegat
         } catch {
         }
 
-
         let senderToUserDefaultsKey: [UIView: String] = [
             Text_Top_Color: "topColor",
             Text_Bottom_Color: "bottomColor",

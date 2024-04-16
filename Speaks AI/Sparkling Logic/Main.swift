@@ -448,6 +448,7 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
                 self.ColorProgress = 0.0
             }
             Play_List_Sounds()
+            
             self.tableView.reloadData()
         }
         Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { [weak self] _ in

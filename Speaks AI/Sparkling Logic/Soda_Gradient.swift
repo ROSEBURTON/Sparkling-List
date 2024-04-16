@@ -9,7 +9,6 @@ class SodaGradientView: UIView {
     private var Current_Gradient_Index = 0
     private var Next_Gradient_Index = 1
     private var Is_Animating = true
-    
 
     private var gradients: [[CGColor]] = {
         var gradientColors: [[CGColor]] = []

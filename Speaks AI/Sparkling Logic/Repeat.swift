@@ -826,7 +826,6 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
                     }
                 }
                 
-                
                 if UserDefaults.standard.object(forKey: "1-Week") == nil {
                     UserDefaults.standard.set(Date(), forKey: "1-Week")
                     UserDefaults.standard.synchronize()

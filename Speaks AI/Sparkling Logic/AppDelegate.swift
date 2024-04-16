@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return true
     }
-
+    
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         let calendar = Calendar.current
         let now = Date()

@@ -16,7 +16,7 @@ struct SubscriptionView: View {
             .padding()
             
             Button("Look Around in Shop") {
-                cancelAction?() // Invoke cancel action
+                cancelAction?()
             }
             .padding()
         }
@@ -51,7 +51,6 @@ struct SubscriptionView: View {
         return nil
     }
 }
-
 
 class StoreManager: NSObject, ObservableObject, SKPaymentTransactionObserver {
     static let shared = StoreManager()
@@ -96,7 +95,6 @@ class StoreManager: NSObject, ObservableObject, SKPaymentTransactionObserver {
         }
     }
 }
-
 
 extension StoreManager: SKProductsRequestDelegate {
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
