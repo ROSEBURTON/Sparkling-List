@@ -21,7 +21,14 @@ class Shopping_Cells: UITableViewCell {
     }
 }
 
-var paying_customer = false
+var paying_customer: Bool {
+    get {
+        return UserDefaults.standard.bool(forKey: "paying_customer")
+    }
+    set {
+        UserDefaults.standard.set(newValue, forKey: "paying_customer")
+    }
+}
 var selectedFontIndex: Int = 0
 var selectedDeletionIndex: Int = 0
 var deleteSoundOptions = ["@*!+-R", "Bakin' Dat Pizza", "Pink Gladiate Soda", "Big Purr", "Rainbow Chromium Finish", "Carbonation Buzzed Up", "Chalkboard", "Coming Near You", "Cybernetic Models", "Astral Melt", "👁️‍🗨️", "Fart", "Wine Glass", "Gold for Galactic Drinks", "Gyat Chonki-Lonki Party Butt Bounce", "Laser", "Loading Productive Ammo", "Miss Computer Email", "Missile Hit", "Nuclear Ending", "Pleased Observing Mantid", "Productive Prep", "Ready for Takeoff", "Soda Sea Mine", "Sparkling Status Signal", "Green Lime, Sour Pink Splash", "Book burn, discredit,  gas light", "Type Ship", "Pizza Deluxe", "Water Lurk"].sorted()

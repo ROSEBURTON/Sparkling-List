@@ -819,9 +819,9 @@
 				CODE_SIGN_ENTITLEMENTS = "Sparkling List.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = 5GXCSWGLQN;
+				DEVELOPMENT_TEAM = 66TT6FTG36;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Speaks AI/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Sparkling List";
@@ -860,9 +860,9 @@
 				CODE_SIGN_ENTITLEMENTS = "Sparkling List.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = 5GXCSWGLQN;
+				DEVELOPMENT_TEAM = 66TT6FTG36;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Speaks AI/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Sparkling List";

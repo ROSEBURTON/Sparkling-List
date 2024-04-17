@@ -90,7 +90,6 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
         "The best time to plant a tree was 20 years ago. The second-best time is now. - Chinese proverb",
         "Actions speak louder than words",
         "Do not ignore daunting but necessary tasks, they will not resolve themselves, and they may still exist",
-        "You can't teach tired brains - Terry Doyle",
         "*Are you owning or avoiding, making progress or justifications - Scott Mautz",
         "The road to success is dotted with many tempting parking spaces - Will Rogers",
         "Get rid of worrying by taking action instead - Chris Croft",
@@ -99,17 +98,12 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
         "Spoil your movie and get to it",
         "Send negativity packing and ensure undesired thoughts don't live rent-free in your mind or range of influence.",
         "Some viruses and bacteria have developed ways to suppress the immune response of the host. Including silencing the cells by interfering with cell communication to avoid detection by immune cells like T cells. True peace for the host can only be attained when the root cause is properly identified and addressed, rather than just treating the theater of symptoms. Although, the invaders are the ones who do not own the host.",
-        "Fragmentation is fear. Come together. Be self-dependent. If you'd like.",
-        "Mutual symbiosis",
         "Know the right form to take and methods to use to be relatable and understood",
         "What are you going to do about the life you want?",
         "International, interplanetary, interstellar",
-        "Self-replicate what is good for the collective and share",
-        "Time is the coin of your life. It is the only coin you have, and only you can determine how it will be spent - Carl Sandburg",
-        "Time is a created thing. To say 'I don't have time,' is like saying, 'I don't want to - Lao Tzu",
+        "Time is a created thing. To say I don't have time, is like saying, I don't want to - Lao Tzu",
         "You will never find time for anything. If you want time, you must make it - Charles Buxton",
         "Your body is the goverment of your cells, use it wisely to navigate life",
-        "Get to your sparkling list and get those sour ice cubes movin'",
         "Being open to change allows for significant shifts in your circumstances.",
         "It's never too late to be what you might have been.",
         "The only thing standing between you and your goal is the story you keep telling yourself as to why you can't achieve it."
@@ -197,14 +191,12 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
         return day_actions_goal * daysSinceInstallation
     }
 
-
     var day_actions_goal_50: Int {
         let calendar = Calendar.current
         let currentDayOfYear = calendar.ordinality(of: .day, in: .year, for: Date()) ?? 1
         let remainingDays = 365 - currentDayOfYear
         return calculateDayActions_to_meet_goal(newYearActions: UserDefaults.standard.integer(forKey: "New_Year_Actions"), remainingDays: remainingDays)
     }
-
     
     var points: Int {
             get {
@@ -380,11 +372,6 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
                     UIView.transition(with: Points_YearLabel, duration: transitionDuration, options: .transitionCrossDissolve, animations: {
                         if self.YEAR_transitioningToRed {
                             self.Points_YearLabel.textColor = .clear
-                            do {
-                                Combined_missions = try self.context.fetch(MissionEntity.fetchRequest())
-                                self.tableView.reloadData()
-                            } catch _ as NSError {
-                            }
                             self.tableView.reloadData()
                         } else {
                             self.Points_YearLabel.textColor = .red
@@ -405,7 +392,7 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
         rainbowTimer = Timer.scheduledTimer(timeInterval: transitionDuration, target: self, selector: #selector(Sparkling_Label_Color_Status), userInfo: nil, repeats: true)
         let currentPoints = self.points
         The_Primal_Dexxacon.layer.zPosition = -1
-        let pointsLabelText = "Sodas reset on: \(TomorrowDateString) \n+\(currentPoints) / \(day_actions_goal_50) sparkling waters today"
+        let pointsLabelText = "Daily capacity resets on: \(TomorrowDateString) \n+\(currentPoints) / \(day_actions_goal_50) sparkling waters today"
         Points_DayLabel.text = pointsLabelText
         Song_Radio?.play()
     }
@@ -949,7 +936,7 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        MissionCounter.text = "\(Combined_missions.count) missions"
+        MissionCounter.text = "\(Combined_missions.count) Sparkling Tasks"
         MissionCounter.textColor = UIColor.blue
         MissionCounter.font = UIFont.boldSystemFont(ofSize:
         MissionCounter.font.pointSize)
@@ -1227,7 +1214,7 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
                 } catch {}
             }
         }
-        let pointsLabelText = "Sodas reset on: \(TomorrowDateString) \n+\(points) / \(day_actions_goal_50) sparkling waters today"
+        let pointsLabelText = "Daily capacity resets on: \(TomorrowDateString) \n+\(points) / \(day_actions_goal_50) sparkling waters today"
         Points_DayLabel.text = pointsLabelText
         guard let cell = tableView.cellForRow(at: indexPath) else { return }
         var tapLocation = cell.contentView.center
@@ -1282,7 +1269,6 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
     }
     
     let placeholder_strings = [
-        "Immune support",
         "For more peace",
         "For simplicity",
         "Fix a worry",
@@ -1295,20 +1281,12 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
         "Reward yourself",
         "Explore new ideas",
         "For a positive mindset",
-        "For creativity",
         "For self-care",
-        "Find inspiration",
-        "For a creative project",
         "For new possibilities",
-        "Celebrate victories",
-        "For personal growth",
         "For a positive atmosphere",
         "A way to destress",
-        "For meaningful connections",
-        "For self-expression",
         "Spend time with lifeforms",
         "For your perception",
-        "For self-improvement",
         "Outcome Visualization",
         "Learn in mutual symbiosis",
         "Attack one-location stagnation",

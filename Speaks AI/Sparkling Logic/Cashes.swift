@@ -31,7 +31,7 @@ struct SubscriptionView: View {
                 return
             }
             
-            let productID = "VAE5K"
+            let productID = "SparklingChromeProductID" // VAE5K
             guard let product = getProduct(withIdentifier: productID) else {
                 subscriptionStatus = "Subscription product not found."
                 return
@@ -64,7 +64,7 @@ class StoreManager: NSObject, ObservableObject, SKPaymentTransactionObserver {
     }
     
     func fetchProducts() {
-        let productIDs: Set<String> = ["VAE5K"]
+        let productIDs: Set<String> = ["SparklingChromeProductID"]
         let request = SKProductsRequest(productIdentifiers: productIDs)
         request.delegate = self
         request.start()
@@ -87,7 +87,6 @@ class StoreManager: NSObject, ObservableObject, SKPaymentTransactionObserver {
                 paying_customer = false
             case .deferred, .purchasing:
                 print("You deferred payment")
-                paying_customer = false
                 break
             @unknown default:
                 break
