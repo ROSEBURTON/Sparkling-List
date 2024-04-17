@@ -98,7 +98,7 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
         "We look for distraction to escape an uncomfortable emotional sensation. Are you addressing or avoiding? - Nir Eyal",
         "Spoil your movie and get to it",
         "Send negativity packing and ensure undesired thoughts don't live rent-free in your mind or range of influence.",
-        "Some viruses and bacteria have developed ways to evade or suppress the immune response of the host. Including silencing the cells of the body to avoid detection by white blood cells such as T cells. The host can be at peace once the cause is properly detected and dealt with. Not the symptoms.",
+        "Some viruses and bacteria have developed ways to suppress the immune response of the host. Including silencing the cells by interfering with cell communication to avoid detection by immune cells like T cells. True peace for the host can only be attained when the root cause is properly identified and addressed, rather than just treating the theater of symptoms. Although, the invaders are the ones who do not own the host.",
         "Fragmentation is fear. Come together. Be self-dependent. If you'd like.",
         "Mutual symbiosis",
         "Know the right form to take and methods to use to be relatable and understood",
