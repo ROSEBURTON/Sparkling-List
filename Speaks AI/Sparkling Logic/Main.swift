@@ -891,9 +891,6 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
 
     public override func viewDidLoad() {
         super.viewDidLoad()
-        
-
-        
         showBlurredImage()
         startMotionDetection()
         becomeFirstResponder()

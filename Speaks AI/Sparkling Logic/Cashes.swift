@@ -30,7 +30,7 @@ struct SubscriptionView: View {
                 subscriptionStatus = "In-app purchases are not enabled on this device."
                 return
             }
-            
+            //
             let productID = "SparklingChromeProductID" // VAE5K // SparklingChromeProductID Gradiations Ecocapsule5K
             guard let product = getProduct(withIdentifier: productID) else {
                 subscriptionStatus = "Subscription product not found."
