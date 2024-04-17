@@ -9,6 +9,8 @@ class Repeat_Cells: UITableViewCell {
     func configure(with repeatEntity: RepeatEntity) {
         self.layer.cornerRadius = 20
         self.layer.masksToBounds = true
+        //self.textLabel?.text = "This is a preview of your list (Test me)"
+        self.textLabel?.text = repeatEntity.repeat_section ?? "This is a preview of your repeating list (Test me)"
         self.textLabel?.text = repeatEntity.repeat_section
         self.textLabel?.adjustsFontSizeToFitWidth = true
         if let selectedFont = UserDefaults.standard.string(forKey: "SelectedFont") {
@@ -16,6 +18,7 @@ class Repeat_Cells: UITableViewCell {
             self.textLabel?.font = customFont
         } else {
             self.textLabel?.font = UIFont(name: "Chalkduster", size: 15.0)
+            self.layer.backgroundColor = UIColor.black.cgColor
         }
     }
 }
@@ -378,6 +381,8 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
                 let Gradient_Changing_Background_Cells = topBackgroundColor.interpolateColorTo(bottomBackgroundColor, fraction: progress)
                 cell.backgroundColor = Gradient_Changing_Background_Cells
             }
+        } else {
+            
         }
         return cell
     }

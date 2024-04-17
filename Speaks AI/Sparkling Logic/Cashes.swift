@@ -31,7 +31,7 @@ struct SubscriptionView: View {
                 return
             }
             
-            let productID = "VAE5K" // VAE5K // SparklingChromeProductID
+            let productID = "Ecocapsule5K" // VAE5K // SparklingChromeProductID Gradiations Ecocapsule5K
             guard let product = getProduct(withIdentifier: productID) else {
                 subscriptionStatus = "Subscription product not found."
                 return
@@ -64,7 +64,7 @@ class StoreManager: NSObject, ObservableObject, SKPaymentTransactionObserver {
     }
     
     func fetchProducts() {
-        let productIDs: Set<String> = ["VAE5K"]
+        let productIDs: Set<String> = ["Ecocapsule5K"]
         let request = SKProductsRequest(productIdentifiers: productIDs)
         request.delegate = self
         request.start()

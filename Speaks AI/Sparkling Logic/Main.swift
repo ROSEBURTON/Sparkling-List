@@ -95,7 +95,6 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
         "Get rid of worrying by taking action instead - Chris Croft",
         "You Don't Reap What You Don't Sow",
         "We look for distraction to escape an uncomfortable emotional sensation. Are you addressing or avoiding? - Nir Eyal",
-        "Spoil your movie and get to it",
         "Send negativity packing and ensure undesired thoughts don't live rent-free in your mind or range of influence.",
         "Some viruses and bacteria have developed ways to suppress the immune response of the host. Including silencing the cells by interfering with cell communication to avoid detection by immune cells like T cells. True peace for the host can only be attained when the root cause is properly identified and addressed, rather than just treating the theater of symptoms. Although, the invaders are the ones who do not own the host.",
         "Know the right form to take and methods to use to be relatable and understood",
@@ -197,10 +196,6 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
         
         return expectedActionsForToday
     }
-
-
-
-
 
     var day_actions_goal_50: Int {
         let calendar = Calendar.current
@@ -440,6 +435,11 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
         
         Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { [weak self] _ in
             guard let self = self else { return }
+            if paying_customer {
+                print("Subscriber")
+                SubscriptionView().purchaseSubscription()
+            }
+            
             self.ColorProgress += 0.03
             if self.ColorProgress > 1.0 {
                 self.ColorProgress = 0.0
@@ -692,7 +692,7 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
             complimentLabel.numberOfLines = 0
             complimentLabel.lineBreakMode = .byWordWrapping
 
-            let compliments = ["🌏", "🇧🇷", "🇸🇰", "🇯🇵", "🇰🇷", "Great job!", "You're doing fantastic!", "New Year New Me", "Juiced up", "You're making progress!", "🍾 Sparkling! 🍾", "Resolutions here I come!", "Bring productive in style", "??¿¿??", "!!¡¡!!", "Ɑ+˥˥ ⱭⱭ ", "EE¡¡ƎƎ¡¡EE",  "<0>___<0>", ";-)", ">:)", ">:D","=^.^=", "(O_O)", "<|-_-|>",  "(◣_◢)"]
+            let compliments = ["🌏", "🇧🇷", "🇸🇰", "🇯🇵", "🇰🇷", "Great job!", "You're doing fantastic!", "New Year New Me", "🧃Juiced up🧃", "You're making progress!", "🍾 Sparkling! 🍾", "Resolutions here I come!", "Bring productive in style", "??¿¿??", "!!¡¡!!", "Ɑ+˥˥ ⱭⱭ ", "EE¡¡ƎƎ¡¡EE",  "<0>___<0>", ";-)", ">:)", ">:D","=^.^=", "(O_O)", "<|-_-|>",  "(◣_◢)"]
             let randomIndex = Int.random(in: 0..<compliments.count)
             complimentLabel.text = compliments[randomIndex]
             complimentLabel.font = UIFont(name: selectedFont ?? "Chalkduster", size: 30.0)
@@ -862,19 +862,32 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
     }
     
     @IBAction func SHOP_Button(_ sender: UIButton) {
-            medium_haptic.impactOccurred()
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let secondViewController = storyboard.instantiateViewController(withIdentifier: "Shop")
-            present(secondViewController, animated: true)
-            guard let soundURL = Bundle.main.url(forResource: "ComputerAlert", withExtension: "wav") else { return }
-            do {
-                Extra_sounds = try AVAudioPlayer(contentsOf: soundURL)
-                Extra_sounds?.prepareToPlay()
-                Extra_sounds?.volume = 0.7
-                Extra_sounds?.play()
-            } catch {
+        medium_haptic.impactOccurred()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let secondViewController = storyboard.instantiateViewController(withIdentifier: "Shop")
+        present(secondViewController, animated: true)
+        
+        guard let soundURL = Bundle.main.url(forResource: "ComputerAlert", withExtension: "wav") else { return }
+        do {
+            Extra_sounds = try AVAudioPlayer(contentsOf: soundURL)
+            Extra_sounds?.prepareToPlay()
+            Extra_sounds?.volume = 0.7
+            Extra_sounds?.play()
+        } catch {
+        }
+        
+        if !paying_customer {
+            SubscriptionView().purchaseSubscription()
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+                if !paying_customer {
+                    SubscriptionView().purchaseSubscription()
+                }
             }
         }
+    }
+
+
 
     public override func viewDidLoad() {
         super.viewDidLoad()

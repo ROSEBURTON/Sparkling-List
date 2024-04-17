@@ -489,9 +489,7 @@ public override func viewDidAppear(_ animated: Bool) {
     public override func viewDidLoad() {
         super.viewDidLoad()
         
-        if !paying_customer {
-            SubscriptionView().purchaseSubscription()
-        }
+
         
 
         FontSelection.delegate = self
