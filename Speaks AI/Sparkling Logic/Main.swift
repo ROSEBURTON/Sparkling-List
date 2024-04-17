@@ -110,7 +110,9 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
         "You will never find time for anything. If you want time, you must make it - Charles Buxton",
         "Your body is the goverment of your cells, use it wisely to navigate life",
         "Get to your sparkling list and get those sour ice cubes movin'",
-        "Being open to change allows for significant shifts in your circumstances."
+        "Being open to change allows for significant shifts in your circumstances.",
+        "It's never too late to be what you might have been.",
+        "The only thing standing between you and your goal is the story you keep telling yourself as to why you can't achieve it."
     ].sorted() // Money buys choices https://youtu.be/H2z1MiZr0a4 44:09 ish
     
     @IBOutlet weak var The_Primal_Dexxacon: UIImageView!
