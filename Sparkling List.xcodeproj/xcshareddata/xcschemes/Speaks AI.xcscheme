@@ -81,7 +81,7 @@
          </AdditionalOption>
       </AdditionalOptions>
       <StoreKitConfigurationFileReference
-         identifier = "../../../../cashes.storekit">
+         identifier = "../../Speaks AI/Sparkling Logic/CustomersWelcome.storekit">
       </StoreKitConfigurationFileReference>
    </LaunchAction>
    <ProfileAction

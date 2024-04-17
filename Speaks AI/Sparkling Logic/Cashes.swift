@@ -30,17 +30,19 @@ struct SubscriptionView: View {
                 subscriptionStatus = "In-app purchases are not enabled on this device."
                 return
             }
-            //
-            let productID = "Ecocapsule5K" // VAE5K // SparklingChromeProductID Gradiations Ecocapsule5K
-            guard let product = getProduct(withIdentifier: productID) else {
-                subscriptionStatus = "Subscription product not found."
-                return
-            }
             
-            let payment = SKPayment(product: product)
-            SKPaymentQueue.default().add(payment)
+            let productID = "Ecocapsule5K" //  // VAE5K // SparklingChromeProductID Ecocapsule5K AUser
+            if let product = getProduct(withIdentifier: productID) {
+                print("Product ID \(productID) found.")
+                let payment = SKPayment(product: product)
+                SKPaymentQueue.default().add(payment)
+            } else {
+                print("Product ID \(productID) not found.")
+                subscriptionStatus = "Subscription product not found."
+            }
         }
     }
+
 
     func getProduct(withIdentifier productID: String) -> SKProduct? {
         for product in StoreManager.shared.availableProducts {

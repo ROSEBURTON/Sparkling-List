@@ -187,6 +187,7 @@
 		4FD479742AFDAF0B001D7848 /* Speaks AI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Speaks AI.entitlements"; sourceTree = "<group>"; };
 		4FD5E8172B8D583600558742 /* Sunday.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = Sunday.gif; path = ../../../../PIXELS/Sunday.gif; sourceTree = "<group>"; };
 		4FDF4AD62BBE40F0009FEC16 /* Sparkling List.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Sparkling List.entitlements"; sourceTree = "<group>"; };
+		4FEA71432BD0706D00407105 /* CustomersWelcome.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = CustomersWelcome.storekit; sourceTree = "<group>"; };
 		4FED9B182AB8FB1700B84552 /* Sparkling Status Signal.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Sparkling Status Signal.mp3"; sourceTree = "<group>"; };
 		4FED9B222AB905FD00B84552 /* Miss Computer Email.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Miss Computer Email.mp3"; sourceTree = "<group>"; };
 		4FED9B242AB9068C00B84552 /* Cybernetic Models.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Cybernetic Models.mp3"; sourceTree = "<group>"; };
@@ -303,6 +304,7 @@
 				4FB1F1062BCB4E09000A09F9 /* Shopping.swift */,
 				4FB1F1072BCB4E09000A09F9 /* Soda_Gradient.swift */,
 				4F9636FC2BCC1E0F001446F8 /* Cashes.swift */,
+				4FEA71432BD0706D00407105 /* CustomersWelcome.storekit */,
 			);
 			path = "Sparkling Logic";
 			sourceTree = "<group>";
