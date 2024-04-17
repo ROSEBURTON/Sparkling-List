@@ -152,6 +152,7 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
     ]
 
     // MARK: ACTIONS LOGIC
+
     var years_actions_goal: Int {
         let calendar = Calendar.current
         let currentDayOfYear = calendar.ordinality(of: .day, in: .year, for: Date()) ?? 1
@@ -161,35 +162,45 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
     }
 
     var you_should_be_at_goal: Int {
-        if UserDefaults.standard.object(forKey: "InstallationDate") == nil {
-            UserDefaults.standard.set(Date(), forKey: "InstallationDate")
+        func remainingActionsInYear(fromDay day: Int, inYear year: Int) -> Int {
+            let remainingDays = year - day + 1
+            return remainingDays * 50
+        }
+
+        let dayOfTheYear = 106 // Change this number to simulate different scenarios
+        let daysInYear = 365 // Assuming 365 days in a year
+        
+        // Calculate remaining actions in the year from the specified day
+        let remainingActions = remainingActionsInYear(fromDay: dayOfTheYear, inYear: daysInYear)
+
+        print("Remaining actions in the year from day \(dayOfTheYear) (assuming \(daysInYear) days in a year):", remainingActions)
+
+        if UserDefaults.standard.object(forKey: "InstallationDates") == nil {
+            UserDefaults.standard.set(Date(), forKey: "InstallationDates")
         }
         
-        let installationDate = UserDefaults.standard.object(forKey: "InstallationDate") as? Date ?? Date()
-        let daysSinceInstallation = Calendar.current.dateComponents([.day], from: installationDate, to: Date()).day ?? 0
-        let day_actions_goal = self.day_actions_goal_50
-
-//        print("\nNew Year Actions: \(UserDefaults.standard.integer(forKey: "New_Year_Actions"))")
-//        print("Installation Date: \(String(describing: UserDefaults.standard.object(forKey: "InstallationDate")))")
-//        print("Days since installation: \(daysSinceInstallation)")
-//        print("Day Actions Goal 50: \(day_actions_goal_50)\n")
+        let installationDate = UserDefaults.standard.object(forKey: "InstallationDates") as? Date ?? Date()
+        let calendar = Calendar.current
         
+        let currentDayOfYear = calendar.ordinality(of: .day, in: .year, for: Date()) ?? 1
+        let remainingDaysFromToday = 365 - currentDayOfYear + 1
         
+        let actionsFromInstallationTo365thDay = 50 * remainingDaysFromToday
         
-//        // Calculate the date 3 days from now
-//        if let threeDaysFromNow = Calendar.current.date(byAdding: .day, value: 3, to: Date()) {
-//            // Calculate days since installation for the future date
-//            let daysSinceInstallationThreeDaysFromNow = Calendar.current.dateComponents([.day], from: installationDate, to: threeDaysFromNow).day ?? 0
-//            
-//            // Print the value of daysSinceInstallation for the future date
-//            print("Days since installation 3 days from now: \(daysSinceInstallationThreeDaysFromNow)")
-//        } else {
-//            print("Error: Unable to calculate future date.")
-//        }
-
+        let daysSinceInstallation = calendar.dateComponents([.day], from: installationDate, to: Date()).day ?? 0
         
-        return day_actions_goal * daysSinceInstallation
+        // Calculate daily actions goal based on total actions goal
+        let dailyActionsGoal = actionsFromInstallationTo365thDay / remainingDaysFromToday
+        
+        // Calculate the expected actions for today
+        let expectedActionsForToday = dailyActionsGoal * (daysSinceInstallation + 1) // Add 1 because today should be included
+        
+        return expectedActionsForToday
     }
+
+
+
+
 
     var day_actions_goal_50: Int {
         let calendar = Calendar.current
@@ -412,17 +423,17 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
         // ===========================================================
             DispatchQueue.main.async {
                 let gradientView = SodaGradientView(frame: self.view.bounds)
-                gradientView.layer.opacity = Float(opacity)
+                gradientView.layer.opacity = 100 // Float(opacity)
                 gradientView.layer.zPosition = -2
                 gradientView.isUserInteractionEnabled = false
                 self.view.addSubview(gradientView)
             }
             
-            if day_actions_goal_50 == 0 {
-                opacity = 0
-            } else {
-                opacity = CGFloat(points) / CGFloat(day_actions_goal_50)
-            }
+//            if day_actions_goal_50 == 0 {
+//                opacity = 0
+//            } else {
+//                opacity = CGFloat(points) / CGFloat(day_actions_goal_50)
+//            }
             let opacityPercentage = Int(opacity * 100)
             print("\n\n\n\n** Soda Gradient at \(points) of \(day_actions_goal_50)\n**  Soda from 0...1: \(opacity)\n**  Soda Opacity percentage: \(opacityPercentage)%")
             //===========================================================
@@ -1214,7 +1225,7 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
                 } catch {}
             }
         }
-        let pointsLabelText = "Daily capacity resets on: \(TomorrowDateString) \n+\(points) / \(day_actions_goal_50) sparkling waters today"
+        let pointsLabelText = "Daily capacity resets on: \(TomorrowDateString) \n+\(points) / \(day_actions_goal_50) actions today"
         Points_DayLabel.text = pointsLabelText
         guard let cell = tableView.cellForRow(at: indexPath) else { return }
         var tapLocation = cell.contentView.center

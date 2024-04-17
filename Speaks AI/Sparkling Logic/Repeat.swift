@@ -75,7 +75,7 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        Repeat_Counter.text = "\(repeatEntities.count) repeating tasks"
+        Repeat_Counter.text = "\(repeatEntities.count) Repeating Tasks"
         Repeat_Counter.textColor = UIColor.blue
         Repeat_Counter.font = UIFont.boldSystemFont(ofSize:
         Repeat_Counter.font.pointSize)

@@ -139,23 +139,26 @@ public class SHOP: UIViewController, UIPickerViewDataSource, UIPickerViewDelegat
                 }
             } else {
                 print("Background Colors not found in UserDefaults")
+                
             }
         } else {
             print("Colors not found in UserDefaults")
+            cell.textLabel?.textColor = UIColor.white
+            
         }
         if indexPath.row == 0 {
             if let topColorData = UserDefaults.standard.data(forKey: "topColor"),
                let topColor = NSKeyedUnarchiver.unarchiveObject(with: topColorData) as? UIColor {
                    cell.textLabel?.textColor = topColor
                } else {
-                   cell.textLabel?.textColor = UIColor.green
+                   cell.backgroundColor = UIColor.black
                }
         } else {
             if let bottomColorData = UserDefaults.standard.data(forKey: "bottomColor"),
                let bottomColor = NSKeyedUnarchiver.unarchiveObject(with: bottomColorData) as? UIColor {
                    cell.textLabel?.textColor = bottomColor
                } else {
-                   cell.textLabel?.textColor = UIColor.red
+                   cell.backgroundColor = UIColor.black
                }
         }
         return cell
