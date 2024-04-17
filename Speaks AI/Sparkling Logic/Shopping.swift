@@ -176,13 +176,9 @@ public class SHOP: UIViewController, UIPickerViewDataSource, UIPickerViewDelegat
             saveColorToUserDefaults(color: selectedColor, forKey: key)
             print("\(sender.accessibilityLabel ?? "") Color: \(String(describing: selectedColor))")
         }
-
             print("You have changed the preview list but you are not a paying customer and so the changes do not apply to the main list")
             Preview_List.reloadData()
-        
-
     }
-
 
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

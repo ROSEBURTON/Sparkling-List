@@ -850,25 +850,14 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
                 }
             }
         }
-        
     }
 
     @objc func auto_add_repeating_cells() {
         duration_math()
     }
-    
 
-    
-    @IBAction func Technologies(_ sender: UIButton) {
-        medium_haptic.impactOccurred()
-        Clicky()
-    }
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
         let footerView = UIView(frame: CGRect(x: 0, y: 0, width: Repeat_tableview.frame.width, height: 20))
         footerView.backgroundColor = .clear
         Repeat_tableview.tableFooterView = footerView
@@ -1063,7 +1052,6 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
             notifier_timeInterval = 60
         }
     }
-
 }
 
 extension Repeat: UITextFieldDelegate {

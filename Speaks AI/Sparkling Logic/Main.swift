@@ -6,9 +6,6 @@ import Foundation
 import CoreMotion
 import AVFoundation
 
-
-// SKU Unique ID for app : NextGenConnectsSwaruu
-
 // Scroll Views:
 //MEMORIZE FROM MAIN LIST:
 // scroll view at 0 , 0 , 0 , 0. Add 4 constraints (SCROLL VIEW 4)
