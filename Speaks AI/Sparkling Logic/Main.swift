@@ -27,14 +27,24 @@ import AVFoundation
  
  Guideline 2.1 - Information Needed
  --------------------------------------------------
+ Q: What does the MIX button do?
+ A: I will submit a new build with the app rejection reasons resolved
+ and if an app user is unsubscribed they may click the MIX button
+ to shuffle the order of tasks in their to-do list like a deck of cards.
+ 
+ If the user is subscribed the MIX button will then not only shuffle
+ the order of tasks but also randomly select the following for the
+ user's to do list: Random FONT, TEXT COLOR, and BACKGROUND COLOR
  
  Guideline 4.0 - Design
  --------------------------------
- 
+ The content for the IPad has been fixed so that all interactive elements are accessible and visible.
+
  Guideline 4.3(a) - Design - Spam
  ----------------------------------------------
  I have removed selected the option "None" for Country or Region Availability and now
- it should not be available on any storefronts within 24 hours.
+ it should not be available on any storefronts within 24 hours. I can see that for my app Speaks AI
+ it says: "Removed from App Store"
  */
 
 // Remove the script
