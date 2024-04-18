@@ -382,7 +382,8 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
                 cell.backgroundColor = Gradient_Changing_Background_Cells
             }
         } else {
-            
+            cell.backgroundColor = UIColor(red: 0.0, green: 0.3, blue: 0.0, alpha: 1.0)
+            cell.textLabel?.textColor = UIColor.white
         }
         return cell
     }

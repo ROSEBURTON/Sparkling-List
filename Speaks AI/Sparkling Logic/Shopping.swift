@@ -151,14 +151,16 @@ public class SHOP: UIViewController, UIPickerViewDataSource, UIPickerViewDelegat
                let topColor = NSKeyedUnarchiver.unarchiveObject(with: topColorData) as? UIColor {
                    cell.textLabel?.textColor = topColor
                } else {
-                   cell.backgroundColor = UIColor.black
+                   cell.backgroundColor = UIColor(red: 0.0, green: 0.3, blue: 0.0, alpha: 1.0)
+                   cell.textLabel?.textColor = UIColor.white
                }
         } else {
             if let bottomColorData = UserDefaults.standard.data(forKey: "bottomColor"),
                let bottomColor = NSKeyedUnarchiver.unarchiveObject(with: bottomColorData) as? UIColor {
                    cell.textLabel?.textColor = bottomColor
                } else {
-                   cell.backgroundColor = UIColor.black
+                   cell.backgroundColor = UIColor(red: 0.0, green: 0.3, blue: 0.0, alpha: 1.0)
+                   cell.textLabel?.textColor = UIColor.white
                }
         }
         return cell

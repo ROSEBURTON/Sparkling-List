@@ -23,6 +23,20 @@ import AVFoundation
  git push -u origin main
  */
 
+/*
+ 
+ Guideline 2.1 - Information Needed
+ --------------------------------------------------
+ 
+ Guideline 4.0 - Design
+ --------------------------------
+ 
+ Guideline 4.3(a) - Design - Spam
+ ----------------------------------------------
+ I have removed selected the option "None" for Country or Region Availability and now
+ it should not be available on any storefronts within 24 hours.
+ */
+
 // Remove the script
 var opacity: CGFloat = 100
 class Main_Cells: UITableViewCell {
@@ -243,14 +257,14 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
     
     @IBAction func Mixing_Dough(_ sender: UIButton) {
         playSound()
-        if paying_customer {
+        //if paying_customer {
             saveRandomColor(forKey: "topColor")
             saveRandomColor(forKey: "bottomColor")
             saveRandomBackgroundColor(forKey: "Top_selected_Background")
             saveRandomBackgroundColor(forKey: "Bottom_selected_Background")
             saveRandomSound()
             selectRandomFont()
-    }
+    //}
         Combined_missions.shuffle()
         saveData()
         tableView.reloadData()
@@ -435,10 +449,10 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
         
         Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { [weak self] _ in
             guard let self = self else { return }
-            if paying_customer {
-                print("Subscriber")
-                SubscriptionView().purchaseSubscription()
-            }
+//            if paying_customer {
+//                print("Subscriber")
+//                SubscriptionView().purchaseSubscription()
+//            }
             
             self.ColorProgress += 0.03
             if self.ColorProgress > 1.0 {
@@ -876,15 +890,15 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
         } catch {
         }
         
-        if !paying_customer {
-            SubscriptionView().purchaseSubscription()
-
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
-                if !paying_customer {
-                    SubscriptionView().purchaseSubscription()
-                }
+        //        if !paying_customer {
+        //            SubscriptionView().purchaseSubscription()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+            if !paying_customer {
+                SubscriptionView().purchaseSubscription()
             }
         }
+    //}
     }
 
 
@@ -1059,6 +1073,9 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
                         cell.backgroundColor = Gradient_Changing_Background_Cells
                     }
                 }
+            } else {
+                cell.backgroundColor = UIColor(red: 0.0, green: 0.3, blue: 0.0, alpha: 1.0)
+                cell.textLabel?.textColor = UIColor.white
             }
 
             cell.textLabel?.numberOfLines = 0
@@ -1224,7 +1241,7 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
                 } catch {}
             }
         } else {
-            if let mp3URL = Bundle.main.url(forResource: "Fart", withExtension: "mp3") {
+            if let mp3URL = Bundle.main.url(forResource: "Chalkboard", withExtension: "wav") {
                 do {
                     Extra_sounds = try AVAudioPlayer(contentsOf: mp3URL)
                     Extra_sounds?.prepareToPlay()

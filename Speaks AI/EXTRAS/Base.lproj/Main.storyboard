@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
@@ -15,7 +15,7 @@
             <objects>
                 <viewController title="Main" id="BYZ-38-t0r" customClass="Main" customModule="Sparkling_List" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="The Primal Dexxacon.gif" translatesAutoresizingMaskIntoConstraints="NO" id="ayR-m1-e5E">
@@ -279,10 +279,10 @@
                                                 <color key="separatorColor" name="WidgetBackground"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Repeat_Cell" id="6x6-Zm-2ay" customClass="Repeat_Cells" customModule="Sparkling_List" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="50" width="355" height="43.666667938232422"/>
+                                                        <rect key="frame" x="0.0" y="50" width="355" height="43.5"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6x6-Zm-2ay" id="ZyQ-ql-gmV">
-                                                            <rect key="frame" x="0.0" y="0.0" width="355" height="43.666667938232422"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="355" height="43.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </tableViewCellContentView>
@@ -409,10 +409,10 @@
                                                 <color key="separatorColor" name="WidgetBackground"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PreviewID" id="BYb-xV-jLC" customClass="Shopping_Cells" customModule="Sparkling_List" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="50" width="276" height="43.666667938232422"/>
+                                                        <rect key="frame" x="0.0" y="50" width="276" height="43.5"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BYb-xV-jLC" id="WCG-2d-XDe">
-                                                            <rect key="frame" x="0.0" y="0.0" width="276" height="43.666667938232422"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="276" height="43.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </tableViewCellContentView>
