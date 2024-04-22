@@ -150,7 +150,7 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
         if let message = Type_Notify_Message.text, !message.isEmpty {
             UserDefaults.standard.set(message, forKey: "notificationText")
             let content = UNMutableNotificationContent()
-            let emojis = ["⚡", "⛈️", "🦋", "🛸", "🎉", "💎", "👽", "🥷", "🪐", "🧧", "✈️", "🛩️"]
+            let emojis = ["⚡", "⛈️", "🦋", "🎉", "💎", "🥷", "🧧", "✈️", "🛩️", "🛸🐆", "⚔️🐅"]
             let randomLeftEmoji = emojis.randomElement() ?? ""
             let randomRightEmoji = emojis.randomElement() ?? ""
             if let dailyInteger = UserDefaults.standard.value(forKey: "points") as? Int {

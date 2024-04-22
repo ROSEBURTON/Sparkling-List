@@ -1,10 +1,13 @@
 import UIKit
+import AVKit
 import SwiftUI
 import StoreKit
 import CoreData
 import Foundation
 import CoreMotion
 import AVFoundation
+
+
 
 // Scroll Views:
 //MEMORIZE FROM MAIN LIST:
@@ -24,27 +27,7 @@ import AVFoundation
  */
 
 /*
- 
- Guideline 2.1 - Information Needed
- --------------------------------------------------
- Q: What does the MIX button do?
- A: I will submit a new build with the app rejection reasons resolved
- and if an app user is unsubscribed they may click the MIX button
- to shuffle the order of tasks in their to-do list like a deck of cards.
- 
- If the user is subscribed the MIX button will then not only shuffle
- the order of tasks but also randomly select the following for the
- user's to do list: Random FONT, TEXT COLOR, and BACKGROUND COLOR
- 
- Guideline 4.0 - Design
- --------------------------------
- The content for the IPad has been fixed so that all interactive elements are accessible and visible.
 
- Guideline 4.3(a) - Design - Spam
- ----------------------------------------------
- I have removed selected the option "None" for Country or Region Availability and now
- it should not be available on any storefronts within 24 hours. I can see that for my app Speaks AI
- it says: "Removed from App Store"
  */
 
 // Remove the script
@@ -102,7 +85,6 @@ var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
 class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, NSFetchedResultsControllerDelegate, SKStoreProductViewControllerDelegate, AVAudioPlayerDelegate, AVSpeechSynthesizerDelegate {
     let motivators = [
         "Write your to dread list containing everything you probably should do but really don't want to - Chris Guillebeau",
-        "Strive for high ethics and know your enemy well, as an immune cell",
         "Change your life trajectory",
         "Do it now. Sometimes later becomes never.",
         "The future depends on what you do today. - Mahatma Gandhi",
@@ -120,14 +102,12 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
         "You Don't Reap What You Don't Sow",
         "We look for distraction to escape an uncomfortable emotional sensation. Are you addressing or avoiding? - Nir Eyal",
         "Send negativity packing and ensure undesired thoughts don't live rent-free in your mind or range of influence.",
-        "Some viruses and bacteria have developed ways to suppress the immune response of the host. Including silencing the cells by interfering with cell communication to avoid detection by immune cells like T cells. True peace for the host can only be attained when the root cause is properly identified and addressed, rather than just treating the theater of symptoms. Although, the invaders are the ones who do not own the host.",
-        "Know the right form to take and methods to use to be relatable and understood",
+        "Some viruses and bacteria have developed ways to suppress the immune response of the host. Including silencing the cells by interfering with cell communication to avoid detection by immune cells like T cells. The root cause should be identified and addressed instead of symptoms in disguise.",
         "What are you going to do about the life you want?",
         "International, interplanetary, interstellar",
         "Time is a created thing. To say I don't have time, is like saying, I don't want to - Lao Tzu",
         "You will never find time for anything. If you want time, you must make it - Charles Buxton",
         "Your body is the goverment of your cells, use it wisely to navigate life",
-        "Being open to change allows for significant shifts in your circumstances.",
         "It's never too late to be what you might have been.",
         "The only thing standing between you and your goal is the story you keep telling yourself as to why you can't achieve it."
     ].sorted() // Money buys choices https://youtu.be/H2z1MiZr0a4 44:09 ish
@@ -189,35 +169,21 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
             let remainingDays = year - day + 1
             return remainingDays * 50
         }
-
-        let dayOfTheYear = 106 // Change this number to simulate different scenarios
-        let daysInYear = 365 // Assuming 365 days in a year
-        
-        // Calculate remaining actions in the year from the specified day
-        let remainingActions = remainingActionsInYear(fromDay: dayOfTheYear, inYear: daysInYear)
-
-        print("Remaining actions in the year from day \(dayOfTheYear) (assuming \(daysInYear) days in a year):", remainingActions)
-
+        let scenario_day_of_365 = 106 // Change this number to simulate different scenarios
+        let daysInYear = 365
+        let remainingActions = remainingActionsInYear(fromDay: scenario_day_of_365, inYear: daysInYear)
+        print("Remaining actions in the year from day \(scenario_day_of_365) (assuming \(daysInYear) days in a year):", remainingActions)
         if UserDefaults.standard.object(forKey: "InstallationDates") == nil {
             UserDefaults.standard.set(Date(), forKey: "InstallationDates")
         }
-        
         let installationDate = UserDefaults.standard.object(forKey: "InstallationDates") as? Date ?? Date()
         let calendar = Calendar.current
-        
         let currentDayOfYear = calendar.ordinality(of: .day, in: .year, for: Date()) ?? 1
         let remainingDaysFromToday = 365 - currentDayOfYear + 1
-        
         let actionsFromInstallationTo365thDay = 50 * remainingDaysFromToday
-        
         let daysSinceInstallation = calendar.dateComponents([.day], from: installationDate, to: Date()).day ?? 0
-        
-        // Calculate daily actions goal based on total actions goal
         let dailyActionsGoal = actionsFromInstallationTo365thDay / remainingDaysFromToday
-        
-        // Calculate the expected actions for today
-        let expectedActionsForToday = dailyActionsGoal * (daysSinceInstallation + 1) // Add 1 because today should be included
-        
+        let expectedActionsForToday = dailyActionsGoal * (daysSinceInstallation + 1)
         return expectedActionsForToday
     }
 
@@ -259,25 +225,26 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
         }
     // MARK: ACTIONS LOGIC
     
-    
     func calculateDayActions_to_meet_goal(newYearActions: Int, remainingDays: Int) -> Int {
         let remainingActions = max(years_actions_goal - newYearActions, 0)
         return remainingActions / max(remainingDays, 1)
     }
     
+    @IBOutlet weak var RED_MIX: UIImageView!
     @IBAction func Mixing_Dough(_ sender: UIButton) {
-        playSound()
-        //if paying_customer {
+            playSound()
             saveRandomColor(forKey: "topColor")
             saveRandomColor(forKey: "bottomColor")
             saveRandomBackgroundColor(forKey: "Top_selected_Background")
             saveRandomBackgroundColor(forKey: "Bottom_selected_Background")
             saveRandomSound()
             selectRandomFont()
-    //}
-        Combined_missions.shuffle()
-        saveData()
-        tableView.reloadData()
+        if Combined_missions.count > 1 {
+            Combined_missions.shuffle()
+        }
+            saveData()
+            tableView.reloadData()
+            RED_MIX.alpha = 1.0
     }
 
     func playSound() {
@@ -422,7 +389,7 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
         rainbowTimer = Timer.scheduledTimer(timeInterval: transitionDuration, target: self, selector: #selector(Sparkling_Label_Color_Status), userInfo: nil, repeats: true)
         let currentPoints = self.points
         The_Primal_Dexxacon.layer.zPosition = -1
-        let pointsLabelText = "Daily capacity resets on: \(TomorrowDateString) \n+\(currentPoints) / \(day_actions_goal_50) sparkling waters today"
+        let pointsLabelText = "+\(currentPoints) / \(day_actions_goal_50) accomplishments today\n Resets on: \(TomorrowDateString)"
         Points_DayLabel.text = pointsLabelText
         Song_Radio?.play()
     }
@@ -459,10 +426,11 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
         
         Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { [weak self] _ in
             guard let self = self else { return }
-//            if paying_customer {
-//                print("Subscriber")
-//                SubscriptionView().purchaseSubscription()
-//            }
+            if Combined_missions.count < 2 {
+                RED_MIX.alpha = 0.1
+            } else {
+                RED_MIX.alpha = 1.0
+            }
             
             self.ColorProgress += 0.03
             if self.ColorProgress > 1.0 {
@@ -476,6 +444,7 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
             self?.Current_Companion()
             Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { [weak self] _ in
                 guard let self = self else { return }
+
                 Current_Companion()
                 let defaults = UserDefaults.standard
                 var tomorrowDate = defaults.object(forKey: "tomorrowDate") as? Date
@@ -606,7 +575,7 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
     }
     
     var colorTransitionTimer: Timer?
-    let radio_colors: [UIColor] = [.red, .red, .blue, .green, .yellow, .systemMint]
+    let radio_colors: [UIColor] = [.red, .red, .blue, .blue, .green, .green, .yellow]
     
     func attributedText(with text: String) -> NSAttributedString {
         let attributedString = NSMutableAttributedString(string: text)
@@ -706,7 +675,6 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
     }
 
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
-            //var tapLocation = sender.location(in: view)
             let complimentLabel = UILabel()
             complimentLabel.textAlignment = .center
             complimentLabel.textColor = UIColor.systemPink
@@ -716,7 +684,7 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
             complimentLabel.numberOfLines = 0
             complimentLabel.lineBreakMode = .byWordWrapping
 
-            let compliments = ["🌏", "🇧🇷", "🇸🇰", "🇯🇵", "🇰🇷", "Great job!", "You're doing fantastic!", "New Year New Me", "🧃Juiced up🧃", "You're making progress!", "🍾 Sparkling! 🍾", "Resolutions here I come!", "Bring productive in style", "??¿¿??", "!!¡¡!!", "Ɑ+˥˥ ⱭⱭ ", "EE¡¡ƎƎ¡¡EE",  "<0>___<0>", ";-)", ">:)", ">:D","=^.^=", "(O_O)", "<|-_-|>",  "(◣_◢)"]
+            let compliments = ["🌏", "🇧🇷", "🇸🇰", "🇯🇵", "🇰🇷", "Great job!", "You're doing fantastic!", "New Year New Me", "🧃Juiced up🧃", "You're making progress!", "🍾 Sparkling! 🍾", "Resolutions here I come!", "Bring productive in style", "??¿¿??", "!!¡¡!!", "Ɑ+˥˥ ⱭⱭ ", "EE¡¡ƎƎ¡¡EE",  "<0>___<0>", ";-)", "=^.^=", "(O_O)", "<|-_-|>",  "(◣_◢)"]
             let randomIndex = Int.random(in: 0..<compliments.count)
             complimentLabel.text = compliments[randomIndex]
             complimentLabel.font = UIFont(name: selectedFont ?? "Chalkduster", size: 30.0)
@@ -812,12 +780,17 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
     }
     
     var motionManager = CMMotionManager()
+    var listDeletionSound: AVAudioPlayer?
+    var isAppActive = true
+
     func startMotionDetection() {
         guard motionManager.isDeviceMotionAvailable else { return }
         motionManager.deviceMotionUpdateInterval = 1
         motionManager.startDeviceMotionUpdates(to: .main) { [weak self] (motion, error) in
             guard let gravity = motion?.gravity else { return }
 
+            guard self?.isAppActive ?? true else { return }
+            
             let isTippingLeft = gravity.x > 0.7
             let isTippingRight = gravity.x < -0.7
             let soundFile = isTippingLeft ? "Pour Drank" : (isTippingRight ? "Ice" : nil)
@@ -826,25 +799,32 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
             if let file = soundFile, let mp3URL = Bundle.main.url(forResource: file, withExtension: "wav") {
                 print("Currently tipping")
                 do {
-                    list_deletion_sound = try AVAudioPlayer(contentsOf: mp3URL)
-                    list_deletion_sound?.prepareToPlay()
-                    list_deletion_sound?.volume = 0.3
-                    list_deletion_sound?.play()
+                    self?.listDeletionSound = try AVAudioPlayer(contentsOf: mp3URL)
+                    self?.listDeletionSound?.prepareToPlay()
+                    self?.listDeletionSound?.volume = 0.3
+                    self?.listDeletionSound?.play()
                 } catch {
+                    print("Error playing sound: \(error)")
                 }
                 if shuffleList {
                     Combined_missions.shuffle()
                 }
             }
         }
+
+        NotificationCenter.default.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(appMovedToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+    }
+
+    @objc func appMovedToBackground() {
+        isAppActive = false
+    }
+
+    @objc func appMovedToForeground() {
+        isAppActive = true
     }
     
     func showBlurredImage() {
-        let activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
-        activityIndicator.center = CGPoint(x: view.bounds.midX, y: view.bounds.midY)
-        view.addSubview(activityIndicator)
-        activityIndicator.startAnimating()
-
         let blackView = UIView(frame: view.bounds)
         blackView.backgroundColor = .black
         blackView.layer.zPosition = 2
@@ -865,13 +845,10 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
         imageView.alpha = 1.0
         blurEffectView.alpha = 0.0
         blackView.alpha = 1.0
-        activityIndicator.alpha = 1.0
 
         UIView.animate(withDuration: 7.0, animations: {
             imageView.alpha = 0.0
             blurEffectView.alpha = 1.0
-            activityIndicator.alpha = 0.0
-            activityIndicator.center.y -= 300
         })
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
@@ -887,9 +864,15 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
     
     @IBAction func SHOP_Button(_ sender: UIButton) {
         medium_haptic.impactOccurred()
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let secondViewController = storyboard.instantiateViewController(withIdentifier: "Shop")
-        present(secondViewController, animated: true)
+        if !paying_customer {
+            let SEDU = UIStoryboard(name: "Main", bundle: nil)
+            let unsubscribed_controller = SEDU.instantiateViewController(withIdentifier: "SEDU")
+            present(unsubscribed_controller, animated: true)
+        } else {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let shopViewController = storyboard.instantiateViewController(withIdentifier: "Shop")
+            present(shopViewController, animated: true)
+        }
         
         guard let soundURL = Bundle.main.url(forResource: "ComputerAlert", withExtension: "wav") else { return }
         do {
@@ -899,16 +882,6 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
             Extra_sounds?.play()
         } catch {
         }
-        
-        //        if !paying_customer {
-        //            SubscriptionView().purchaseSubscription()
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
-            if !paying_customer {
-                SubscriptionView().purchaseSubscription()
-            }
-        }
-    //}
     }
 
 
@@ -924,8 +897,12 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
             _ = try context.fetch(request)
         } catch {
         }
-
         
+
+           
+        
+        print("The number of missions")
+        print(Combined_missions.count)
         timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(refresh), userInfo: nil, repeats: true)
         GifPlayer().PlayGif(named: "The Primal Dexxacon", within: The_Primal_Dexxacon)
         GifPlayer().PlayGif(named: "Volume", within: Volume_Bars)
@@ -1166,7 +1143,7 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
     func slideUpAndFadeOutAndDeleteCell(at indexPath: IndexPath, in tableView: UITableView) {
         UIView.animate(withDuration: 0.3, animations: {
             let cell = tableView.cellForRow(at: indexPath)
-            cell?.transform = CGAffineTransform(translationX: 0, y: -(cell?.frame.height ?? 100) ?? 0)
+            cell?.transform = CGAffineTransform(translationX: 0, y: -(cell?.frame.height ?? 100))
             cell?.alpha = 0.0
         }) { _ in
             let cell = tableView.cellForRow(at: indexPath)
@@ -1262,7 +1239,7 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
                 } catch {}
             }
         }
-        let pointsLabelText = "Daily capacity resets on: \(TomorrowDateString) \n+\(points) / \(day_actions_goal_50) actions today"
+        let pointsLabelText = "+\(points) / \(day_actions_goal_50) accomplishments today\n Resets on: \(TomorrowDateString)"
         Points_DayLabel.text = pointsLabelText
         guard let cell = tableView.cellForRow(at: indexPath) else { return }
         var tapLocation = cell.contentView.center
@@ -1337,10 +1314,11 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
         "For your perception",
         "Outcome Visualization",
         "Learn in mutual symbiosis",
-        "Attack one-location stagnation",
         "International Support",
-        "International Healing",
-        "For International Exposure"
+        "International Exposure Support",
+        "For International Exposure",
+        "Live in variety",
+        "Expose to variety"
     ]
     var selectedPlaceholders = Set<String>()
     

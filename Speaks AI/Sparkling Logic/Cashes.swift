@@ -1,4 +1,5 @@
 import SwiftUI
+import PassKit
 import StoreKit
 
 struct SubscriptionView: View {
@@ -23,15 +24,23 @@ struct SubscriptionView: View {
         .navigationBarTitle("Subscription")
     }
     
+    func restorePurchases() {
+        SKPaymentQueue.default().restoreCompletedTransactions()
+    }
+
+    
+
+    
     func purchaseSubscription() {
-        print("Paying customer status: \(paying_customer)")
+        restorePurchases()
+
         if !paying_customer {
             if !SKPaymentQueue.canMakePayments() {
                 subscriptionStatus = "In-app purchases are not enabled on this device."
                 return
             }
             
-            let productID = "Ecocapsule5K" //  // VAE5K // SparklingChromeProductID Ecocapsule5K AUser
+            let productID = "Ecocapsule5K"
             if let product = getProduct(withIdentifier: productID) {
                 print("Product ID \(productID) found.")
                 let payment = SKPayment(product: product)
@@ -56,7 +65,6 @@ struct SubscriptionView: View {
 
 class StoreManager: NSObject, ObservableObject, SKPaymentTransactionObserver {
     static let shared = StoreManager()
-    
     @Published var availableProducts: [SKProduct] = []
     
     override private init() {
@@ -76,6 +84,7 @@ class StoreManager: NSObject, ObservableObject, SKPaymentTransactionObserver {
         print("Error fetching products: \(error.localizedDescription)")
     }
     
+    
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         for transaction in transactions {
             switch transaction.transactionState {
@@ -83,18 +92,26 @@ class StoreManager: NSObject, ObservableObject, SKPaymentTransactionObserver {
                 print("You are a customer")
                 SKPaymentQueue.default().finishTransaction(transaction)
                 paying_customer = true
+                // Save paying_customer status to Keychain
+                savePayingCustomerToKeychain()
             case .failed:
-                print("You are NOT a customer")
+                print("Transaction failed")
                 SKPaymentQueue.default().finishTransaction(transaction)
                 paying_customer = false
             case .deferred, .purchasing:
-                print("You deferred payment")
-                break
+                print("Transaction in progress or deferred")
             @unknown default:
-                break
+                print("Unknown transaction state")
             }
         }
     }
+
+    func savePayingCustomerToKeychain() {
+        // Save paying_customer status to Keychain
+        KeychainService.savePayingCustomerStatus(true)
+    }
+
+
 }
 
 extension StoreManager: SKProductsRequestDelegate {
@@ -110,3 +127,36 @@ struct SubscriptionView_Previews: PreviewProvider {
         SubscriptionView()
     }
 }
+
+//    func createPass() {
+//        let passLibrary = PKPassLibrary()
+//
+//        if PKPassLibrary.isPassLibraryAvailable() {
+//            let pass = PKPass()
+//            let passTypeIdentifier = "your.pass.identifier"
+//            let serialNumber = "123456"
+//
+//            // Initialize pass information
+//            let passInformation = [
+//                "organizationName": "Sparkling List",
+//                "teamIdentifier": "Sparkling-List",
+//                "passTypeIdentifier": passTypeIdentifier,
+//                "serialNumber": serialNumber,
+//                // Add more pass information as needed
+//            ]
+//
+//            // Encode pass information
+//            let passData = try! NSKeyedArchiver.archivedData(withRootObject: passInformation, requiringSecureCoding: true)
+//
+//            // Add pass to pass library
+//            passLibrary.addPasses([passData]) { (result: Bool) in
+//                if result {
+//                    print("Pass added successfully")
+//                } else {
+//                    print("Failed to add pass")
+//                }
+//            }
+//        } else {
+//            print("PassKit is not available")
+//        }
+//    }

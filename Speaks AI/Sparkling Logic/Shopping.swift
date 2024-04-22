@@ -3,7 +3,15 @@ import SwiftUI
 import StoreKit
 import CoreData
 import Foundation
+import MessageUI
 import AVFoundation
+
+// Scroll Views:
+//MEMORIZE FROM MAIN LIST:
+// scroll view at 0 , 0 , 0 , 0. Add 4 constraints (SCROLL VIEW 4)
+// mini view contraints 0 , 0 , 0 , 0, specify height of SHOP. Add 5 constraints (MINI 5)
+// mini view control drag to main view , equal widths, equal heights (MINI DRAG)
+// 1800
 
 class Shopping_Cells: UITableViewCell {
     override func layoutSubviews() {
@@ -23,23 +31,31 @@ class Shopping_Cells: UITableViewCell {
 
 var paying_customer: Bool {
     get {
+        // Load paying_customer status from Keychain
+        if let payingCustomer = KeychainService.loadPayingCustomerStatus() {
+            return payingCustomer
+        }
+        // If paying_customer status is not found in Keychain, fallback to UserDefaults
         return UserDefaults.standard.bool(forKey: "paying_customer")
     }
     set {
-        UserDefaults.standard.set(newValue, forKey: "paying_customer")
+        // Save paying_customer status to Keychain
+        KeychainService.savePayingCustomerStatus(newValue)
     }
 }
+
+
 var selectedFontIndex: Int = 0
 var selectedDeletionIndex: Int = 0
-var deleteSoundOptions = ["@*!+-R", "Bakin' Dat Pizza", "Pink Gladiate Soda", "Big Purr", "Rainbow Chromium Finish", "Carbonation Buzzed Up", "Chalkboard", "Coming Near You", "Cybernetic Models", "Astral Melt", "👁️‍🗨️", "Fart", "Wine Glass", "Gold for Galactic Drinks", "Gyat Chonki-Lonki Party Butt Bounce", "Laser", "Loading Productive Ammo", "Miss Computer Email", "Missile Hit", "Nuclear Ending", "Pleased Observing Mantid", "Productive Prep", "Ready for Takeoff", "Soda Sea Mine", "Sparkling Status Signal", "Green Lime, Sour Pink Splash", "Book burn, discredit,  gas light", "Type Ship", "Pizza Deluxe", "Water Lurk"].sorted()
+var deleteSoundOptions = ["@*!+-R", "Bakin' Dat Pizza", "Pink Gladiate Soda", "Super Big Purr", "Rainbow Chromium Finish", "Thrist Trappin' Soda", "Chalkboard", "Coming Near You", "Cybernetic Models", "Astral Melt", "👁️‍🗨️", "Fart", "Wine Glass", "Gold for Galactic Drinks", "Gyat Chonki-Lonki Party Butt Bounce", "Laser", "Loading Productive Ammo", "Miss Computer Email", "Missile Hit", "Nuclear Ending", "Pleased Observing Mantid", "Productive Prep", "Ready for Takeoff", "Soda Sea Mine", "Sparkling Status Signal", "Green Lime, Sour Pink Splash", "Book burn, discredit,  gas light", "Type Ship", "Pizza Deluxe", "Water Lurk"].sorted()
 
 //Scroll Store:
 // scroll view at 0 , 0 , 0 , 0. Add 4 constraints
 // mini view contraints 0 , 0 , 0 , 0, specify height of SHOP. Add 5 constraints
 // mini view control drag to main view , equal widths, equal heights
-// 1750
+// 1300
 
-public class SHOP: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITableViewDelegate, UITableViewDataSource, SKRequestDelegate, SKPaymentTransactionObserver, SKProductsRequestDelegate {
+public class SHOP: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITableViewDelegate, UITableViewDataSource, SKRequestDelegate, SKPaymentTransactionObserver, SKProductsRequestDelegate, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var Preview_List: UITableView!
     @IBOutlet weak var Top_List_Background_Color: UIColorWell!
     @IBOutlet weak var Bottom_List_Background_Color: UIColorWell!
@@ -73,6 +89,92 @@ public class SHOP: UIViewController, UIPickerViewDataSource, UIPickerViewDelegat
         _ = UserDefaults.standard.data(forKey: "Bottom_selected_Background")
         return 2
     }
+    
+    @IBAction func Contact_Support(_ sender: UIButton) {
+        Clicky()
+        if MFMailComposeViewController.canSendMail() {
+            let mailComposeViewController = MFMailComposeViewController()
+            mailComposeViewController.mailComposeDelegate = self
+            mailComposeViewController.setToRecipients(["cosmonautEBE@gmail.com"])
+            mailComposeViewController.setSubject("Support Request")
+            mailComposeViewController.setMessageBody("Hello, I need some support with your app.", isHTML: false)
+            present(mailComposeViewController, animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(title: "Unable to Send Email for support", message: "Your device is not configured to send emails.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func Privacy_Policy(_ sender: UIButton) {
+        Clicky()
+        guard let privacyPolicyURL = URL(string: "https://docs.google.com/document/d/1xwWv_7OzP-w5mnaCtva0HRoaC81AXQ7DT4c6GCvA0yk/edit?usp=sharing") else {
+            return
+        }
+        UIApplication.shared.open(privacyPolicyURL, options: [:], completionHandler: nil)
+    }
+    
+    @IBAction func Terms_of_Use_EULA(_ sender: UIButton) {
+        Clicky()
+        guard let termsOfUseURL = URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/") else {
+            return
+        }
+        UIApplication.shared.open(termsOfUseURL, options: [:], completionHandler: nil)
+    }
+
+    public func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    func getProduct(withIdentifier productID: String) -> SKProduct? {
+        for product in StoreManager.shared.availableProducts {
+            if product.productIdentifier == productID {
+                return product
+            }
+        }
+        return nil
+    }
+    
+    
+    
+    func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        DispatchQueue.main.async {
+            UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func restorePurchases() {
+        SKPaymentQueue.default().restoreCompletedTransactions()
+    }
+
+    @IBAction func Restore_Purchases(_ sender: UIButton) {
+        Clicky()
+        if !paying_customer {
+            let alert = UIAlertController(title: "Unable to Restore Purchases", message: "You have not made any purchases", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+
+        if KeychainService.loadPayingCustomerStatus() != nil {
+            restorePurchases()
+            KeychainService.savePayingCustomerStatus(true)
+            
+            let alert = UIAlertController(title: "Restoring Subscription", message: "Your subscription has been restored", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            print("Unable to load paying_customer status from Keychain")
+            let alert = UIAlertController(title: "Unable to Restore Purchases", message: "Unable to load subscription status", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+
+
+    
     
     func configurePickerView(with options: [String], for pickerView: UIPickerView) {
         pickerView.dataSource = self
@@ -116,36 +218,42 @@ public class SHOP: UIViewController, UIPickerViewDataSource, UIPickerViewDelegat
         cell.layer.masksToBounds = true
         cell.textLabel?.adjustsFontSizeToFitWidth = true
         if let topColorData = UserDefaults.standard.data(forKey: "topColor"),
-           let bottomColorData = UserDefaults.standard.data(forKey: "bottomColor"),
-           let Top_Background_Color_Data = UserDefaults.standard.data(forKey: "Top_selected_Background"),
-           let Bottom_Background_Color_Data = UserDefaults.standard.data(forKey: "Bottom_selected_Background"),
-           let topColor = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(topColorData) as? UIColor,
-           let bottomColor = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(bottomColorData) as? UIColor {
-            let textColor = topColor.interpolateColorTo(bottomColor, fraction: progress)
-            cell.textLabel?.textColor = textColor
-            let topBackgroundColor = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(Top_Background_Color_Data) as? UIColor
-            let bottomBackgroundColor = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(Bottom_Background_Color_Data) as? UIColor
-            if let topBackgroundColor = topBackgroundColor, let bottomBackgroundColor = bottomBackgroundColor {
+           let topColor = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(topColorData) as? UIColor {
+            // Set text color
+            if let bottomColorData = UserDefaults.standard.data(forKey: "bottomColor"),
+               let bottomColor = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(bottomColorData) as? UIColor {
+                let textColor = topColor.interpolateColorTo(bottomColor, fraction: progress)
+                cell.textLabel?.textColor = textColor
+            } else {
+                cell.textLabel?.textColor = topColor
+            }
+        }
+        
+        // Set background color
+        if let topBackgroundColorData = UserDefaults.standard.data(forKey: "Top_selected_Background") {
+            let topBackgroundColor = NSKeyedUnarchiver.unarchiveObject(with: topBackgroundColorData) as? UIColor
+            if let bottomBackgroundColorData = UserDefaults.standard.data(forKey: "Bottom_selected_Background") {
+                let bottomBackgroundColor = NSKeyedUnarchiver.unarchiveObject(with: bottomBackgroundColorData) as? UIColor
                 if indexPath.row == 0 {
-                    if let topBackgroundColorData = UserDefaults.standard.data(forKey: "Top_selected_Background") {
-                        let topBackgroundColor = NSKeyedUnarchiver.unarchiveObject(with: topBackgroundColorData) as? UIColor
-                        cell.backgroundColor = topBackgroundColor
-                    }
+                    cell.backgroundColor = topBackgroundColor
                 } else if indexPath.row == 1 {
-                    if let bottomBackgroundColorData = UserDefaults.standard.data(forKey: "Bottom_selected_Background") {
-                        let bottomBackgroundColor = NSKeyedUnarchiver.unarchiveObject(with: bottomBackgroundColorData) as? UIColor
-                        cell.backgroundColor = bottomBackgroundColor
-                    }
+                    cell.backgroundColor = bottomBackgroundColor
                 }
             } else {
-                print("Background Colors not found in UserDefaults")
-                
+                cell.backgroundColor = topBackgroundColor
             }
+        } else if let bottomBackgroundColorData = UserDefaults.standard.data(forKey: "Bottom_selected_Background") {
+            let bottomBackgroundColor = NSKeyedUnarchiver.unarchiveObject(with: bottomBackgroundColorData) as? UIColor
+            cell.backgroundColor = bottomBackgroundColor
         } else {
-            print("Colors not found in UserDefaults")
-            cell.textLabel?.textColor = UIColor.white
-            
+            print("Background Colors not found in UserDefaults")
         }
+//
+// else {
+//            print("Colors not found in UserDefaults")
+//            cell.textLabel?.textColor = UIColor.white
+//            
+//        }
         if indexPath.row == 0 {
             if let topColorData = UserDefaults.standard.data(forKey: "topColor"),
                let topColor = NSKeyedUnarchiver.unarchiveObject(with: topColorData) as? UIColor {
@@ -185,10 +293,16 @@ public class SHOP: UIViewController, UIPickerViewDataSource, UIPickerViewDelegat
 
         if let key = senderToUserDefaultsKey[sender] {
             let selectedColor = sender.selectedColor
-            saveColorToUserDefaults(color: selectedColor, forKey: key)
-            print("\(sender.accessibilityLabel ?? "") Color: \(String(describing: selectedColor))")
+            
+            // Check if selectedColor is nil before saving to UserDefaults
+            if selectedColor != nil {
+                saveColorToUserDefaults(color: selectedColor!, forKey: key)
+                print("\(sender.accessibilityLabel ?? "") Color: \(String(describing: selectedColor))")
+            } else {
+                print("Selected color is nil.")
+            }
         }
-            print("You have changed the preview list but you are not a paying customer and so the changes do not apply to the main list")
+
             Preview_List.reloadData()
     }
 
@@ -258,6 +372,7 @@ public class SHOP: UIViewController, UIPickerViewDataSource, UIPickerViewDelegat
             if UIFont.familyNames.contains(selectedOption) {
                 Clicky()
             }
+            
             if UIFont(name: selectedOption, size: 17) != nil {
                 UserDefaults.standard.set(selectedOption, forKey: "SelectedFont")
                 UserDefaults.standard.synchronize()
@@ -370,7 +485,7 @@ public class SHOP: UIViewController, UIPickerViewDataSource, UIPickerViewDelegat
             if let selectedEntity = UserDefaults.standard.string(forKey: "Selected_AI_Entity") {
                 print("Selected AI Entity: \(selectedEntity)")
                 
-                guard let soundURL = Bundle.main.url(forResource: "Big Purr", withExtension: "wav") else { return }
+                guard let soundURL = Bundle.main.url(forResource: "Super Big Purr", withExtension: "wav") else { return }
                 do {
                     Extra_sounds = try AVAudioPlayer(contentsOf: soundURL)
                     Extra_sounds?.prepareToPlay()
@@ -462,7 +577,6 @@ public override func viewDidAppear(_ animated: Bool) {
         // ===========================================================
             DispatchQueue.main.async {
                 let gradientView = SodaGradientView(frame: self.view.bounds)
-                //gradientView.layer.opacity = Float(opacity)
                 gradientView.layer.zPosition = -2
                 gradientView.isUserInteractionEnabled = false
                 self.view.addSubview(gradientView)
@@ -491,8 +605,11 @@ public override func viewDidAppear(_ animated: Bool) {
     public override func viewDidLoad() {
         super.viewDidLoad()
         
-
-        
+        if let payingCustomer = KeychainService.loadPayingCustomerStatus() {
+            print("Restored Purchase Status from Keychain: \(payingCustomer)")
+        } else {
+            print("Unable to load restored purchase status from Keychain")
+        }
 
         FontSelection.delegate = self
         FontSelection.dataSource = self

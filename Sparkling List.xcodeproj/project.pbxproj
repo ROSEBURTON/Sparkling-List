@@ -27,7 +27,7 @@
 		4F12A2DB2B53132200509DEA /* Neutrophil SWAT Alert.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F12A2D52B53132200509DEA /* Neutrophil SWAT Alert.mp3 */; };
 		4F15CFC62AA938A100525964 /* Volume.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F15CFC52AA938A100525964 /* Volume.gif */; };
 		4F18CAD52B8B97BF00DE53F5 /* Fart.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F18CAD42B8B97BF00DE53F5 /* Fart.mp3 */; };
-		4F18CAD72B8BD48200DE53F5 /* Carbonation Buzzed Up.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F18CAD62B8BD48200DE53F5 /* Carbonation Buzzed Up.wav */; };
+		4F18CAD72B8BD48200DE53F5 /* Thrist Trappin' Soda.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F18CAD62B8BD48200DE53F5 /* Thrist Trappin' Soda.wav */; };
 		4F18CAD92B8BD80D00DE53F5 /* Space Race.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F18CAD82B8BD80D00DE53F5 /* Space Race.mp3 */; };
 		4F1E378B2B6822AD006DC211 /* Wine Glass.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F1E378A2B6822AD006DC211 /* Wine Glass.wav */; };
 		4F1E378D2B682389006DC211 /* Astral Melt.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F1E378C2B682389006DC211 /* Astral Melt.wav */; };
@@ -39,7 +39,7 @@
 		4F20DA632B89905500131EA3 /* Ice.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F20DA622B89905500131EA3 /* Ice.wav */; };
 		4F20DA652B89929A00131EA3 /* Gyat Chonki-Lonki Party Butt Bounce.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F20DA642B89929A00131EA3 /* Gyat Chonki-Lonki Party Butt Bounce.wav */; };
 		4F20DA692B8993BF00131EA3 /* Coming Near You.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F20DA682B8993BF00131EA3 /* Coming Near You.wav */; };
-		4F20DA6F2B8995FC00131EA3 /* Big Purr.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F20DA6E2B8995FC00131EA3 /* Big Purr.wav */; };
+		4F20DA6F2B8995FC00131EA3 /* Super Big Purr.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F20DA6E2B8995FC00131EA3 /* Super Big Purr.wav */; };
 		4F3A6BA22B8A3AD800BCD616 /* Book burn, discredit,  gas light.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F3A6BA12B8A3AD800BCD616 /* Book burn, discredit,  gas light.wav */; };
 		4F4FCF672AFBDB4C0011E62B /* Disco.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F4FCF662AFBDB4C0011E62B /* Disco.gif */; };
 		4F528E282BAE199E00BBB47B /* ASTRAL_ZERO.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F528E272BAE199D00BBB47B /* ASTRAL_ZERO.gif */; };
@@ -48,6 +48,9 @@
 		4F528E3C2BAE26F000BBB47B /* ASTRAL_OPTIMAL.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F528E3B2BAE26F000BBB47B /* ASTRAL_OPTIMAL.gif */; };
 		4F528E3E2BAE28C600BBB47B /* ASTRAL_LOW.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F528E3D2BAE28C600BBB47B /* ASTRAL_LOW.gif */; };
 		4F5F49BA2B4C959800530610 /* Speaks_AI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F5F49B82B4C959700530610 /* Speaks_AI.xcdatamodeld */; };
+		4F6C2A522BD1D82F005C4704 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F6C2A512BD1D82F005C4704 /* StoreKit.framework */; };
+		4F6C2A552BD1DF10005C4704 /* Screenshot 2024-04-18 at 8.30.58 AM.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F6C2A532BD1DF10005C4704 /* Screenshot 2024-04-18 at 8.30.58 AM.png */; };
+		4F6C2A562BD1DF10005C4704 /* Screenshot 2024-04-18 at 8.21.14 AM.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F6C2A542BD1DF10005C4704 /* Screenshot 2024-04-18 at 8.21.14 AM.png */; };
 		4F6D3AAE2B8EDE170000BEC0 /* Night Snow Cleats.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F6D3AAD2B8EDE170000BEC0 /* Night Snow Cleats.mp3 */; };
 		4F77421A2AF81E8C00466505 /* Pleased Observing Mantid.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F7742192AF81E8C00466505 /* Pleased Observing Mantid.wav */; };
 		4F77421E2AF81F0000466505 /* Green Lime, Sour Pink Splash.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F77421D2AF81F0000466505 /* Green Lime, Sour Pink Splash.wav */; };
@@ -60,6 +63,7 @@
 		4F9309482AB0EB2C00E9BFAB /* Telepathy.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F9309472AB0EB2B00E9BFAB /* Telepathy.wav */; };
 		4F9636FD2BCC1E0F001446F8 /* Cashes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9636FC2BCC1E0F001446F8 /* Cashes.swift */; };
 		4FA93FD82B8259C7000CA4C4 /* Type Ship.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4FA93FD72B8259C7000CA4C4 /* Type Ship.wav */; };
+		4FACBEF92BD2288300EB2D39 /* SEDU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FACBEF82BD2287F00EB2D39 /* SEDU.swift */; };
 		4FAFBCA32A818B9200F848F5 /* Laser.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4FAFBCA22A818B9200F848F5 /* Laser.mp3 */; };
 		4FB1F1262BCB4F49000A09F9 /* Shopping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB1F1062BCB4E09000A09F9 /* Shopping.swift */; };
 		4FB1F1272BCB4F49000A09F9 /* Animated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB1F1002BCB4E09000A09F9 /* Animated.swift */; };
@@ -86,6 +90,7 @@
 		4FEFED772B20C518003B44A7 /* @*!+-R.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4FEFED762B20C517003B44A7 /* @*!+-R.wav */; };
 		4FFAFA282BAF830100EDC16F /* Sketches_Valid.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4FFAFA272BAF830100EDC16F /* Sketches_Valid.gif */; };
 		4FFAFA2A2BAF830500EDC16F /* SketchesRED.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4FFAFA292BAF830500EDC16F /* SketchesRED.gif */; };
+		4FFF30D82BD5D88C00B9E9F7 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFF30D72BD5D88C00B9E9F7 /* Keychain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,7 +135,7 @@
 		4F12A2D52B53132200509DEA /* Neutrophil SWAT Alert.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Neutrophil SWAT Alert.mp3"; sourceTree = "<group>"; };
 		4F15CFC52AA938A100525964 /* Volume.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Volume.gif; sourceTree = "<group>"; };
 		4F18CAD42B8B97BF00DE53F5 /* Fart.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Fart.mp3; path = "Speaks AI/Sparkling List/Fart.mp3"; sourceTree = SOURCE_ROOT; };
-		4F18CAD62B8BD48200DE53F5 /* Carbonation Buzzed Up.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Carbonation Buzzed Up.wav"; sourceTree = "<group>"; };
+		4F18CAD62B8BD48200DE53F5 /* Thrist Trappin' Soda.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Thrist Trappin' Soda.wav"; sourceTree = "<group>"; };
 		4F18CAD82B8BD80D00DE53F5 /* Space Race.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Space Race.mp3"; sourceTree = "<group>"; };
 		4F1E378A2B6822AD006DC211 /* Wine Glass.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Wine Glass.wav"; sourceTree = "<group>"; };
 		4F1E378C2B682389006DC211 /* Astral Melt.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Astral Melt.wav"; sourceTree = "<group>"; };
@@ -143,7 +148,7 @@
 		4F20DA622B89905500131EA3 /* Ice.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Ice.wav; sourceTree = "<group>"; };
 		4F20DA642B89929A00131EA3 /* Gyat Chonki-Lonki Party Butt Bounce.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Gyat Chonki-Lonki Party Butt Bounce.wav"; sourceTree = "<group>"; };
 		4F20DA682B8993BF00131EA3 /* Coming Near You.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Coming Near You.wav"; sourceTree = "<group>"; };
-		4F20DA6E2B8995FC00131EA3 /* Big Purr.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Big Purr.wav"; sourceTree = "<group>"; };
+		4F20DA6E2B8995FC00131EA3 /* Super Big Purr.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Super Big Purr.wav"; sourceTree = "<group>"; };
 		4F3A6BA12B8A3AD800BCD616 /* Book burn, discredit,  gas light.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Book burn, discredit,  gas light.wav"; sourceTree = "<group>"; };
 		4F438C6C2A97C4860084319E /* Visual AssistExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Visual AssistExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F4FCF662AFBDB4C0011E62B /* Disco.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Disco.gif; sourceTree = "<group>"; };
@@ -153,6 +158,9 @@
 		4F528E3B2BAE26F000BBB47B /* ASTRAL_OPTIMAL.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = ASTRAL_OPTIMAL.gif; path = ../../../../PIXELS/ASTRAL_OPTIMAL.gif; sourceTree = "<group>"; };
 		4F528E3D2BAE28C600BBB47B /* ASTRAL_LOW.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = ASTRAL_LOW.gif; path = ../../../../PIXELS/ASTRAL_LOW.gif; sourceTree = "<group>"; };
 		4F5F49B92B4C959700530610 /* Speaks_AI.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Speaks_AI.xcdatamodel; sourceTree = "<group>"; };
+		4F6C2A512BD1D82F005C4704 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		4F6C2A532BD1DF10005C4704 /* Screenshot 2024-04-18 at 8.30.58 AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Screenshot 2024-04-18 at 8.30.58 AM.png"; path = "../../../../Screenshot 2024-04-18 at 8.30.58 AM.png"; sourceTree = "<group>"; };
+		4F6C2A542BD1DF10005C4704 /* Screenshot 2024-04-18 at 8.21.14 AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Screenshot 2024-04-18 at 8.21.14 AM.png"; path = "../../../../Screenshot 2024-04-18 at 8.21.14 AM.png"; sourceTree = "<group>"; };
 		4F6D3AAD2B8EDE170000BEC0 /* Night Snow Cleats.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Night Snow Cleats.mp3"; sourceTree = "<group>"; };
 		4F7742192AF81E8C00466505 /* Pleased Observing Mantid.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Pleased Observing Mantid.wav"; sourceTree = "<group>"; };
 		4F77421D2AF81F0000466505 /* Green Lime, Sour Pink Splash.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Green Lime, Sour Pink Splash.wav"; sourceTree = "<group>"; };
@@ -165,6 +173,7 @@
 		4F9309472AB0EB2B00E9BFAB /* Telepathy.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Telepathy.wav; sourceTree = "<group>"; };
 		4F9636FC2BCC1E0F001446F8 /* Cashes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cashes.swift; sourceTree = "<group>"; };
 		4FA93FD72B8259C7000CA4C4 /* Type Ship.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Type Ship.wav"; sourceTree = "<group>"; };
+		4FACBEF82BD2287F00EB2D39 /* SEDU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEDU.swift; sourceTree = "<group>"; };
 		4FAFBCA22A818B9200F848F5 /* Laser.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Laser.mp3; sourceTree = "<group>"; };
 		4FB1F1002BCB4E09000A09F9 /* Animated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animated.swift; sourceTree = "<group>"; };
 		4FB1F1012BCB4E09000A09F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -194,6 +203,7 @@
 		4FEFED762B20C517003B44A7 /* @*!+-R.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "@*!+-R.wav"; sourceTree = "<group>"; };
 		4FFAFA272BAF830100EDC16F /* Sketches_Valid.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = Sketches_Valid.gif; path = "../../../../PIXELS/AppIcons-2/Sketches_Valid.gif"; sourceTree = "<group>"; };
 		4FFAFA292BAF830500EDC16F /* SketchesRED.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = SketchesRED.gif; path = "../../../../PIXELS/AppIcons-2/SketchesRED.gif"; sourceTree = "<group>"; };
+		4FFF30D72BD5D88C00B9E9F7 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +211,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F6C2A522BD1D82F005C4704 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +247,7 @@
 				4F01698A2A7F164D0080DF70 /* Speaks AITests */,
 				4F0169942A7F164D0080DF70 /* Speaks AIUITests */,
 				4F01696F2A7F164C0080DF70 /* Products */,
+				4F6C2A4E2BD1D7CD005C4704 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -293,6 +305,14 @@
 			path = EXTRAS;
 			sourceTree = "<group>";
 		};
+		4F6C2A4E2BD1D7CD005C4704 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4F6C2A512BD1D82F005C4704 /* StoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4FB1F12D2BCB4F86000A09F9 /* Sparkling Logic */ = {
 			isa = PBXGroup;
 			children = (
@@ -304,6 +324,8 @@
 				4FB1F1062BCB4E09000A09F9 /* Shopping.swift */,
 				4FB1F1072BCB4E09000A09F9 /* Soda_Gradient.swift */,
 				4F9636FC2BCC1E0F001446F8 /* Cashes.swift */,
+				4FFF30D72BD5D88C00B9E9F7 /* Keychain.swift */,
+				4FACBEF82BD2287F00EB2D39 /* SEDU.swift */,
 				4FEA71432BD0706D00407105 /* CustomersWelcome.storekit */,
 			);
 			path = "Sparkling Logic";
@@ -332,12 +354,12 @@
 				4F1E7AB82B98CB98003B0B83 /* 👁️‍🗨️.wav */,
 				4F1E7AB62B98CB18003B0B83 /* Rainbow Chromium Finish.wav */,
 				4F82876D2B961E1E00651F85 /* Gold for Galactic Drinks.wav */,
-				4F18CAD62B8BD48200DE53F5 /* Carbonation Buzzed Up.wav */,
+				4F18CAD62B8BD48200DE53F5 /* Thrist Trappin' Soda.wav */,
 				4F18CAD42B8B97BF00DE53F5 /* Fart.mp3 */,
 				4FBB654F2B8A7AED0075EBB0 /* Water Lurk.wav */,
 				4FBB654D2B8A79EC0075EBB0 /* Productive Prep.mp3 */,
 				4F3A6BA12B8A3AD800BCD616 /* Book burn, discredit,  gas light.wav */,
-				4F20DA6E2B8995FC00131EA3 /* Big Purr.wav */,
+				4F20DA6E2B8995FC00131EA3 /* Super Big Purr.wav */,
 				4F20DA682B8993BF00131EA3 /* Coming Near You.wav */,
 				4F20DA642B89929A00131EA3 /* Gyat Chonki-Lonki Party Butt Bounce.wav */,
 				4F20DA622B89905500131EA3 /* Ice.wav */,
@@ -390,6 +412,8 @@
 				4FB2AAA22B117D42003D336C /* The Primal Dexxacon.gif */,
 				4FC4995E2A8062C900ACC494 /* Scribble.gif */,
 				4F15CFC52AA938A100525964 /* Volume.gif */,
+				4F6C2A542BD1DF10005C4704 /* Screenshot 2024-04-18 at 8.21.14 AM.png */,
+				4F6C2A532BD1DF10005C4704 /* Screenshot 2024-04-18 at 8.30.58 AM.png */,
 			);
 			path = Visuals;
 			sourceTree = "<group>";
@@ -529,6 +553,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FC018412BC2DA4F00580265 /* Logos.jpg in Resources */,
+				4F6C2A552BD1DF10005C4704 /* Screenshot 2024-04-18 at 8.30.58 AM.png in Resources */,
 				4F20DA612B89901E00131EA3 /* Pour Drank.wav in Resources */,
 				4F7742222AF820F300466505 /* Loading Productive Ammo.wav in Resources */,
 				4F528E3A2BAE268300BBB47B /* ASTRAL_RISING.gif in Resources */,
@@ -564,20 +589,21 @@
 				4F073E442AF319CE00623681 /* Omit.wav in Resources */,
 				4F018C5A2B55863700AA9AAD /* Bakin' Dat Pizza.wav in Resources */,
 				4F528E282BAE199E00BBB47B /* ASTRAL_ZERO.gif in Resources */,
-				4F20DA6F2B8995FC00131EA3 /* Big Purr.wav in Resources */,
+				4F20DA6F2B8995FC00131EA3 /* Super Big Purr.wav in Resources */,
 				4F3A6BA22B8A3AD800BCD616 /* Book burn, discredit,  gas light.wav in Resources */,
 				4F073E542AF31D3600623681 /* ATL Night Rain.wav in Resources */,
 				4F0169812A7F164D0080DF70 /* LaunchScreen.storyboard in Resources */,
 				4F82876E2B961E1E00651F85 /* Gold for Galactic Drinks.wav in Resources */,
 				4F01697E2A7F164D0080DF70 /* Assets.xcassets in Resources */,
 				4F12A2DB2B53132200509DEA /* Neutrophil SWAT Alert.mp3 in Resources */,
-				4F18CAD72B8BD48200DE53F5 /* Carbonation Buzzed Up.wav in Resources */,
+				4F18CAD72B8BD48200DE53F5 /* Thrist Trappin' Soda.wav in Resources */,
 				4F0169792A7F164C0080DF70 /* Main.storyboard in Resources */,
 				4F1E378B2B6822AD006DC211 /* Wine Glass.wav in Resources */,
 				4FA93FD82B8259C7000CA4C4 /* Type Ship.wav in Resources */,
 				4FC0183F2BC2DA3200580265 /* SOUR CUBES.mp3 in Resources */,
 				4FBB654E2B8A79EC0075EBB0 /* Productive Prep.mp3 in Resources */,
 				4F528E3C2BAE26F000BBB47B /* ASTRAL_OPTIMAL.gif in Resources */,
+				4F6C2A562BD1DF10005C4704 /* Screenshot 2024-04-18 at 8.21.14 AM.png in Resources */,
 				4FD5E8182B8D583600558742 /* Sunday.gif in Resources */,
 				4F7742242AF8215800466505 /* Pink Gladiate Soda.wav in Resources */,
 				4F528E2C2BAE1B8400BBB47B /* ASTRAL_MEDIUM.gif in Resources */,
@@ -630,6 +656,8 @@
 				4FB1F1292BCB4F49000A09F9 /* Repeat.swift in Sources */,
 				4FB1F12C2BCB4F49000A09F9 /* Soda_Gradient.swift in Sources */,
 				4F5F49BA2B4C959800530610 /* Speaks_AI.xcdatamodeld in Sources */,
+				4FACBEF92BD2288300EB2D39 /* SEDU.swift in Sources */,
+				4FFF30D82BD5D88C00B9E9F7 /* Keychain.swift in Sources */,
 				4FB1F1272BCB4F49000A09F9 /* Animated.swift in Sources */,
 				4F9636FD2BCC1E0F001446F8 /* Cashes.swift in Sources */,
 				4FB1F1262BCB4F49000A09F9 /* Shopping.swift in Sources */,

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
@@ -15,7 +15,7 @@
             <objects>
                 <viewController title="Main" id="BYZ-38-t0r" customClass="Main" customModule="Sparkling_List" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="The Primal Dexxacon.gif" translatesAutoresizingMaskIntoConstraints="NO" id="ayR-m1-e5E">
@@ -39,10 +39,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading.." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XTa-t8-jha">
-                                <rect key="frame" x="16" y="228" width="97" height="114"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading.." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XTa-t8-jha">
+                                <rect key="frame" x="16" y="225" width="105" height="118"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -160,6 +160,7 @@
                         <outlet property="MissionCounter" destination="570-gt-aac" id="hcZ-wU-1bL"/>
                         <outlet property="Points_DayLabel" destination="XTa-t8-jha" id="cUW-kq-sew"/>
                         <outlet property="Points_YearLabel" destination="rdw-qZ-Vvq" id="jEQ-EL-j29"/>
+                        <outlet property="RED_MIX" destination="c4d-1G-Hsn" id="WaM-C8-NKc"/>
                         <outlet property="Scribble" destination="Csv-ON-hs2" id="clJ-zV-f6R"/>
                         <outlet property="The_Primal_Dexxacon" destination="ayR-m1-e5E" id="zeQ-os-bg0"/>
                         <outlet property="Volume_Bars" destination="DmS-Ey-OiU" id="yEA-J8-hfW"/>
@@ -175,7 +176,7 @@
         <scene sceneID="YiY-Ub-xf3">
             <objects>
                 <viewController storyboardIdentifier="Repeat" title="Repeat" id="2h5-W4-NGE" customClass="Repeat" customModule="Sparkling_List" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" alpha="0.89000000000000001" contentMode="scaleToFill" ambiguous="YES" id="1nn-1H-AtN">
+                    <view key="view" alpha="0.91000000000000003" contentMode="scaleToFill" ambiguous="YES" id="1nn-1H-AtN">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -219,45 +220,6 @@
                                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Duration" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NIH-Yv-IU3">
-                                                <rect key="frame" x="124" y="323" width="142" height="33"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="15"/>
-                                                <color key="textColor" red="0.79826433630000004" green="0.0" blue="0.029304259329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create a reminder:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWh-Vz-aLk">
-                                                <rect key="frame" x="94" y="239" width="202" height="31"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
-                                                <color key="textColor" systemColor="systemYellowColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type your notification" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="dJP-XE-ECX">
-                                                <rect key="frame" x="18" y="278" width="355" height="34"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                                <connections>
-                                                    <action selector="Notify_Message:" destination="2h5-W4-NGE" eventType="editingDidEnd" id="JML-80-N5m"/>
-                                                </connections>
-                                            </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKV-B9-EhR">
-                                                <rect key="frame" x="57" y="320" width="55" height="46"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain"/>
-                                                <connections>
-                                                    <action selector="Decrease_notifier:" destination="2h5-W4-NGE" eventType="touchUpInside" id="Cl5-Bv-nmV"/>
-                                                </connections>
-                                            </button>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Minus" translatesAutoresizingMaskIntoConstraints="NO" id="XGT-Fc-vip">
-                                                <rect key="frame" x="57" y="320" width="55" height="46"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Repeating Tasks Preview" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qOb-Rc-4Cu">
                                                 <rect key="frame" x="64" y="408" width="258" height="37"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -279,10 +241,10 @@
                                                 <color key="separatorColor" name="WidgetBackground"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Repeat_Cell" id="6x6-Zm-2ay" customClass="Repeat_Cells" customModule="Sparkling_List" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="50" width="355" height="43.5"/>
+                                                        <rect key="frame" x="0.0" y="50" width="355" height="43.666667938232422"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6x6-Zm-2ay" id="ZyQ-ql-gmV">
-                                                            <rect key="frame" x="0.0" y="0.0" width="355" height="43.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="355" height="43.666667938232422"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </tableViewCellContentView>
@@ -324,8 +286,40 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Duration" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NIH-Yv-IU3">
+                                                <rect key="frame" x="124" y="331" width="142" height="33"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="15"/>
+                                                <color key="textColor" red="0.79826433630000004" green="0.0" blue="0.029304259329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type your notification" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="dJP-XE-ECX">
+                                                <rect key="frame" x="18" y="286" width="355" height="34"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="Notify_Message:" destination="2h5-W4-NGE" eventType="editingDidEnd" id="JML-80-N5m"/>
+                                                </connections>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKV-B9-EhR">
+                                                <rect key="frame" x="57" y="328" width="55" height="46"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="Decrease_notifier:" destination="2h5-W4-NGE" eventType="touchUpInside" id="Cl5-Bv-nmV"/>
+                                                </connections>
+                                            </button>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Minus" translatesAutoresizingMaskIntoConstraints="NO" id="XGT-Fc-vip">
+                                                <rect key="frame" x="57" y="328" width="55" height="46"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J0O-5z-ouH">
-                                                <rect key="frame" x="284" y="320" width="55" height="46"/>
+                                                <rect key="frame" x="284" y="328" width="55" height="46"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
@@ -334,9 +328,16 @@
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="plus" translatesAutoresizingMaskIntoConstraints="NO" id="IM6-8t-ruU">
-                                                <rect key="frame" x="284" y="320" width="55" height="46"/>
+                                                <rect key="frame" x="284" y="328" width="55" height="46"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create a Rapid-Fire Thought Reminder:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWh-Vz-aLk">
+                                                <rect key="frame" x="83" y="232" width="219" height="46"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="15"/>
+                                                <color key="textColor" systemColor="systemYellowColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -379,13 +380,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KHp-RB-ljB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="727.48091603053433" y="-35.211267605633807"/>
+            <point key="canvasLocation" x="726.2790697674418" y="-35.407725321888414"/>
         </scene>
         <!--Shop-->
         <scene sceneID="xGl-xz-POg">
             <objects>
                 <viewController storyboardIdentifier="Shop" title="Shop" id="gWn-0X-Wjp" customClass="SHOP" customModule="Sparkling_List" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" alpha="0.89000000000000001" contentMode="scaleToFill" id="dFE-0Q-xYa">
+                    <view key="view" alpha="0.91000000000000003" contentMode="scaleToFill" id="dFE-0Q-xYa">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -393,7 +394,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QEu-V9-hzs">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1000"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1350"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="List Preview" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NnM-Ci-87y">
                                                 <rect key="frame" x="116" y="37.333333333333336" width="178" height="21.666666666666664"/>
@@ -409,10 +410,10 @@
                                                 <color key="separatorColor" name="WidgetBackground"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PreviewID" id="BYb-xV-jLC" customClass="Shopping_Cells" customModule="Sparkling_List" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="50" width="276" height="43.5"/>
+                                                        <rect key="frame" x="0.0" y="50" width="276" height="43.666667938232422"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BYb-xV-jLC" id="WCG-2d-XDe">
-                                                            <rect key="frame" x="0.0" y="0.0" width="276" height="43.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="276" height="43.666667938232422"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </tableViewCellContentView>
@@ -526,30 +527,78 @@
                                                     <action selector="ASTRAL_Selection:" destination="gWn-0X-Wjp" eventType="touchUpInside" id="Ak1-7R-29S"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pz-2E-jJt">
+                                                <rect key="frame" x="27" y="1031" width="343" height="91"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="tintColor" red="0.014448697577689939" green="0.59900531570000004" blue="0.16060643991591761" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title=" Terms of Use (EULA)">
+                                                    <fontDescription key="titleFontDescription" name="Chalkduster" family="Chalkduster" pointSize="19"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="Terms_of_Use_EULA:" destination="gWn-0X-Wjp" eventType="touchUpInside" id="qKw-O6-VGb"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Po4-wy-7lD">
+                                                <rect key="frame" x="201" y="932" width="167" height="91"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="tintColor" red="0.59104125303638477" green="0.13391078318576452" blue="0.59900531570000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Privacy Policy">
+                                                    <fontDescription key="titleFontDescription" name="Chalkduster" family="Chalkduster" pointSize="19"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="Privacy_Policy:" destination="gWn-0X-Wjp" eventType="touchUpInside" id="Yxr-Y4-vuW"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JQf-Ib-3Zz">
+                                                <rect key="frame" x="24" y="932" width="169" height="91"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="tintColor" red="0.082529531269999998" green="0.059883005080000003" blue="0.59900531570000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Contact Support">
+                                                    <fontDescription key="titleFontDescription" name="Chalkduster" family="Chalkduster" pointSize="19"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="Contact_Support:" destination="gWn-0X-Wjp" eventType="touchUpInside" id="B9u-Zg-J2f"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dma-aV-seW">
+                                                <rect key="frame" x="27" y="1130" width="343" height="91"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="tintColor" red="0.0" green="0.59227612095215554" blue="0.59900531570000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Restore Purchases">
+                                                    <fontDescription key="titleFontDescription" name="Chalkduster" family="Chalkduster" pointSize="19"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="Restore_Purchases:" destination="gWn-0X-Wjp" eventType="touchUpInside" id="iRd-m7-zcy"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="1000" id="61J-AB-qMl"/>
+                                            <constraint firstAttribute="height" constant="1350" id="9Ie-Pd-5KG"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="QEu-V9-hzs" firstAttribute="leading" secondItem="NoL-TQ-ir3" secondAttribute="leading" id="NVT-tJ-DJo"/>
-                                    <constraint firstAttribute="bottom" secondItem="QEu-V9-hzs" secondAttribute="bottom" id="Y6C-5X-HLV"/>
-                                    <constraint firstAttribute="trailing" secondItem="QEu-V9-hzs" secondAttribute="trailing" id="ild-2A-Cfz"/>
-                                    <constraint firstItem="QEu-V9-hzs" firstAttribute="top" secondItem="NoL-TQ-ir3" secondAttribute="top" id="zSZ-kL-gx3"/>
+                                    <constraint firstItem="QEu-V9-hzs" firstAttribute="top" secondItem="NoL-TQ-ir3" secondAttribute="top" id="MPE-hV-Phj"/>
+                                    <constraint firstAttribute="trailing" secondItem="QEu-V9-hzs" secondAttribute="trailing" id="UI7-h0-A9b"/>
+                                    <constraint firstItem="QEu-V9-hzs" firstAttribute="leading" secondItem="NoL-TQ-ir3" secondAttribute="leading" id="xvJ-AI-EN7"/>
+                                    <constraint firstAttribute="bottom" secondItem="QEu-V9-hzs" secondAttribute="bottom" id="zsP-gX-tIX"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Hfh-7S-noA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="QEu-V9-hzs" firstAttribute="width" secondItem="dFE-0Q-xYa" secondAttribute="width" id="7kI-Qb-E7C"/>
-                            <constraint firstItem="QEu-V9-hzs" firstAttribute="height" secondItem="dFE-0Q-xYa" secondAttribute="height" multiplier="1.17371" id="MHa-ji-oNH"/>
-                            <constraint firstAttribute="bottom" secondItem="NoL-TQ-ir3" secondAttribute="bottom" id="T3C-Kd-Rw3"/>
-                            <constraint firstItem="NoL-TQ-ir3" firstAttribute="trailing" secondItem="Hfh-7S-noA" secondAttribute="trailing" id="aej-2B-Ijh"/>
-                            <constraint firstItem="NoL-TQ-ir3" firstAttribute="top" secondItem="dFE-0Q-xYa" secondAttribute="top" id="fx3-m7-tqO"/>
-                            <constraint firstItem="NoL-TQ-ir3" firstAttribute="leading" secondItem="Hfh-7S-noA" secondAttribute="leading" id="hOn-kf-F5A"/>
+                            <constraint firstAttribute="bottom" secondItem="NoL-TQ-ir3" secondAttribute="bottom" id="6JL-bO-I70"/>
+                            <constraint firstItem="NoL-TQ-ir3" firstAttribute="leading" secondItem="Hfh-7S-noA" secondAttribute="leading" id="7Sb-J8-L8H"/>
+                            <constraint firstItem="QEu-V9-hzs" firstAttribute="height" secondItem="dFE-0Q-xYa" secondAttribute="height" multiplier="1.58451" id="C41-4o-AJG"/>
+                            <constraint firstItem="QEu-V9-hzs" firstAttribute="width" secondItem="dFE-0Q-xYa" secondAttribute="width" id="Ixg-8W-OeU"/>
+                            <constraint firstItem="NoL-TQ-ir3" firstAttribute="top" secondItem="dFE-0Q-xYa" secondAttribute="top" id="hKf-s7-p0I"/>
+                            <constraint firstItem="NoL-TQ-ir3" firstAttribute="trailing" secondItem="Hfh-7S-noA" secondAttribute="trailing" id="rPJ-BE-Rax"/>
                         </constraints>
                     </view>
                     <size key="freeformSize" width="393" height="852"/>
@@ -569,11 +618,71 @@
             </objects>
             <point key="canvasLocation" x="-640.4580152671756" y="-34.507042253521128"/>
         </scene>
+        <!--SEDU-->
+        <scene sceneID="3iM-Lx-zjc">
+            <objects>
+                <viewController storyboardIdentifier="SEDU" title="SEDU" id="pHF-6P-az6" customClass="SEDUViewController" customModule="Sparkling_List" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8is-xW-pm8">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Subscribe for $3.99 in order to customize your to-do list:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZX3-Hi-T6k">
+                                <rect key="frame" x="28" y="360" width="339" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="19"/>
+                                <color key="textColor" red="0.35076513459999997" green="0.26616730979999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gain a variety of over +20 deletion sounds, +80 fonts, 2 list background colors, and 2 text colors" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I16-E2-F1r">
+                                <rect key="frame" x="37" y="449" width="320" height="112"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="19"/>
+                                <color key="textColor" systemColor="systemPurpleColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screenshot 2024-04-18 at 8.30.58 AM.png" translatesAutoresizingMaskIntoConstraints="NO" id="0GR-Hr-WH3">
+                                <rect key="frame" x="43" y="59" width="305" height="265"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NEZ-md-GKW">
+                                <rect key="frame" x="26" y="569" width="339" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.082529531271188228" green="0.059883005082123845" blue="0.5990053157216495" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Subscribe for $3.99/per week to access List Customization features">
+                                    <fontDescription key="titleFontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="subscribeButtonTapped:" destination="pHF-6P-az6" eventType="touchUpInside" id="8sj-wM-2Mw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f80-9k-a7d">
+                                <rect key="frame" x="26" y="687" width="339" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Cancel">
+                                    <fontDescription key="titleFontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="cancelButtonTapped:" destination="pHF-6P-az6" eventType="touchUpInside" id="99V-SK-0Qz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="SV6-WT-t4T"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FeX-bt-k90" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-643.51145038167931" y="614.78873239436621"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Green_Button_00001" width="1280" height="720"/>
         <image name="MIX" width="1280" height="720"/>
         <image name="Minus" width="1280" height="720"/>
+        <image name="Screenshot 2024-04-18 at 8.30.58 AM.png" width="371" height="262"/>
         <image name="Select_Sketches" width="1251" height="704"/>
         <image name="TagurLogo.gif" width="1251" height="704"/>
         <image name="The Primal Dexxacon.gif" width="1620" height="2160"/>
@@ -589,6 +698,12 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
