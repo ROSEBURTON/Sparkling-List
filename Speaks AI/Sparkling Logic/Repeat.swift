@@ -260,7 +260,7 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
     @IBAction func Add_Repeat_Button(_ sender: UIButton) {
         Clicky()
         medium_haptic.impactOccurred()
-        let alert = UIAlertController(title: "How frequent should this task regenerate?", message: "\n\n\n\n\n", preferredStyle: .alert)
+        let alert = UIAlertController(title: "How frequently should this task regenerate?", message: "\n\n\n\n\n", preferredStyle: .alert)
         let pickerView = UIPickerView(frame: CGRect(x: 0, y: 40, width: 260, height: 110))
         pickerView.dataSource = self
         pickerView.delegate = self
@@ -950,7 +950,7 @@ class Repeat: UIViewController, UITableViewDataSource, UNUserNotificationCenterD
                 } else {
                     DispatchQueue.main.async {
                         let alertController = UIAlertController(title: "Notification Permission Denied",
-                                                                message: "You can enable it in the settings: Settings > Sparkling List > Notifications.",
+                                                                message: "You can enable notifications for Rapid-Fire Reminders in the settings: Settings > Sparkling List > Notifications.",
                                                                 preferredStyle: .alert)
                         let settingsAction = UIAlertAction(title: "Open Settings", style: .default) { (_) in
                             if let settingsURL = URL(string: UIApplication.openSettingsURLString) {

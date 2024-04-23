@@ -7,8 +7,6 @@ import Foundation
 import CoreMotion
 import AVFoundation
 
-
-
 // Scroll Views:
 //MEMORIZE FROM MAIN LIST:
 // scroll view at 0 , 0 , 0 , 0. Add 4 constraints (SCROLL VIEW 4)
@@ -18,14 +16,18 @@ import AVFoundation
 
 // Commit a Project to Github:
 /*
- Sparkling List.xcodeproj
+ cd /Users/ialvector/Desktop/5k Sparkling/Sparkling-List/Sparkling List.xcodeproj
  git init
  git add .
  git commit -m "Submitting this code"
- git remote add origin https://github.com/ROSEBURTON/Sparkling-List-Gold.git
+ git remote add origin https://github.com/ROSEBURTON/Sparkling_ICE.git
+ git push -u origin main
+
+ 
+ git remote add origin https://github.com/ROSEBURTON/Sparkling_ICE.git
+ git branch -M main
  git push -u origin main
  */
-
 /*
 
  */
@@ -158,11 +160,15 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
 
     var years_actions_goal: Int {
         let calendar = Calendar.current
-        let currentDayOfYear = calendar.ordinality(of: .day, in: .year, for: Date()) ?? 1
-        let remainingDays = 365 - currentDayOfYear + 1
+        guard let installationDate = UserDefaults.standard.object(forKey: "InstallationDates") as? Date else {
+            return 0
+        }
+        let date_to_start_from = calendar.ordinality(of: .day, in: .year, for: installationDate) ?? 1
+        let remainingDays = 365 - date_to_start_from + 1
         let actionsFromInstallationTo365thDay = 50 * remainingDays
         return actionsFromInstallationTo365thDay
     }
+
 
     var you_should_be_at_goal: Int {
         func remainingActionsInYear(fromDay day: Int, inYear year: Int) -> Int {
@@ -675,16 +681,17 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
     }
 
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
-            let complimentLabel = UILabel()
-            complimentLabel.textAlignment = .center
-            complimentLabel.textColor = UIColor.systemPink
-            complimentLabel.backgroundColor = UIColor.purple.withAlphaComponent(0.7)
-            complimentLabel.layer.cornerRadius = 4
-            complimentLabel.clipsToBounds = true
-            complimentLabel.numberOfLines = 0
-            complimentLabel.lineBreakMode = .byWordWrapping
+        let complimentLabel = UILabel()
+        complimentLabel.textAlignment = .center
+        complimentLabel.textColor = [UIColor.cyan, UIColor.systemPink].randomElement()!
 
-            let compliments = ["🌏", "🇧🇷", "🇸🇰", "🇯🇵", "🇰🇷", "Great job!", "You're doing fantastic!", "New Year New Me", "🧃Juiced up🧃", "You're making progress!", "🍾 Sparkling! 🍾", "Resolutions here I come!", "Bring productive in style", "??¿¿??", "!!¡¡!!", "Ɑ+˥˥ ⱭⱭ ", "EE¡¡ƎƎ¡¡EE",  "<0>___<0>", ";-)", "=^.^=", "(O_O)", "<|-_-|>",  "(◣_◢)"]
+        complimentLabel.backgroundColor = [UIColor.red, UIColor.yellow, UIColor.blue].randomElement()!.withAlphaComponent(0.7)
+        complimentLabel.layer.cornerRadius = 4
+        complimentLabel.clipsToBounds = true
+        complimentLabel.numberOfLines = 0
+        complimentLabel.lineBreakMode = .byWordWrapping
+
+            let compliments = ["🌏", "🇧🇷", "🇸🇰", "🇯🇵", "🇰🇷", "Great job!", "You're doing fantastic!", "New Year New Me", "🧃Juiced up🧃", "You're making progress!", "🍾 Sparkling! 🍾", "Resolutions here I come!", "Bring productive in style", "??¿¿??", "!!¡¡!!", "Ɑ+˥˥ ⱭⱭ ", "EE¡¡ƎƎ¡¡EE",  "<0>___<0>", ";-)", "=^.^=", "(O_O)", "<|-_-|>",  "(◣_◢)", "🧃Soda saturated!🧃"]
             let randomIndex = Int.random(in: 0..<compliments.count)
             complimentLabel.text = compliments[randomIndex]
             complimentLabel.font = UIFont(name: selectedFont ?? "Chalkduster", size: 30.0)
@@ -888,7 +895,7 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
 
     public override func viewDidLoad() {
         super.viewDidLoad()
-        showBlurredImage()
+        
         startMotionDetection()
         becomeFirstResponder()
         let request: NSFetchRequest<Gradient> = Gradient.fetchRequest()
@@ -942,7 +949,7 @@ class Main: UIViewController, UITableViewDataSource, UITableViewDelegate, UIText
         day_goal.textColor = UIColor.green
         day_goal.adjustsFontSizeToFitWidth = true
         
-        
+        showBlurredImage()
     }
     
     @objc func reloadRow(_ notification: Notification) {

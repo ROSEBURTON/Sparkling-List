@@ -33,7 +33,6 @@ struct SubscriptionView: View {
     
     func purchaseSubscription() {
         restorePurchases()
-
         if !paying_customer {
             if !SKPaymentQueue.canMakePayments() {
                 subscriptionStatus = "In-app purchases are not enabled on this device."

@@ -186,13 +186,6 @@
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DhY-Gv-AOM">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="940"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Set New Year's Resolutions:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cwa-UW-OBc">
-                                                <rect key="frame" x="52" y="43" width="287" height="31"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
-                                                <color key="textColor" red="0.70970652814834878" green="0.3281599464709159" blue="0.96841150522232056" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type your 2nd New Year's Resolution" adjustsFontForContentSizeCategory="YES" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Sgv-BR-C6D">
                                                 <rect key="frame" x="65" y="124" width="311" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -336,6 +329,13 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="15"/>
                                                 <color key="textColor" systemColor="systemYellowColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Set New Year's Resolutions:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cwa-UW-OBc">
+                                                <rect key="frame" x="53" y="43" width="287" height="31"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                                <color key="textColor" red="0.70970652814834878" green="0.3281599464709159" blue="0.96841150522232056" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -563,42 +563,30 @@
                                                     <action selector="Contact_Support:" destination="gWn-0X-Wjp" eventType="touchUpInside" id="B9u-Zg-J2f"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dma-aV-seW">
-                                                <rect key="frame" x="27" y="1130" width="343" height="91"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="tintColor" red="0.0" green="0.59227612095215554" blue="0.59900531570000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Restore Purchases">
-                                                    <fontDescription key="titleFontDescription" name="Chalkduster" family="Chalkduster" pointSize="19"/>
-                                                </buttonConfiguration>
-                                                <connections>
-                                                    <action selector="Restore_Purchases:" destination="gWn-0X-Wjp" eventType="touchUpInside" id="iRd-m7-zcy"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="1350" id="9Ie-Pd-5KG"/>
+                                            <constraint firstAttribute="height" constant="1350" id="ccA-eq-9ST"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="QEu-V9-hzs" firstAttribute="top" secondItem="NoL-TQ-ir3" secondAttribute="top" id="MPE-hV-Phj"/>
-                                    <constraint firstAttribute="trailing" secondItem="QEu-V9-hzs" secondAttribute="trailing" id="UI7-h0-A9b"/>
-                                    <constraint firstItem="QEu-V9-hzs" firstAttribute="leading" secondItem="NoL-TQ-ir3" secondAttribute="leading" id="xvJ-AI-EN7"/>
-                                    <constraint firstAttribute="bottom" secondItem="QEu-V9-hzs" secondAttribute="bottom" id="zsP-gX-tIX"/>
+                                    <constraint firstAttribute="trailing" secondItem="QEu-V9-hzs" secondAttribute="trailing" id="LcY-dF-UZB"/>
+                                    <constraint firstItem="QEu-V9-hzs" firstAttribute="leading" secondItem="NoL-TQ-ir3" secondAttribute="leading" id="e2P-qq-onH"/>
+                                    <constraint firstAttribute="bottom" secondItem="QEu-V9-hzs" secondAttribute="bottom" id="hz7-FX-E4F"/>
+                                    <constraint firstItem="QEu-V9-hzs" firstAttribute="top" secondItem="NoL-TQ-ir3" secondAttribute="top" id="oj5-QP-cYn"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Hfh-7S-noA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="NoL-TQ-ir3" secondAttribute="bottom" id="6JL-bO-I70"/>
-                            <constraint firstItem="NoL-TQ-ir3" firstAttribute="leading" secondItem="Hfh-7S-noA" secondAttribute="leading" id="7Sb-J8-L8H"/>
-                            <constraint firstItem="QEu-V9-hzs" firstAttribute="height" secondItem="dFE-0Q-xYa" secondAttribute="height" multiplier="1.58451" id="C41-4o-AJG"/>
-                            <constraint firstItem="QEu-V9-hzs" firstAttribute="width" secondItem="dFE-0Q-xYa" secondAttribute="width" id="Ixg-8W-OeU"/>
-                            <constraint firstItem="NoL-TQ-ir3" firstAttribute="top" secondItem="dFE-0Q-xYa" secondAttribute="top" id="hKf-s7-p0I"/>
-                            <constraint firstItem="NoL-TQ-ir3" firstAttribute="trailing" secondItem="Hfh-7S-noA" secondAttribute="trailing" id="rPJ-BE-Rax"/>
+                            <constraint firstItem="NoL-TQ-ir3" firstAttribute="leading" secondItem="Hfh-7S-noA" secondAttribute="leading" id="66i-VK-rGP"/>
+                            <constraint firstItem="QEu-V9-hzs" firstAttribute="height" secondItem="dFE-0Q-xYa" secondAttribute="height" multiplier="1.58451" id="FsZ-1l-XG1"/>
+                            <constraint firstItem="NoL-TQ-ir3" firstAttribute="trailing" secondItem="Hfh-7S-noA" secondAttribute="trailing" id="Xhr-fx-hV7"/>
+                            <constraint firstItem="QEu-V9-hzs" firstAttribute="width" secondItem="dFE-0Q-xYa" secondAttribute="width" id="mqk-xt-s5e"/>
+                            <constraint firstItem="NoL-TQ-ir3" firstAttribute="top" secondItem="dFE-0Q-xYa" secondAttribute="top" id="ovb-ZZ-Byt"/>
+                            <constraint firstAttribute="bottom" secondItem="NoL-TQ-ir3" secondAttribute="bottom" id="ppi-AJ-YeQ"/>
                         </constraints>
                     </view>
                     <size key="freeformSize" width="393" height="852"/>
@@ -626,15 +614,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Subscribe for $3.99 in order to customize your to-do list:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZX3-Hi-T6k">
-                                <rect key="frame" x="28" y="360" width="339" height="69"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Subscribe for $3.99 to access List Customization features:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZX3-Hi-T6k">
+                                <rect key="frame" x="26" y="332" width="339" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="19"/>
                                 <color key="textColor" red="0.35076513459999997" green="0.26616730979999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gain a variety of over +20 deletion sounds, +80 fonts, 2 list background colors, and 2 text colors" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I16-E2-F1r">
-                                <rect key="frame" x="37" y="449" width="320" height="112"/>
+                                <rect key="frame" x="45" y="409" width="320" height="112"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="19"/>
                                 <color key="textColor" systemColor="systemPurpleColor"/>
@@ -645,19 +633,31 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NEZ-md-GKW">
-                                <rect key="frame" x="26" y="569" width="339" height="86"/>
+                                <rect key="frame" x="26" y="529" width="339" height="86"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.082529531271188228" green="0.059883005082123845" blue="0.5990053157216495" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Subscribe for $3.99/per week to access List Customization features">
+                                <buttonConfiguration key="configuration" style="filled" title="Subscribe for $3.99/per week to customize your to-do list:">
                                     <fontDescription key="titleFontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="subscribeButtonTapped:" destination="pHF-6P-az6" eventType="touchUpInside" id="8sj-wM-2Mw"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tgf-OP-Yqg">
+                                <rect key="frame" x="26" y="623" width="339" height="91"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.0" green="0.59227612100000004" blue="0.59900531570000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Restore Purchases">
+                                    <fontDescription key="titleFontDescription" name="Chalkduster" family="Chalkduster" pointSize="19"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="Restore_Purchases:" destination="pHF-6P-az6" eventType="touchUpInside" id="u9P-yy-F6J"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f80-9k-a7d">
-                                <rect key="frame" x="26" y="687" width="339" height="60"/>
+                                <rect key="frame" x="26" y="722" width="339" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="systemRedColor"/>
                                 <state key="normal" title="Button"/>

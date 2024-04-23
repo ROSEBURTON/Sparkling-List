@@ -2,12 +2,123 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Comic Sans MS Bold.ttf</string>
+		<string>Phosphate.ttc</string>
+		<string>Arial Black.ttf</string>
+		<string>Tahoma Bold.ttf</string>
+		<string>Al Nile.ttc</string>
+		<string>Al Tarikh.ttc</string>
+		<string>AlBayan.ttc</string>
+		<string>AmericanTypewriter.ttc</string>
+		<string>Andale Mono.ttf</string>
+		<string>Apple Chancery.ttf</string>
+		<string>AppleGothic.ttf</string>
+		<string>AppleMyungjo.ttf</string>
+		<string>Arial Black.ttf</string>
+		<string>Arial Bold Italic.ttf</string>
+		<string>Arial Bold.ttf</string>
+		<string>Arial Italic.ttf</string>
+		<string>Arial Narrow Bold Italic.ttf</string>
+		<string>Arial Narrow Bold.ttf</string>
+		<string>Arial Narrow Italic.ttf</string>
+		<string>Arial Narrow.ttf</string>
+		<string>Arial Rounded Bold.ttf</string>
+		<string>Arial Unicode.ttf</string>
+		<string>Arial.ttf</string>
+		<string>Athelas.ttc</string>
+		<string>Ayuthaya.ttf</string>
+		<string>Baghdad.ttc</string>
+		<string>Bangla MN.ttc</string>
+		<string>Bangla Sangam MN.ttc</string>
+		<string>Baskerville.ttc</string>
+		<string>Beirut.ttc</string>
+		<string>BigCaslon.ttf</string>
+		<string>Bodoni 72 OS.ttc</string>
+		<string>Bodoni 72 Smallcaps Book.ttf</string>
+		<string>Bodoni 72.ttc</string>
+		<string>Bradley Hand Bold.ttf</string>
+		<string>Brush Script.ttf</string>
+		<string>ChalkboardSE.ttc</string>
+		<string>Chalkduster.ttf</string>
+		<string>Charter.ttc</string>
+		<string>Cochin.ttc</string>
+		<string>Comic Sans MS Bold.ttf</string>
+		<string>Comic Sans MS.ttf</string>
+		<string>Courier New Bold Italic.ttf</string>
+		<string>Courier New Bold.ttf</string>
+		<string>Courier New Italic.ttf</string>
+		<string>Courier New.ttf</string>
+		<string>Didot.ttc</string>
+		<string>DIN Alternate Bold.ttf</string>
+		<string>DIN Condensed Bold.ttf</string>
+		<string>Diwan Kufi.ttc</string>
+		<string>EuphemiaCAS.ttc</string>
+		<string>Futura.ttc</string>
+		<string>Galvji.ttc</string>
+		<string>Georgia Bold Italic.ttf</string>
+		<string>Georgia Bold.ttf</string>
+		<string>Georgia Italic.ttf</string>
+		<string>Georgia.ttf</string>
+		<string>GillSans.ttc</string>
+		<string>Herculanum.ttf</string>
+		<string>Hoefler Text.ttc</string>
+		<string>Iowan Old Style.ttc</string>
+		<string>Krungthep.ttf</string>
+		<string>Lao MN.ttc</string>
+		<string>Lao Sangam MN.ttf</string>
+		<string>Luminari.ttf</string>
+		<string>Marion.ttc</string>
+		<string>Microsoft Sans Serif.ttf</string>
+		<string>NotoSansEgyptianHieroglyphs-Regular.ttf</string>
+		<string>NotoSansOldPersian-Regular.ttf</string>
+		<string>Papyrus.ttc</string>
+		<string>PartyLET-plain.ttf</string>
+		<string>PlantagenetCherokee.ttf</string>
+		<string>Rockwell.ttc</string>
+		<string>Sana.ttc</string>
+		<string>Savoye LET.ttc</string>
+		<string>Seravek.ttc</string>
+		<string>SignPainter.ttc</string>
+		<string>Silom.ttf</string>
+		<string>Skia.ttf</string>
+		<string>SnellRoundhand.ttc</string>
+		<string>Songti.ttc</string>
+		<string>STIXGeneral.otf</string>
+		<string>STIXGeneralBol.otf</string>
+		<string>STIXNonUni.otf</string>
+		<string>STIXNonUniBol.otf</string>
+		<string>STIXNonUniBolIta.otf</string>
+		<string>STIXNonUniIta.otf</string>
+		<string>STIXTwoMath.otf</string>
+		<string>STIXTwoText-Italic.ttf</string>
+		<string>STIXTwoText.ttf</string>
+		<string>STIXVar.otf</string>
+		<string>SuperClarendon.ttc</string>
+		<string>Tahoma Bold.ttf</string>
+		<string>Tahoma.ttf</string>
+		<string>Times New Roman Bold Italic.ttf</string>
+		<string>Times New Roman Bold.ttf</string>
+		<string>Times New Roman Italic.ttf</string>
+		<string>Times New Roman.ttf</string>
+		<string>Trattatello.ttf</string>
+		<string>Trebuchet MS Bold Italic.ttf</string>
+		<string>Trebuchet MS Bold.ttf</string>
+		<string>Trebuchet MS Italic.ttf</string>
+		<string>Trebuchet MS.ttf</string>
+		<string>Verdana Bold Italic.ttf</string>
+		<string>Verdana Bold.ttf</string>
+		<string>Verdana Italic.ttf</string>
+		<string>Verdana.ttf</string>
+		<string>Tahoma Bold.ttf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>Privacy - Motion Usage Description</key>
-		<string>Tipping your device can be used to shuffle your to do list. If you'd like to allow motion detection, please select Allow</string>
+		<string>Tipping your device can be used to shuffle your to do list. If you&apos;d like to allow motion detection, please select Allow</string>
 		<key>Privacy - Reminders Usage Description</key>
-		<string>If you'd like notifications from Sparkling List, please select Allow</string>
+		<string>If you&apos;d like notifications from Sparkling List, please select Allow</string>
 		<key>UIApplicationSupportsMultipleScenes</key>
 		<false/>
 		<key>UISceneConfigurations</key>

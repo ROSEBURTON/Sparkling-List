@@ -1,5 +1,6 @@
 import UIKit
 import SwiftUI
+import CoreText
 import StoreKit
 import CoreData
 import Foundation
@@ -47,7 +48,8 @@ var paying_customer: Bool {
 
 var selectedFontIndex: Int = 0
 var selectedDeletionIndex: Int = 0
-var deleteSoundOptions = ["@*!+-R", "Bakin' Dat Pizza", "Pink Gladiate Soda", "Super Big Purr", "Rainbow Chromium Finish", "Thrist Trappin' Soda", "Chalkboard", "Coming Near You", "Cybernetic Models", "Astral Melt", "👁️‍🗨️", "Fart", "Wine Glass", "Gold for Galactic Drinks", "Gyat Chonki-Lonki Party Butt Bounce", "Laser", "Loading Productive Ammo", "Miss Computer Email", "Missile Hit", "Nuclear Ending", "Pleased Observing Mantid", "Productive Prep", "Ready for Takeoff", "Soda Sea Mine", "Sparkling Status Signal", "Green Lime, Sour Pink Splash", "Book burn, discredit,  gas light", "Type Ship", "Pizza Deluxe", "Water Lurk"].sorted()
+var deleteSoundOptions = ["@*!+-R", "Bakin' Dat Pizza", "Pink Gladiate Soda", "Super Big Purr", "Rainbow Chromium Finish", "Thrist Trappin' Soda", "Chalkboard", "Coming Near You", "Cybernetic Models", "Astral Melt", "👁️‍🗨️", "Fart", "Wine Glass", "Gold for Galactic Drinks", "Gyat Chonki-Lonki Party Butt Bounce", "Laser", "Loading Productive Ammo", "Miss Computer Email", "Missile Hit", "Nuclear Ending", "Pleased Observing Mantid", "Productive Prep", "Ready for Takeoff", "Soda Sea Mine", "Sparkling Status Signal", "Green Lime, Sour Pink Splash", "Book burn, discredit,  gas light", "Type Ship", "Synthetic Pizza Deluxe", "Water Lurk"].sorted()
+
 
 //Scroll Store:
 // scroll view at 0 , 0 , 0 , 0. Add 4 constraints
@@ -97,7 +99,7 @@ public class SHOP: UIViewController, UIPickerViewDataSource, UIPickerViewDelegat
             mailComposeViewController.mailComposeDelegate = self
             mailComposeViewController.setToRecipients(["cosmonautEBE@gmail.com"])
             mailComposeViewController.setSubject("Support Request")
-            mailComposeViewController.setMessageBody("Hello, I need some support with your app.", isHTML: false)
+            mailComposeViewController.setMessageBody("I would like some support with this app.\n\nDescribe your concern:\n\n\n\n\nIf you'd like to fill out the following section, please do, it will really improve the app!\n---------------------------------\nBug Issue:\n\nSuggestion and Feedback:\n\nApp Like and Dislike:\n\nOther:", isHTML: false)
             present(mailComposeViewController, animated: true, completion: nil)
         } else {
             let alert = UIAlertController(title: "Unable to Send Email for support", message: "Your device is not configured to send emails.", preferredStyle: .alert)
@@ -146,32 +148,7 @@ public class SHOP: UIViewController, UIPickerViewDataSource, UIPickerViewDelegat
         }
     }
     
-    func restorePurchases() {
-        SKPaymentQueue.default().restoreCompletedTransactions()
-    }
 
-    @IBAction func Restore_Purchases(_ sender: UIButton) {
-        Clicky()
-        if !paying_customer {
-            let alert = UIAlertController(title: "Unable to Restore Purchases", message: "You have not made any purchases", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        }
-
-        if KeychainService.loadPayingCustomerStatus() != nil {
-            restorePurchases()
-            KeychainService.savePayingCustomerStatus(true)
-            
-            let alert = UIAlertController(title: "Restoring Subscription", message: "Your subscription has been restored", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        } else {
-            print("Unable to load paying_customer status from Keychain")
-            let alert = UIAlertController(title: "Unable to Restore Purchases", message: "Unable to load subscription status", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        }
-    }
 
 
     
@@ -659,15 +636,75 @@ public override func viewDidAppear(_ animated: Bool) {
         
         configurePickerView(with: deleteSoundOptions, for: DeleteSound)
         DeleteSound.selectRow(selectedDeleteSoundIndex, inComponent: 0, animated: false)
-        fonts = UIFont.familyNames.sorted()
-        selectedDeletionIndex = UserDefaults.standard.integer(forKey: "selectedDeleteSoundIndex")
         
-        configurePickerView(with: fonts, for: FontSelection)
-        FontSelection.selectRow(selectedFontIndex, inComponent: 0, animated: false)
-        selectedFontIndex = UserDefaults.standard.integer(forKey: "selectedFontIndex")
+        
         
 
-    }
+        
+        func loadFontsFromFolder(folderName: String) -> [String] {
+            var fontFamilies = [String]()
+            if let folderURL = Bundle.main.url(forResource: folderName, withExtension: nil) {
+                do {
+                    let fontURLs = try FileManager.default.contentsOfDirectory(at: folderURL, includingPropertiesForKeys: nil, options: [])
+                    for fontURL in fontURLs {
+                        if let fontDataProvider = CGDataProvider(url: fontURL as CFURL),
+                           let font = CGFont(fontDataProvider) {
+                            if let fontName = font.postScriptName as String? {
+                                fontFamilies.append(fontName)
+                            }
+                        } else {
+                            print("Error loading font from URL:", fontURL)
+                        }
+                    }
+                } catch {
+                    print("Error loading fonts from folder:", error)
+                }
+            }
+            return fontFamilies
+        }
+        //fonts = UIFont.familyNames.sorted()
+
+        
+
+
+
+        func registerFont() {
+            if let fontURL = Bundle.main.url(forResource: "SF-Compact-Display-Black", withExtension: "otf"),
+               let fontData = try? Data(contentsOf: fontURL) as CFData,
+               let provider = CGDataProvider(data: fontData),
+               let font = CGFont(provider) {
+                if !CTFontManagerRegisterGraphicsFont(font, nil) {
+                    print("Failed to register font.")
+                }
+            } else {
+                print("Font file not found.")
+            }
+        }
+
+        // Call the function to register the font
+        registerFont()
+
+        // Get all system fonts
+        let allFonts = UIFont.familyNames.sorted()
+
+        // Include the registered font in the list of fonts
+        let registeredFont = "SF-Compact-Display-Black" // The font name without the file extension
+        let fonts = allFonts// + [registeredFont]
+
+        print(fonts, fonts.count)
+
+
+
+
+        
+        
+        
+        
+        
+        selectedDeletionIndex = UserDefaults.standard.integer(forKey: "selectedDeleteSoundIndex")
+        configurePickerView(with: fonts, for: FontSelection)
+        FontSelection.selectRow(selectedFontIndex, inComponent: 0, animated: false)
+        selectedFontIndex = UserDefaults.standard.integer(forKey: "selectedFontIndex")    }
     
 
     

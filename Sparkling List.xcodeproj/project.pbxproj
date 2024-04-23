@@ -17,7 +17,7 @@
 		4F073E442AF319CE00623681 /* Omit.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F073E432AF319CE00623681 /* Omit.wav */; };
 		4F073E542AF31D3600623681 /* ATL Night Rain.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F073E532AF31D3600623681 /* ATL Night Rain.wav */; };
 		4F073E582AF31E3500623681 /* Missile Hit.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F073E572AF31E3500623681 /* Missile Hit.wav */; };
-		4F073E602AF3207900623681 /* Pizza Deluxe.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F073E5F2AF3207900623681 /* Pizza Deluxe.wav */; };
+		4F073E602AF3207900623681 /* Synthetic Pizza Deluxe.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F073E5F2AF3207900623681 /* Synthetic Pizza Deluxe.wav */; };
 		4F073E622AF323B800623681 /* Nuclear Ending.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F073E612AF323B800623681 /* Nuclear Ending.wav */; };
 		4F073E642AF3241900623681 /* Soda Sea Mine.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F073E632AF3241900623681 /* Soda Sea Mine.wav */; };
 		4F0931252A8570E0007B782A /* Selected.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F0931242A8570E0007B782A /* Selected.wav */; };
@@ -62,6 +62,112 @@
 		4F87BB332B8597FB00DD093B /* shuffle.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F87BB322B8597FB00DD093B /* shuffle.wav */; };
 		4F9309482AB0EB2C00E9BFAB /* Telepathy.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F9309472AB0EB2B00E9BFAB /* Telepathy.wav */; };
 		4F9636FD2BCC1E0F001446F8 /* Cashes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9636FC2BCC1E0F001446F8 /* Cashes.swift */; };
+		4FA7D6502BD818D70091EA2E /* Bodoni 72 Smallcaps Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D52F2BD818C80091EA2E /* Bodoni 72 Smallcaps Book.ttf */; };
+		4FA7D6532BD818D70091EA2E /* Diwan Kufi.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5322BD818C80091EA2E /* Diwan Kufi.ttc */; };
+		4FA7D6552BD818D70091EA2E /* Didot.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5342BD818C80091EA2E /* Didot.ttc */; };
+		4FA7D6582BD818D70091EA2E /* Times New Roman Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5372BD818C80091EA2E /* Times New Roman Bold.ttf */; };
+		4FA7D6592BD818D70091EA2E /* Courier New Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5382BD818C80091EA2E /* Courier New Bold.ttf */; };
+		4FA7D65B2BD818D70091EA2E /* Songti.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D53A2BD818CA0091EA2E /* Songti.ttc */; };
+		4FA7D65D2BD818D70091EA2E /* Georgia Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D53C2BD818CA0091EA2E /* Georgia Italic.ttf */; };
+		4FA7D6602BD818D70091EA2E /* STIXNonUni.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D53F2BD818CA0091EA2E /* STIXNonUni.otf */; };
+		4FA7D6632BD818D70091EA2E /* Iowan Old Style.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5422BD818CA0091EA2E /* Iowan Old Style.ttc */; };
+		4FA7D6642BD818D70091EA2E /* Cochin.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5432BD818CA0091EA2E /* Cochin.ttc */; };
+		4FA7D6652BD818D70091EA2E /* Luminari.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5442BD818CA0091EA2E /* Luminari.ttf */; };
+		4FA7D6662BD818D70091EA2E /* STIXVar.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5452BD818CA0091EA2E /* STIXVar.otf */; };
+		4FA7D6682BD818D70091EA2E /* PartyLET-plain.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5472BD818CA0091EA2E /* PartyLET-plain.ttf */; };
+		4FA7D6692BD818D70091EA2E /* Arial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5482BD818CA0091EA2E /* Arial.ttf */; };
+		4FA7D66A2BD818D70091EA2E /* Times New Roman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5492BD818CA0091EA2E /* Times New Roman.ttf */; };
+		4FA7D66B2BD818D70091EA2E /* Bodoni 72 OS.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D54A2BD818CA0091EA2E /* Bodoni 72 OS.ttc */; };
+		4FA7D66C2BD818D70091EA2E /* Krungthep.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D54B2BD818CA0091EA2E /* Krungthep.ttf */; };
+		4FA7D6712BD818D70091EA2E /* Comic Sans MS Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5502BD818CB0091EA2E /* Comic Sans MS Bold.ttf */; };
+		4FA7D6732BD818D70091EA2E /* Futura.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5522BD818CB0091EA2E /* Futura.ttc */; };
+		4FA7D6772BD818D70091EA2E /* Baghdad.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5562BD818CB0091EA2E /* Baghdad.ttc */; };
+		4FA7D6782BD818D70091EA2E /* Marion.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5572BD818CB0091EA2E /* Marion.ttc */; };
+		4FA7D67C2BD818D70091EA2E /* Times New Roman Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D55B2BD818CB0091EA2E /* Times New Roman Italic.ttf */; };
+		4FA7D67E2BD818D70091EA2E /* PlantagenetCherokee.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D55D2BD818CB0091EA2E /* PlantagenetCherokee.ttf */; };
+		4FA7D6812BD818D70091EA2E /* Trebuchet MS Bold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5602BD818CB0091EA2E /* Trebuchet MS Bold Italic.ttf */; };
+		4FA7D6852BD818D70091EA2E /* SnellRoundhand.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5642BD818CB0091EA2E /* SnellRoundhand.ttc */; };
+		4FA7D6882BD818D70091EA2E /* Verdana Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5672BD818CC0091EA2E /* Verdana Bold.ttf */; };
+		4FA7D6892BD818D70091EA2E /* Verdana Bold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5682BD818CC0091EA2E /* Verdana Bold Italic.ttf */; };
+		4FA7D68A2BD818D70091EA2E /* Athelas.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5692BD818CC0091EA2E /* Athelas.ttc */; };
+		4FA7D68C2BD818D70091EA2E /* Zapfino.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D56B2BD818CC0091EA2E /* Zapfino.ttf */; };
+		4FA7D68D2BD818D70091EA2E /* Baskerville.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D56C2BD818CC0091EA2E /* Baskerville.ttc */; };
+		4FA7D6902BD818D70091EA2E /* BigCaslon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D56F2BD818CC0091EA2E /* BigCaslon.ttf */; };
+		4FA7D6952BD818D70091EA2E /* Charter.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5742BD818CC0091EA2E /* Charter.ttc */; };
+		4FA7D6972BD818D70091EA2E /* AmericanTypewriter.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5762BD818CC0091EA2E /* AmericanTypewriter.ttc */; };
+		4FA7D6992BD818D70091EA2E /* AlBayan.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5782BD818CC0091EA2E /* AlBayan.ttc */; };
+		4FA7D69B2BD818D70091EA2E /* Sana.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D57A2BD818CC0091EA2E /* Sana.ttc */; };
+		4FA7D69C2BD818D70091EA2E /* Courier New.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D57B2BD818CC0091EA2E /* Courier New.ttf */; };
+		4FA7D69D2BD818D70091EA2E /* Arial Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D57C2BD818CD0091EA2E /* Arial Black.ttf */; };
+		4FA7D69F2BD818D70091EA2E /* Arial Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D57E2BD818CD0091EA2E /* Arial Bold.ttf */; };
+		4FA7D6A02BD818D70091EA2E /* AppleGothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D57F2BD818CD0091EA2E /* AppleGothic.ttf */; };
+		4FA7D6A32BD818D70091EA2E /* Georgia Bold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5822BD818CD0091EA2E /* Georgia Bold Italic.ttf */; };
+		4FA7D6AA2BD818D70091EA2E /* Arial Narrow Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5892BD818CD0091EA2E /* Arial Narrow Italic.ttf */; };
+		4FA7D6AD2BD818D70091EA2E /* Hoefler Text.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D58C2BD818CE0091EA2E /* Hoefler Text.ttc */; };
+		4FA7D6B02BD818D70091EA2E /* ChalkboardSE.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D58F2BD818CE0091EA2E /* ChalkboardSE.ttc */; };
+		4FA7D6B32BD818D70091EA2E /* Trebuchet MS Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5922BD818CE0091EA2E /* Trebuchet MS Bold.ttf */; };
+		4FA7D6B92BD818D70091EA2E /* AppleMyungjo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5982BD818CE0091EA2E /* AppleMyungjo.ttf */; };
+		4FA7D6BD2BD818D70091EA2E /* Arial Narrow Bold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D59C2BD818CE0091EA2E /* Arial Narrow Bold Italic.ttf */; };
+		4FA7D6BF2BD818D70091EA2E /* Courier New Bold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D59E2BD818CF0091EA2E /* Courier New Bold Italic.ttf */; };
+		4FA7D6C02BD818D70091EA2E /* DIN Alternate Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D59F2BD818CF0091EA2E /* DIN Alternate Bold.ttf */; };
+		4FA7D6C42BD818D70091EA2E /* DIN Condensed Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5A32BD818CF0091EA2E /* DIN Condensed Bold.ttf */; };
+		4FA7D6C52BD818D70091EA2E /* Ayuthaya.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5A42BD818CF0091EA2E /* Ayuthaya.ttf */; };
+		4FA7D6C92BD818D70091EA2E /* Verdana.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5A82BD818CF0091EA2E /* Verdana.ttf */; };
+		4FA7D6CA2BD818D70091EA2E /* Verdana Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5A92BD818CF0091EA2E /* Verdana Italic.ttf */; };
+		4FA7D6D12BD818D70091EA2E /* SignPainter.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5B02BD818CF0091EA2E /* SignPainter.ttc */; };
+		4FA7D6D42BD818D70091EA2E /* Herculanum.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5B32BD818CF0091EA2E /* Herculanum.ttf */; };
+		4FA7D6D52BD818D70091EA2E /* Tahoma.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5B42BD818CF0091EA2E /* Tahoma.ttf */; };
+		4FA7D6D72BD818D70091EA2E /* Trebuchet MS.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5B62BD818CF0091EA2E /* Trebuchet MS.ttf */; };
+		4FA7D6D82BD818D70091EA2E /* Brush Script.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5B72BD818D00091EA2E /* Brush Script.ttf */; };
+		4FA7D6DB2BD818D70091EA2E /* Chalkduster.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5BA2BD818D00091EA2E /* Chalkduster.ttf */; };
+		4FA7D6DD2BD818D70091EA2E /* STIXTwoText.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5BC2BD818D00091EA2E /* STIXTwoText.ttf */; };
+		4FA7D6DF2BD818D70091EA2E /* STIXGeneral.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5BE2BD818D00091EA2E /* STIXGeneral.otf */; };
+		4FA7D6E22BD818D70091EA2E /* Savoye LET.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5C12BD818D00091EA2E /* Savoye LET.ttc */; };
+		4FA7D6E52BD818D70091EA2E /* Silom.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5C42BD818D00091EA2E /* Silom.ttf */; };
+		4FA7D6E62BD818D70091EA2E /* Comic Sans MS.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5C52BD818D00091EA2E /* Comic Sans MS.ttf */; };
+		4FA7D6E92BD818D70091EA2E /* Galvji.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5C82BD818D00091EA2E /* Galvji.ttc */; };
+		4FA7D6EE2BD818D70091EA2E /* Seravek.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5CD2BD818D10091EA2E /* Seravek.ttc */; };
+		4FA7D6F32BD818D70091EA2E /* Al Nile.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5D22BD818D10091EA2E /* Al Nile.ttc */; };
+		4FA7D6F42BD818D70091EA2E /* STIXNonUniBol.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5D32BD818D10091EA2E /* STIXNonUniBol.otf */; };
+		4FA7D6F62BD818D70091EA2E /* Lao Sangam MN.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5D52BD818D10091EA2E /* Lao Sangam MN.ttf */; };
+		4FA7D6F72BD818D70091EA2E /* STIXNonUniIta.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5D62BD818D10091EA2E /* STIXNonUniIta.otf */; };
+		4FA7D6FB2BD818D70091EA2E /* SuperClarendon.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5DA2BD818D10091EA2E /* SuperClarendon.ttc */; };
+		4FA7D6FC2BD818D70091EA2E /* Lao MN.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5DB2BD818D10091EA2E /* Lao MN.ttc */; };
+		4FA7D6FE2BD818D70091EA2E /* Arial Unicode.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5DD2BD818D20091EA2E /* Arial Unicode.ttf */; };
+		4FA7D6FF2BD818D70091EA2E /* Rockwell.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5DE2BD818D20091EA2E /* Rockwell.ttc */; };
+		4FA7D7012BD818D70091EA2E /* Malayalam Sangam MN.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5E02BD818D20091EA2E /* Malayalam Sangam MN.ttc */; };
+		4FA7D7032BD818D70091EA2E /* Times New Roman Bold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5E22BD818D20091EA2E /* Times New Roman Bold Italic.ttf */; };
+		4FA7D7072BD818D70091EA2E /* Georgia.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5E62BD818D20091EA2E /* Georgia.ttf */; };
+		4FA7D70F2BD818D70091EA2E /* Bodoni 72.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5EE2BD818D30091EA2E /* Bodoni 72.ttc */; };
+		4FA7D71C2BD818D70091EA2E /* Arial Narrow Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5FB2BD818D30091EA2E /* Arial Narrow Bold.ttf */; };
+		4FA7D71D2BD818D70091EA2E /* Bradley Hand Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5FC2BD818D30091EA2E /* Bradley Hand Bold.ttf */; };
+		4FA7D7202BD818D70091EA2E /* Al Tarikh.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D5FF2BD818D30091EA2E /* Al Tarikh.ttc */; };
+		4FA7D7212BD818D70091EA2E /* Andale Mono.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D6002BD818D30091EA2E /* Andale Mono.ttf */; };
+		4FA7D7222BD818D70091EA2E /* STIXTwoText-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D6012BD818D30091EA2E /* STIXTwoText-Italic.ttf */; };
+		4FA7D7282BD818D70091EA2E /* STIXTwoMath.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D6072BD818D40091EA2E /* STIXTwoMath.otf */; };
+		4FA7D72C2BD818D70091EA2E /* Papyrus.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D60B2BD818D40091EA2E /* Papyrus.ttc */; };
+		4FA7D72D2BD818D70091EA2E /* Microsoft Sans Serif.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D60C2BD818D40091EA2E /* Microsoft Sans Serif.ttf */; };
+		4FA7D7362BD818D70091EA2E /* NotoSansOldPersian-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D6152BD818D40091EA2E /* NotoSansOldPersian-Regular.ttf */; };
+		4FA7D7392BD818D70091EA2E /* EuphemiaCAS.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D6182BD818D40091EA2E /* EuphemiaCAS.ttc */; };
+		4FA7D73A2BD818D70091EA2E /* Beirut.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D6192BD818D40091EA2E /* Beirut.ttc */; };
+		4FA7D73B2BD818D70091EA2E /* Skia.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D61A2BD818D40091EA2E /* Skia.ttf */; };
+		4FA7D73C2BD818D70091EA2E /* Apple Chancery.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D61B2BD818D50091EA2E /* Apple Chancery.ttf */; };
+		4FA7D73E2BD818D70091EA2E /* STIXNonUniBolIta.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D61D2BD818D50091EA2E /* STIXNonUniBolIta.otf */; };
+		4FA7D73F2BD818D70091EA2E /* Courier New Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D61E2BD818D50091EA2E /* Courier New Italic.ttf */; };
+		4FA7D7442BD818D70091EA2E /* Phosphate.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D6232BD818D50091EA2E /* Phosphate.ttc */; };
+		4FA7D7472BD818D70091EA2E /* Arial Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D6262BD818D50091EA2E /* Arial Italic.ttf */; };
+		4FA7D74F2BD818D70091EA2E /* Arial Bold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D62E2BD818D50091EA2E /* Arial Bold Italic.ttf */; };
+		4FA7D7522BD818D70091EA2E /* Arial Narrow.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D6312BD818D50091EA2E /* Arial Narrow.ttf */; };
+		4FA7D7542BD818D70091EA2E /* Bangla Sangam MN.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D6332BD818D50091EA2E /* Bangla Sangam MN.ttc */; };
+		4FA7D7562BD818D70091EA2E /* Georgia Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D6352BD818D60091EA2E /* Georgia Bold.ttf */; };
+		4FA7D7592BD818D70091EA2E /* Tahoma Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D6382BD818D60091EA2E /* Tahoma Bold.ttf */; };
+		4FA7D75B2BD818D70091EA2E /* Trebuchet MS Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D63A2BD818D60091EA2E /* Trebuchet MS Italic.ttf */; };
+		4FA7D75E2BD818D70091EA2E /* Bangla MN.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D63D2BD818D60091EA2E /* Bangla MN.ttc */; };
+		4FA7D75F2BD818D70091EA2E /* NotoSansEgyptianHieroglyphs-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D63E2BD818D60091EA2E /* NotoSansEgyptianHieroglyphs-Regular.ttf */; };
+		4FA7D7632BD818D70091EA2E /* Arial Rounded Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D6422BD818D60091EA2E /* Arial Rounded Bold.ttf */; };
+		4FA7D7652BD818D70091EA2E /* STIXGeneralBol.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D6442BD818D60091EA2E /* STIXGeneralBol.otf */; };
+		4FA7D7672BD818D70091EA2E /* GillSans.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D6462BD818D60091EA2E /* GillSans.ttc */; };
+		4FA7D76C2BD818D70091EA2E /* Trattatello.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA7D64B2BD818D60091EA2E /* Trattatello.ttf */; };
 		4FA93FD82B8259C7000CA4C4 /* Type Ship.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4FA93FD72B8259C7000CA4C4 /* Type Ship.wav */; };
 		4FACBEF92BD2288300EB2D39 /* SEDU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FACBEF82BD2287F00EB2D39 /* SEDU.swift */; };
 		4FAFBCA32A818B9200F848F5 /* Laser.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4FAFBCA22A818B9200F848F5 /* Laser.mp3 */; };
@@ -125,7 +231,7 @@
 		4F073E432AF319CE00623681 /* Omit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Omit.wav; sourceTree = "<group>"; };
 		4F073E532AF31D3600623681 /* ATL Night Rain.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "ATL Night Rain.wav"; sourceTree = "<group>"; };
 		4F073E572AF31E3500623681 /* Missile Hit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Missile Hit.wav"; sourceTree = "<group>"; };
-		4F073E5F2AF3207900623681 /* Pizza Deluxe.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Pizza Deluxe.wav"; sourceTree = "<group>"; };
+		4F073E5F2AF3207900623681 /* Synthetic Pizza Deluxe.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Synthetic Pizza Deluxe.wav"; sourceTree = "<group>"; };
 		4F073E612AF323B800623681 /* Nuclear Ending.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Nuclear Ending.wav"; sourceTree = "<group>"; };
 		4F073E632AF3241900623681 /* Soda Sea Mine.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Soda Sea Mine.wav"; sourceTree = "<group>"; };
 		4F0931242A8570E0007B782A /* Selected.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Selected.wav; sourceTree = "<group>"; };
@@ -172,6 +278,113 @@
 		4F87BB322B8597FB00DD093B /* shuffle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shuffle.wav; sourceTree = "<group>"; };
 		4F9309472AB0EB2B00E9BFAB /* Telepathy.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Telepathy.wav; sourceTree = "<group>"; };
 		4F9636FC2BCC1E0F001446F8 /* Cashes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cashes.swift; sourceTree = "<group>"; };
+		4FA7D52D2BD815BE0091EA2E /* Tahoma Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tahoma Bold.ttf"; sourceTree = "<group>"; };
+		4FA7D52F2BD818C80091EA2E /* Bodoni 72 Smallcaps Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bodoni 72 Smallcaps Book.ttf"; sourceTree = "<group>"; };
+		4FA7D5322BD818C80091EA2E /* Diwan Kufi.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Diwan Kufi.ttc"; sourceTree = "<group>"; };
+		4FA7D5342BD818C80091EA2E /* Didot.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Didot.ttc; sourceTree = "<group>"; };
+		4FA7D5372BD818C80091EA2E /* Times New Roman Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Times New Roman Bold.ttf"; sourceTree = "<group>"; };
+		4FA7D5382BD818C80091EA2E /* Courier New Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Courier New Bold.ttf"; sourceTree = "<group>"; };
+		4FA7D53A2BD818CA0091EA2E /* Songti.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Songti.ttc; sourceTree = "<group>"; };
+		4FA7D53C2BD818CA0091EA2E /* Georgia Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Georgia Italic.ttf"; sourceTree = "<group>"; };
+		4FA7D53F2BD818CA0091EA2E /* STIXNonUni.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = STIXNonUni.otf; sourceTree = "<group>"; };
+		4FA7D5422BD818CA0091EA2E /* Iowan Old Style.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Iowan Old Style.ttc"; sourceTree = "<group>"; };
+		4FA7D5432BD818CA0091EA2E /* Cochin.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cochin.ttc; sourceTree = "<group>"; };
+		4FA7D5442BD818CA0091EA2E /* Luminari.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Luminari.ttf; sourceTree = "<group>"; };
+		4FA7D5452BD818CA0091EA2E /* STIXVar.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = STIXVar.otf; sourceTree = "<group>"; };
+		4FA7D5472BD818CA0091EA2E /* PartyLET-plain.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PartyLET-plain.ttf"; sourceTree = "<group>"; };
+		4FA7D5482BD818CA0091EA2E /* Arial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Arial.ttf; sourceTree = "<group>"; };
+		4FA7D5492BD818CA0091EA2E /* Times New Roman.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Times New Roman.ttf"; sourceTree = "<group>"; };
+		4FA7D54A2BD818CA0091EA2E /* Bodoni 72 OS.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bodoni 72 OS.ttc"; sourceTree = "<group>"; };
+		4FA7D54B2BD818CA0091EA2E /* Krungthep.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Krungthep.ttf; sourceTree = "<group>"; };
+		4FA7D5502BD818CB0091EA2E /* Comic Sans MS Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comic Sans MS Bold.ttf"; sourceTree = "<group>"; };
+		4FA7D5522BD818CB0091EA2E /* Futura.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Futura.ttc; sourceTree = "<group>"; };
+		4FA7D5562BD818CB0091EA2E /* Baghdad.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Baghdad.ttc; sourceTree = "<group>"; };
+		4FA7D5572BD818CB0091EA2E /* Marion.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Marion.ttc; sourceTree = "<group>"; };
+		4FA7D55B2BD818CB0091EA2E /* Times New Roman Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Times New Roman Italic.ttf"; sourceTree = "<group>"; };
+		4FA7D55D2BD818CB0091EA2E /* PlantagenetCherokee.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PlantagenetCherokee.ttf; sourceTree = "<group>"; };
+		4FA7D5602BD818CB0091EA2E /* Trebuchet MS Bold Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Trebuchet MS Bold Italic.ttf"; sourceTree = "<group>"; };
+		4FA7D5642BD818CB0091EA2E /* SnellRoundhand.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = SnellRoundhand.ttc; sourceTree = "<group>"; };
+		4FA7D5672BD818CC0091EA2E /* Verdana Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Verdana Bold.ttf"; sourceTree = "<group>"; };
+		4FA7D5682BD818CC0091EA2E /* Verdana Bold Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Verdana Bold Italic.ttf"; sourceTree = "<group>"; };
+		4FA7D5692BD818CC0091EA2E /* Athelas.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Athelas.ttc; sourceTree = "<group>"; };
+		4FA7D56B2BD818CC0091EA2E /* Zapfino.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Zapfino.ttf; sourceTree = "<group>"; };
+		4FA7D56C2BD818CC0091EA2E /* Baskerville.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Baskerville.ttc; sourceTree = "<group>"; };
+		4FA7D56F2BD818CC0091EA2E /* BigCaslon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BigCaslon.ttf; sourceTree = "<group>"; };
+		4FA7D5742BD818CC0091EA2E /* Charter.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Charter.ttc; sourceTree = "<group>"; };
+		4FA7D5762BD818CC0091EA2E /* AmericanTypewriter.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = AmericanTypewriter.ttc; sourceTree = "<group>"; };
+		4FA7D5782BD818CC0091EA2E /* AlBayan.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = AlBayan.ttc; sourceTree = "<group>"; };
+		4FA7D57A2BD818CC0091EA2E /* Sana.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sana.ttc; sourceTree = "<group>"; };
+		4FA7D57B2BD818CC0091EA2E /* Courier New.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Courier New.ttf"; sourceTree = "<group>"; };
+		4FA7D57C2BD818CD0091EA2E /* Arial Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Arial Black.ttf"; sourceTree = "<group>"; };
+		4FA7D57E2BD818CD0091EA2E /* Arial Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Arial Bold.ttf"; sourceTree = "<group>"; };
+		4FA7D57F2BD818CD0091EA2E /* AppleGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleGothic.ttf; sourceTree = "<group>"; };
+		4FA7D5822BD818CD0091EA2E /* Georgia Bold Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Georgia Bold Italic.ttf"; sourceTree = "<group>"; };
+		4FA7D5892BD818CD0091EA2E /* Arial Narrow Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Arial Narrow Italic.ttf"; sourceTree = "<group>"; };
+		4FA7D58C2BD818CE0091EA2E /* Hoefler Text.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hoefler Text.ttc"; sourceTree = "<group>"; };
+		4FA7D58F2BD818CE0091EA2E /* ChalkboardSE.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = ChalkboardSE.ttc; sourceTree = "<group>"; };
+		4FA7D5922BD818CE0091EA2E /* Trebuchet MS Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Trebuchet MS Bold.ttf"; sourceTree = "<group>"; };
+		4FA7D5982BD818CE0091EA2E /* AppleMyungjo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleMyungjo.ttf; sourceTree = "<group>"; };
+		4FA7D59C2BD818CE0091EA2E /* Arial Narrow Bold Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Arial Narrow Bold Italic.ttf"; sourceTree = "<group>"; };
+		4FA7D59E2BD818CF0091EA2E /* Courier New Bold Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Courier New Bold Italic.ttf"; sourceTree = "<group>"; };
+		4FA7D59F2BD818CF0091EA2E /* DIN Alternate Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN Alternate Bold.ttf"; sourceTree = "<group>"; };
+		4FA7D5A32BD818CF0091EA2E /* DIN Condensed Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN Condensed Bold.ttf"; sourceTree = "<group>"; };
+		4FA7D5A42BD818CF0091EA2E /* Ayuthaya.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ayuthaya.ttf; sourceTree = "<group>"; };
+		4FA7D5A82BD818CF0091EA2E /* Verdana.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Verdana.ttf; sourceTree = "<group>"; };
+		4FA7D5A92BD818CF0091EA2E /* Verdana Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Verdana Italic.ttf"; sourceTree = "<group>"; };
+		4FA7D5B02BD818CF0091EA2E /* SignPainter.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = SignPainter.ttc; sourceTree = "<group>"; };
+		4FA7D5B32BD818CF0091EA2E /* Herculanum.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Herculanum.ttf; sourceTree = "<group>"; };
+		4FA7D5B42BD818CF0091EA2E /* Tahoma.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tahoma.ttf; sourceTree = "<group>"; };
+		4FA7D5B62BD818CF0091EA2E /* Trebuchet MS.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Trebuchet MS.ttf"; sourceTree = "<group>"; };
+		4FA7D5B72BD818D00091EA2E /* Brush Script.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Brush Script.ttf"; sourceTree = "<group>"; };
+		4FA7D5BA2BD818D00091EA2E /* Chalkduster.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chalkduster.ttf; sourceTree = "<group>"; };
+		4FA7D5BC2BD818D00091EA2E /* STIXTwoText.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = STIXTwoText.ttf; sourceTree = "<group>"; };
+		4FA7D5BE2BD818D00091EA2E /* STIXGeneral.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = STIXGeneral.otf; sourceTree = "<group>"; };
+		4FA7D5C12BD818D00091EA2E /* Savoye LET.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Savoye LET.ttc"; sourceTree = "<group>"; };
+		4FA7D5C42BD818D00091EA2E /* Silom.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Silom.ttf; sourceTree = "<group>"; };
+		4FA7D5C52BD818D00091EA2E /* Comic Sans MS.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comic Sans MS.ttf"; sourceTree = "<group>"; };
+		4FA7D5C82BD818D00091EA2E /* Galvji.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Galvji.ttc; sourceTree = "<group>"; };
+		4FA7D5CD2BD818D10091EA2E /* Seravek.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Seravek.ttc; sourceTree = "<group>"; };
+		4FA7D5D22BD818D10091EA2E /* Al Nile.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Al Nile.ttc"; sourceTree = "<group>"; };
+		4FA7D5D32BD818D10091EA2E /* STIXNonUniBol.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = STIXNonUniBol.otf; sourceTree = "<group>"; };
+		4FA7D5D52BD818D10091EA2E /* Lao Sangam MN.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lao Sangam MN.ttf"; sourceTree = "<group>"; };
+		4FA7D5D62BD818D10091EA2E /* STIXNonUniIta.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = STIXNonUniIta.otf; sourceTree = "<group>"; };
+		4FA7D5DA2BD818D10091EA2E /* SuperClarendon.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = SuperClarendon.ttc; sourceTree = "<group>"; };
+		4FA7D5DB2BD818D10091EA2E /* Lao MN.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lao MN.ttc"; sourceTree = "<group>"; };
+		4FA7D5DD2BD818D20091EA2E /* Arial Unicode.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Arial Unicode.ttf"; sourceTree = "<group>"; };
+		4FA7D5DE2BD818D20091EA2E /* Rockwell.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Rockwell.ttc; sourceTree = "<group>"; };
+		4FA7D5E02BD818D20091EA2E /* Malayalam Sangam MN.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Malayalam Sangam MN.ttc"; sourceTree = "<group>"; };
+		4FA7D5E22BD818D20091EA2E /* Times New Roman Bold Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Times New Roman Bold Italic.ttf"; sourceTree = "<group>"; };
+		4FA7D5E62BD818D20091EA2E /* Georgia.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Georgia.ttf; sourceTree = "<group>"; };
+		4FA7D5EE2BD818D30091EA2E /* Bodoni 72.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bodoni 72.ttc"; sourceTree = "<group>"; };
+		4FA7D5FB2BD818D30091EA2E /* Arial Narrow Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Arial Narrow Bold.ttf"; sourceTree = "<group>"; };
+		4FA7D5FC2BD818D30091EA2E /* Bradley Hand Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bradley Hand Bold.ttf"; sourceTree = "<group>"; };
+		4FA7D5FF2BD818D30091EA2E /* Al Tarikh.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Al Tarikh.ttc"; sourceTree = "<group>"; };
+		4FA7D6002BD818D30091EA2E /* Andale Mono.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Andale Mono.ttf"; sourceTree = "<group>"; };
+		4FA7D6012BD818D30091EA2E /* STIXTwoText-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "STIXTwoText-Italic.ttf"; sourceTree = "<group>"; };
+		4FA7D6072BD818D40091EA2E /* STIXTwoMath.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = STIXTwoMath.otf; sourceTree = "<group>"; };
+		4FA7D60B2BD818D40091EA2E /* Papyrus.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Papyrus.ttc; sourceTree = "<group>"; };
+		4FA7D60C2BD818D40091EA2E /* Microsoft Sans Serif.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Microsoft Sans Serif.ttf"; sourceTree = "<group>"; };
+		4FA7D6152BD818D40091EA2E /* NotoSansOldPersian-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansOldPersian-Regular.ttf"; sourceTree = "<group>"; };
+		4FA7D6182BD818D40091EA2E /* EuphemiaCAS.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = EuphemiaCAS.ttc; sourceTree = "<group>"; };
+		4FA7D6192BD818D40091EA2E /* Beirut.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Beirut.ttc; sourceTree = "<group>"; };
+		4FA7D61A2BD818D40091EA2E /* Skia.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Skia.ttf; sourceTree = "<group>"; };
+		4FA7D61B2BD818D50091EA2E /* Apple Chancery.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apple Chancery.ttf"; sourceTree = "<group>"; };
+		4FA7D61D2BD818D50091EA2E /* STIXNonUniBolIta.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = STIXNonUniBolIta.otf; sourceTree = "<group>"; };
+		4FA7D61E2BD818D50091EA2E /* Courier New Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Courier New Italic.ttf"; sourceTree = "<group>"; };
+		4FA7D6232BD818D50091EA2E /* Phosphate.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Phosphate.ttc; sourceTree = "<group>"; };
+		4FA7D6262BD818D50091EA2E /* Arial Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Arial Italic.ttf"; sourceTree = "<group>"; };
+		4FA7D62E2BD818D50091EA2E /* Arial Bold Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Arial Bold Italic.ttf"; sourceTree = "<group>"; };
+		4FA7D6312BD818D50091EA2E /* Arial Narrow.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Arial Narrow.ttf"; sourceTree = "<group>"; };
+		4FA7D6332BD818D50091EA2E /* Bangla Sangam MN.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bangla Sangam MN.ttc"; sourceTree = "<group>"; };
+		4FA7D6352BD818D60091EA2E /* Georgia Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Georgia Bold.ttf"; sourceTree = "<group>"; };
+		4FA7D6382BD818D60091EA2E /* Tahoma Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tahoma Bold.ttf"; path = "../../../../../../../System/Library/Fonts/Supplemental/Tahoma Bold.ttf"; sourceTree = "<group>"; };
+		4FA7D63A2BD818D60091EA2E /* Trebuchet MS Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Trebuchet MS Italic.ttf"; sourceTree = "<group>"; };
+		4FA7D63D2BD818D60091EA2E /* Bangla MN.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bangla MN.ttc"; sourceTree = "<group>"; };
+		4FA7D63E2BD818D60091EA2E /* NotoSansEgyptianHieroglyphs-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansEgyptianHieroglyphs-Regular.ttf"; sourceTree = "<group>"; };
+		4FA7D6422BD818D60091EA2E /* Arial Rounded Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Arial Rounded Bold.ttf"; sourceTree = "<group>"; };
+		4FA7D6442BD818D60091EA2E /* STIXGeneralBol.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = STIXGeneralBol.otf; sourceTree = "<group>"; };
+		4FA7D6462BD818D60091EA2E /* GillSans.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = GillSans.ttc; sourceTree = "<group>"; };
+		4FA7D64B2BD818D60091EA2E /* Trattatello.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Trattatello.ttf; sourceTree = "<group>"; };
 		4FA93FD72B8259C7000CA4C4 /* Type Ship.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Type Ship.wav"; sourceTree = "<group>"; };
 		4FACBEF82BD2287F00EB2D39 /* SEDU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEDU.swift; sourceTree = "<group>"; };
 		4FAFBCA22A818B9200F848F5 /* Laser.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Laser.mp3; sourceTree = "<group>"; };
@@ -265,6 +478,7 @@
 		4F0169702A7F164C0080DF70 /* Speaks AI */ = {
 			isa = PBXGroup;
 			children = (
+				4F47D0622BD80A3400DFE373 /* Soda_Fonts */,
 				4FB1F12D2BCB4F86000A09F9 /* Sparkling Logic */,
 				4FE1FC6A2B5301AD00F81903 /* Deletion Sounds */,
 				4FE1FC642B53015D00F81903 /* Soundtrack */,
@@ -303,6 +517,120 @@
 				4FD479742AFDAF0B001D7848 /* Speaks AI.entitlements */,
 			);
 			path = EXTRAS;
+			sourceTree = "<group>";
+		};
+		4F47D0622BD80A3400DFE373 /* Soda_Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4FA7D5D22BD818D10091EA2E /* Al Nile.ttc */,
+				4FA7D5FF2BD818D30091EA2E /* Al Tarikh.ttc */,
+				4FA7D5782BD818CC0091EA2E /* AlBayan.ttc */,
+				4FA7D5762BD818CC0091EA2E /* AmericanTypewriter.ttc */,
+				4FA7D6002BD818D30091EA2E /* Andale Mono.ttf */,
+				4FA7D61B2BD818D50091EA2E /* Apple Chancery.ttf */,
+				4FA7D57F2BD818CD0091EA2E /* AppleGothic.ttf */,
+				4FA7D5982BD818CE0091EA2E /* AppleMyungjo.ttf */,
+				4FA7D57C2BD818CD0091EA2E /* Arial Black.ttf */,
+				4FA7D62E2BD818D50091EA2E /* Arial Bold Italic.ttf */,
+				4FA7D57E2BD818CD0091EA2E /* Arial Bold.ttf */,
+				4FA7D6262BD818D50091EA2E /* Arial Italic.ttf */,
+				4FA7D59C2BD818CE0091EA2E /* Arial Narrow Bold Italic.ttf */,
+				4FA7D5FB2BD818D30091EA2E /* Arial Narrow Bold.ttf */,
+				4FA7D5892BD818CD0091EA2E /* Arial Narrow Italic.ttf */,
+				4FA7D6312BD818D50091EA2E /* Arial Narrow.ttf */,
+				4FA7D6422BD818D60091EA2E /* Arial Rounded Bold.ttf */,
+				4FA7D5DD2BD818D20091EA2E /* Arial Unicode.ttf */,
+				4FA7D5482BD818CA0091EA2E /* Arial.ttf */,
+				4FA7D5692BD818CC0091EA2E /* Athelas.ttc */,
+				4FA7D5A42BD818CF0091EA2E /* Ayuthaya.ttf */,
+				4FA7D5562BD818CB0091EA2E /* Baghdad.ttc */,
+				4FA7D63D2BD818D60091EA2E /* Bangla MN.ttc */,
+				4FA7D6332BD818D50091EA2E /* Bangla Sangam MN.ttc */,
+				4FA7D56C2BD818CC0091EA2E /* Baskerville.ttc */,
+				4FA7D6192BD818D40091EA2E /* Beirut.ttc */,
+				4FA7D56F2BD818CC0091EA2E /* BigCaslon.ttf */,
+				4FA7D54A2BD818CA0091EA2E /* Bodoni 72 OS.ttc */,
+				4FA7D52F2BD818C80091EA2E /* Bodoni 72 Smallcaps Book.ttf */,
+				4FA7D5EE2BD818D30091EA2E /* Bodoni 72.ttc */,
+				4FA7D5FC2BD818D30091EA2E /* Bradley Hand Bold.ttf */,
+				4FA7D5B72BD818D00091EA2E /* Brush Script.ttf */,
+				4FA7D58F2BD818CE0091EA2E /* ChalkboardSE.ttc */,
+				4FA7D5BA2BD818D00091EA2E /* Chalkduster.ttf */,
+				4FA7D5742BD818CC0091EA2E /* Charter.ttc */,
+				4FA7D5432BD818CA0091EA2E /* Cochin.ttc */,
+				4FA7D5502BD818CB0091EA2E /* Comic Sans MS Bold.ttf */,
+				4FA7D5C52BD818D00091EA2E /* Comic Sans MS.ttf */,
+				4FA7D59E2BD818CF0091EA2E /* Courier New Bold Italic.ttf */,
+				4FA7D5382BD818C80091EA2E /* Courier New Bold.ttf */,
+				4FA7D61E2BD818D50091EA2E /* Courier New Italic.ttf */,
+				4FA7D57B2BD818CC0091EA2E /* Courier New.ttf */,
+				4FA7D5342BD818C80091EA2E /* Didot.ttc */,
+				4FA7D59F2BD818CF0091EA2E /* DIN Alternate Bold.ttf */,
+				4FA7D5A32BD818CF0091EA2E /* DIN Condensed Bold.ttf */,
+				4FA7D5322BD818C80091EA2E /* Diwan Kufi.ttc */,
+				4FA7D6182BD818D40091EA2E /* EuphemiaCAS.ttc */,
+				4FA7D5522BD818CB0091EA2E /* Futura.ttc */,
+				4FA7D5C82BD818D00091EA2E /* Galvji.ttc */,
+				4FA7D5822BD818CD0091EA2E /* Georgia Bold Italic.ttf */,
+				4FA7D6352BD818D60091EA2E /* Georgia Bold.ttf */,
+				4FA7D53C2BD818CA0091EA2E /* Georgia Italic.ttf */,
+				4FA7D5E62BD818D20091EA2E /* Georgia.ttf */,
+				4FA7D6462BD818D60091EA2E /* GillSans.ttc */,
+				4FA7D5B32BD818CF0091EA2E /* Herculanum.ttf */,
+				4FA7D58C2BD818CE0091EA2E /* Hoefler Text.ttc */,
+				4FA7D5422BD818CA0091EA2E /* Iowan Old Style.ttc */,
+				4FA7D54B2BD818CA0091EA2E /* Krungthep.ttf */,
+				4FA7D5DB2BD818D10091EA2E /* Lao MN.ttc */,
+				4FA7D5D52BD818D10091EA2E /* Lao Sangam MN.ttf */,
+				4FA7D5442BD818CA0091EA2E /* Luminari.ttf */,
+				4FA7D5E02BD818D20091EA2E /* Malayalam Sangam MN.ttc */,
+				4FA7D5572BD818CB0091EA2E /* Marion.ttc */,
+				4FA7D60C2BD818D40091EA2E /* Microsoft Sans Serif.ttf */,
+				4FA7D63E2BD818D60091EA2E /* NotoSansEgyptianHieroglyphs-Regular.ttf */,
+				4FA7D6152BD818D40091EA2E /* NotoSansOldPersian-Regular.ttf */,
+				4FA7D60B2BD818D40091EA2E /* Papyrus.ttc */,
+				4FA7D5472BD818CA0091EA2E /* PartyLET-plain.ttf */,
+				4FA7D6232BD818D50091EA2E /* Phosphate.ttc */,
+				4FA7D55D2BD818CB0091EA2E /* PlantagenetCherokee.ttf */,
+				4FA7D5DE2BD818D20091EA2E /* Rockwell.ttc */,
+				4FA7D57A2BD818CC0091EA2E /* Sana.ttc */,
+				4FA7D5C12BD818D00091EA2E /* Savoye LET.ttc */,
+				4FA7D5CD2BD818D10091EA2E /* Seravek.ttc */,
+				4FA7D5B02BD818CF0091EA2E /* SignPainter.ttc */,
+				4FA7D5C42BD818D00091EA2E /* Silom.ttf */,
+				4FA7D61A2BD818D40091EA2E /* Skia.ttf */,
+				4FA7D5642BD818CB0091EA2E /* SnellRoundhand.ttc */,
+				4FA7D53A2BD818CA0091EA2E /* Songti.ttc */,
+				4FA7D5BE2BD818D00091EA2E /* STIXGeneral.otf */,
+				4FA7D6442BD818D60091EA2E /* STIXGeneralBol.otf */,
+				4FA7D53F2BD818CA0091EA2E /* STIXNonUni.otf */,
+				4FA7D5D32BD818D10091EA2E /* STIXNonUniBol.otf */,
+				4FA7D61D2BD818D50091EA2E /* STIXNonUniBolIta.otf */,
+				4FA7D5D62BD818D10091EA2E /* STIXNonUniIta.otf */,
+				4FA7D6072BD818D40091EA2E /* STIXTwoMath.otf */,
+				4FA7D6012BD818D30091EA2E /* STIXTwoText-Italic.ttf */,
+				4FA7D5BC2BD818D00091EA2E /* STIXTwoText.ttf */,
+				4FA7D5452BD818CA0091EA2E /* STIXVar.otf */,
+				4FA7D5DA2BD818D10091EA2E /* SuperClarendon.ttc */,
+				4FA7D6382BD818D60091EA2E /* Tahoma Bold.ttf */,
+				4FA7D5B42BD818CF0091EA2E /* Tahoma.ttf */,
+				4FA7D5E22BD818D20091EA2E /* Times New Roman Bold Italic.ttf */,
+				4FA7D5372BD818C80091EA2E /* Times New Roman Bold.ttf */,
+				4FA7D55B2BD818CB0091EA2E /* Times New Roman Italic.ttf */,
+				4FA7D5492BD818CA0091EA2E /* Times New Roman.ttf */,
+				4FA7D64B2BD818D60091EA2E /* Trattatello.ttf */,
+				4FA7D5602BD818CB0091EA2E /* Trebuchet MS Bold Italic.ttf */,
+				4FA7D5922BD818CE0091EA2E /* Trebuchet MS Bold.ttf */,
+				4FA7D63A2BD818D60091EA2E /* Trebuchet MS Italic.ttf */,
+				4FA7D5B62BD818CF0091EA2E /* Trebuchet MS.ttf */,
+				4FA7D5682BD818CC0091EA2E /* Verdana Bold Italic.ttf */,
+				4FA7D5672BD818CC0091EA2E /* Verdana Bold.ttf */,
+				4FA7D5A92BD818CF0091EA2E /* Verdana Italic.ttf */,
+				4FA7D5A82BD818CF0091EA2E /* Verdana.ttf */,
+				4FA7D56B2BD818CC0091EA2E /* Zapfino.ttf */,
+				4FA7D52D2BD815BE0091EA2E /* Tahoma Bold.ttf */,
+			);
+			path = Soda_Fonts;
 			sourceTree = "<group>";
 		};
 		4F6C2A4E2BD1D7CD005C4704 /* Frameworks */ = {
@@ -387,7 +715,7 @@
 				4F073E632AF3241900623681 /* Soda Sea Mine.wav */,
 				4FED9B182AB8FB1700B84552 /* Sparkling Status Signal.mp3 */,
 				4F77421D2AF81F0000466505 /* Green Lime, Sour Pink Splash.wav */,
-				4F073E5F2AF3207900623681 /* Pizza Deluxe.wav */,
+				4F073E5F2AF3207900623681 /* Synthetic Pizza Deluxe.wav */,
 				4F77422B2AF8234400466505 /* Барыня.wav */,
 				4FA93FD72B8259C7000CA4C4 /* Type Ship.wav */,
 			);
@@ -553,71 +881,177 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FC018412BC2DA4F00580265 /* Logos.jpg in Resources */,
+				4FA7D67C2BD818D70091EA2E /* Times New Roman Italic.ttf in Resources */,
+				4FA7D7592BD818D70091EA2E /* Tahoma Bold.ttf in Resources */,
 				4F6C2A552BD1DF10005C4704 /* Screenshot 2024-04-18 at 8.30.58 AM.png in Resources */,
 				4F20DA612B89901E00131EA3 /* Pour Drank.wav in Resources */,
+				4FA7D66C2BD818D70091EA2E /* Krungthep.ttf in Resources */,
 				4F7742222AF820F300466505 /* Loading Productive Ammo.wav in Resources */,
 				4F528E3A2BAE268300BBB47B /* ASTRAL_RISING.gif in Resources */,
+				4FA7D6F72BD818D70091EA2E /* STIXNonUniIta.otf in Resources */,
 				4FB2AAA32B117D42003D336C /* The Primal Dexxacon.gif in Resources */,
 				4F20DA692B8993BF00131EA3 /* Coming Near You.wav in Resources */,
-				4F073E602AF3207900623681 /* Pizza Deluxe.wav in Resources */,
+				4F073E602AF3207900623681 /* Synthetic Pizza Deluxe.wav in Resources */,
 				4F12A2D72B53132200509DEA /* All Chromed Out.mp3 in Resources */,
+				4FA7D7202BD818D70091EA2E /* Al Tarikh.ttc in Resources */,
+				4FA7D6C02BD818D70091EA2E /* DIN Alternate Bold.ttf in Resources */,
+				4FA7D6812BD818D70091EA2E /* Trebuchet MS Bold Italic.ttf in Resources */,
+				4FA7D6552BD818D70091EA2E /* Didot.ttc in Resources */,
 				4F1E378F2B684D00006DC211 /* TagurLogo.gif in Resources */,
+				4FA7D6DF2BD818D70091EA2E /* STIXGeneral.otf in Resources */,
+				4FA7D7012BD818D70091EA2E /* Malayalam Sangam MN.ttc in Resources */,
+				4FA7D6BF2BD818D70091EA2E /* Courier New Bold Italic.ttf in Resources */,
+				4FA7D71D2BD818D70091EA2E /* Bradley Hand Bold.ttf in Resources */,
+				4FA7D6692BD818D70091EA2E /* Arial.ttf in Resources */,
+				4FA7D6772BD818D70091EA2E /* Baghdad.ttc in Resources */,
+				4FA7D6952BD818D70091EA2E /* Charter.ttc in Resources */,
 				4F4FCF672AFBDB4C0011E62B /* Disco.gif in Resources */,
+				4FA7D7672BD818D70091EA2E /* GillSans.ttc in Resources */,
+				4FA7D69F2BD818D70091EA2E /* Arial Bold.ttf in Resources */,
+				4FA7D7542BD818D70091EA2E /* Bangla Sangam MN.ttc in Resources */,
+				4FA7D6502BD818D70091EA2E /* Bodoni 72 Smallcaps Book.ttf in Resources */,
+				4FA7D7072BD818D70091EA2E /* Georgia.ttf in Resources */,
+				4FA7D6C52BD818D70091EA2E /* Ayuthaya.ttf in Resources */,
 				4FC018392BC2DA0500580265 /* Astrally Slipped Out.mp3 in Resources */,
 				4FED9B252AB9068C00B84552 /* Cybernetic Models.mp3 in Resources */,
+				4FA7D7222BD818D70091EA2E /* STIXTwoText-Italic.ttf in Resources */,
+				4FA7D68D2BD818D70091EA2E /* Baskerville.ttc in Resources */,
+				4FA7D6A32BD818D70091EA2E /* Georgia Bold Italic.ttf in Resources */,
+				4FA7D6E22BD818D70091EA2E /* Savoye LET.ttc in Resources */,
+				4FA7D6652BD818D70091EA2E /* Luminari.ttf in Resources */,
 				4F12A2CB2B53110700509DEA /* ComputerAlert.wav in Resources */,
+				4FA7D75E2BD818D70091EA2E /* Bangla MN.ttc in Resources */,
 				4FFAFA2A2BAF830500EDC16F /* SketchesRED.gif in Resources */,
 				4F9309482AB0EB2C00E9BFAB /* Telepathy.wav in Resources */,
 				4F77422A2AF8228600466505 /* Ready for Takeoff.wav in Resources */,
 				4FFAFA282BAF830100EDC16F /* Sketches_Valid.gif in Resources */,
+				4FA7D7632BD818D70091EA2E /* Arial Rounded Bold.ttf in Resources */,
 				4F77421E2AF81F0000466505 /* Green Lime, Sour Pink Splash.wav in Resources */,
+				4FA7D7442BD818D70091EA2E /* Phosphate.ttc in Resources */,
 				4F15CFC62AA938A100525964 /* Volume.gif in Resources */,
+				4FA7D6632BD818D70091EA2E /* Iowan Old Style.ttc in Resources */,
 				4FBB65502B8A7AED0075EBB0 /* Water Lurk.wav in Resources */,
+				4FA7D74F2BD818D70091EA2E /* Arial Bold Italic.ttf in Resources */,
+				4FA7D6E92BD818D70091EA2E /* Galvji.ttc in Resources */,
+				4FA7D73F2BD818D70091EA2E /* Courier New Italic.ttf in Resources */,
+				4FA7D6732BD818D70091EA2E /* Futura.ttc in Resources */,
 				4F77422C2AF8234400466505 /* Барыня.wav in Resources */,
 				4F0931252A8570E0007B782A /* Selected.wav in Resources */,
+				4FA7D6AD2BD818D70091EA2E /* Hoefler Text.ttc in Resources */,
 				4F12A2DA2B53132200509DEA /* Supreme Commander.mp3 in Resources */,
 				4FBD77032B50B2CC00DB7DF5 /* Seductress.gif in Resources */,
 				4F18CAD52B8B97BF00DE53F5 /* Fart.mp3 in Resources */,
 				4FC4995F2A8062C900ACC494 /* Scribble.gif in Resources */,
 				4F87BB332B8597FB00DD093B /* shuffle.wav in Resources */,
+				4FA7D6E52BD818D70091EA2E /* Silom.ttf in Resources */,
+				4FA7D65B2BD818D70091EA2E /* Songti.ttc in Resources */,
 				4F1E7AB72B98CB19003B0B83 /* Rainbow Chromium Finish.wav in Resources */,
+				4FA7D70F2BD818D70091EA2E /* Bodoni 72.ttc in Resources */,
+				4FA7D6712BD818D70091EA2E /* Comic Sans MS Bold.ttf in Resources */,
+				4FA7D6D52BD818D70091EA2E /* Tahoma.ttf in Resources */,
+				4FA7D6642BD818D70091EA2E /* Cochin.ttc in Resources */,
 				4F073E582AF31E3500623681 /* Missile Hit.wav in Resources */,
+				4FA7D7522BD818D70091EA2E /* Arial Narrow.ttf in Resources */,
 				4FC0183B2BC2DA1400580265 /* Paranormal Starship.mp3 in Resources */,
+				4FA7D67E2BD818D70091EA2E /* PlantagenetCherokee.ttf in Resources */,
 				4F073E622AF323B800623681 /* Nuclear Ending.wav in Resources */,
+				4FA7D6902BD818D70091EA2E /* BigCaslon.ttf in Resources */,
 				4FED9B232AB905FD00B84552 /* Miss Computer Email.mp3 in Resources */,
 				4FED9B192AB8FB1700B84552 /* Sparkling Status Signal.mp3 in Resources */,
+				4FA7D6D82BD818D70091EA2E /* Brush Script.ttf in Resources */,
+				4FA7D6FF2BD818D70091EA2E /* Rockwell.ttc in Resources */,
+				4FA7D75B2BD818D70091EA2E /* Trebuchet MS Italic.ttf in Resources */,
+				4FA7D6FB2BD818D70091EA2E /* SuperClarendon.ttc in Resources */,
+				4FA7D6F32BD818D70091EA2E /* Al Nile.ttc in Resources */,
+				4FA7D6582BD818D70091EA2E /* Times New Roman Bold.ttf in Resources */,
+				4FA7D7392BD818D70091EA2E /* EuphemiaCAS.ttc in Resources */,
+				4FA7D6882BD818D70091EA2E /* Verdana Bold.ttf in Resources */,
+				4FA7D7212BD818D70091EA2E /* Andale Mono.ttf in Resources */,
+				4FA7D7032BD818D70091EA2E /* Times New Roman Bold Italic.ttf in Resources */,
+				4FA7D71C2BD818D70091EA2E /* Arial Narrow Bold.ttf in Resources */,
+				4FA7D76C2BD818D70091EA2E /* Trattatello.ttf in Resources */,
+				4FA7D6DB2BD818D70091EA2E /* Chalkduster.ttf in Resources */,
 				4F073E442AF319CE00623681 /* Omit.wav in Resources */,
+				4FA7D6FC2BD818D70091EA2E /* Lao MN.ttc in Resources */,
+				4FA7D6662BD818D70091EA2E /* STIXVar.otf in Resources */,
 				4F018C5A2B55863700AA9AAD /* Bakin' Dat Pizza.wav in Resources */,
+				4FA7D69C2BD818D70091EA2E /* Courier New.ttf in Resources */,
+				4FA7D6C92BD818D70091EA2E /* Verdana.ttf in Resources */,
 				4F528E282BAE199E00BBB47B /* ASTRAL_ZERO.gif in Resources */,
+				4FA7D6CA2BD818D70091EA2E /* Verdana Italic.ttf in Resources */,
 				4F20DA6F2B8995FC00131EA3 /* Super Big Purr.wav in Resources */,
 				4F3A6BA22B8A3AD800BCD616 /* Book burn, discredit,  gas light.wav in Resources */,
 				4F073E542AF31D3600623681 /* ATL Night Rain.wav in Resources */,
 				4F0169812A7F164D0080DF70 /* LaunchScreen.storyboard in Resources */,
+				4FA7D6602BD818D70091EA2E /* STIXNonUni.otf in Resources */,
 				4F82876E2B961E1E00651F85 /* Gold for Galactic Drinks.wav in Resources */,
+				4FA7D6992BD818D70091EA2E /* AlBayan.ttc in Resources */,
 				4F01697E2A7F164D0080DF70 /* Assets.xcassets in Resources */,
+				4FA7D6532BD818D70091EA2E /* Diwan Kufi.ttc in Resources */,
+				4FA7D7282BD818D70091EA2E /* STIXTwoMath.otf in Resources */,
 				4F12A2DB2B53132200509DEA /* Neutrophil SWAT Alert.mp3 in Resources */,
+				4FA7D6D72BD818D70091EA2E /* Trebuchet MS.ttf in Resources */,
+				4FA7D6D42BD818D70091EA2E /* Herculanum.ttf in Resources */,
 				4F18CAD72B8BD48200DE53F5 /* Thrist Trappin' Soda.wav in Resources */,
 				4F0169792A7F164C0080DF70 /* Main.storyboard in Resources */,
+				4FA7D6852BD818D70091EA2E /* SnellRoundhand.ttc in Resources */,
+				4FA7D6A02BD818D70091EA2E /* AppleGothic.ttf in Resources */,
+				4FA7D6B32BD818D70091EA2E /* Trebuchet MS Bold.ttf in Resources */,
 				4F1E378B2B6822AD006DC211 /* Wine Glass.wav in Resources */,
+				4FA7D6C42BD818D70091EA2E /* DIN Condensed Bold.ttf in Resources */,
+				4FA7D6EE2BD818D70091EA2E /* Seravek.ttc in Resources */,
+				4FA7D72D2BD818D70091EA2E /* Microsoft Sans Serif.ttf in Resources */,
 				4FA93FD82B8259C7000CA4C4 /* Type Ship.wav in Resources */,
+				4FA7D73A2BD818D70091EA2E /* Beirut.ttc in Resources */,
+				4FA7D6BD2BD818D70091EA2E /* Arial Narrow Bold Italic.ttf in Resources */,
+				4FA7D65D2BD818D70091EA2E /* Georgia Italic.ttf in Resources */,
 				4FC0183F2BC2DA3200580265 /* SOUR CUBES.mp3 in Resources */,
 				4FBB654E2B8A79EC0075EBB0 /* Productive Prep.mp3 in Resources */,
+				4FA7D6FE2BD818D70091EA2E /* Arial Unicode.ttf in Resources */,
+				4FA7D6682BD818D70091EA2E /* PartyLET-plain.ttf in Resources */,
 				4F528E3C2BAE26F000BBB47B /* ASTRAL_OPTIMAL.gif in Resources */,
 				4F6C2A562BD1DF10005C4704 /* Screenshot 2024-04-18 at 8.21.14 AM.png in Resources */,
+				4FA7D7472BD818D70091EA2E /* Arial Italic.ttf in Resources */,
+				4FA7D6F42BD818D70091EA2E /* STIXNonUniBol.otf in Resources */,
+				4FA7D6AA2BD818D70091EA2E /* Arial Narrow Italic.ttf in Resources */,
+				4FA7D75F2BD818D70091EA2E /* NotoSansEgyptianHieroglyphs-Regular.ttf in Resources */,
+				4FA7D7652BD818D70091EA2E /* STIXGeneralBol.otf in Resources */,
 				4FD5E8182B8D583600558742 /* Sunday.gif in Resources */,
+				4FA7D6E62BD818D70091EA2E /* Comic Sans MS.ttf in Resources */,
+				4FA7D6892BD818D70091EA2E /* Verdana Bold Italic.ttf in Resources */,
 				4F7742242AF8215800466505 /* Pink Gladiate Soda.wav in Resources */,
+				4FA7D68C2BD818D70091EA2E /* Zapfino.ttf in Resources */,
+				4FA7D6782BD818D70091EA2E /* Marion.ttc in Resources */,
+				4FA7D7562BD818D70091EA2E /* Georgia Bold.ttf in Resources */,
 				4F528E2C2BAE1B8400BBB47B /* ASTRAL_MEDIUM.gif in Resources */,
+				4FA7D73C2BD818D70091EA2E /* Apple Chancery.ttf in Resources */,
+				4FA7D69D2BD818D70091EA2E /* Arial Black.ttf in Resources */,
+				4FA7D66B2BD818D70091EA2E /* Bodoni 72 OS.ttc in Resources */,
 				4FAFBCA32A818B9200F848F5 /* Laser.mp3 in Resources */,
+				4FA7D6DD2BD818D70091EA2E /* STIXTwoText.ttf in Resources */,
+				4FA7D6B92BD818D70091EA2E /* AppleMyungjo.ttf in Resources */,
+				4FA7D68A2BD818D70091EA2E /* Athelas.ttc in Resources */,
+				4FA7D69B2BD818D70091EA2E /* Sana.ttc in Resources */,
+				4FA7D6592BD818D70091EA2E /* Courier New Bold.ttf in Resources */,
 				4F206EA52B88421100F8C61B /* Blue Waters.mp3 in Resources */,
 				4F20DA652B89929A00131EA3 /* Gyat Chonki-Lonki Party Butt Bounce.wav in Resources */,
+				4FA7D73E2BD818D70091EA2E /* STIXNonUniBolIta.otf in Resources */,
+				4FA7D7362BD818D70091EA2E /* NotoSansOldPersian-Regular.ttf in Resources */,
 				4F073E642AF3241900623681 /* Soda Sea Mine.wav in Resources */,
+				4FA7D73B2BD818D70091EA2E /* Skia.ttf in Resources */,
+				4FA7D6D12BD818D70091EA2E /* SignPainter.ttc in Resources */,
 				4FC994002B5197E900C53D0E /* Chalkboard.wav in Resources */,
+				4FA7D6F62BD818D70091EA2E /* Lao Sangam MN.ttf in Resources */,
 				4F1E378D2B682389006DC211 /* Astral Melt.wav in Resources */,
 				4FEFED772B20C518003B44A7 /* @*!+-R.wav in Resources */,
+				4FA7D6B02BD818D70091EA2E /* ChalkboardSE.ttc in Resources */,
 				4F528E3E2BAE28C600BBB47B /* ASTRAL_LOW.gif in Resources */,
+				4FA7D72C2BD818D70091EA2E /* Papyrus.ttc in Resources */,
 				4F77421A2AF81E8C00466505 /* Pleased Observing Mantid.wav in Resources */,
 				4F18CAD92B8BD80D00DE53F5 /* Space Race.mp3 in Resources */,
 				4F1E7AB92B98CB98003B0B83 /* 👁️‍🗨️.wav in Resources */,
+				4FA7D6972BD818D70091EA2E /* AmericanTypewriter.ttc in Resources */,
+				4FA7D66A2BD818D70091EA2E /* Times New Roman.ttf in Resources */,
 				4F6D3AAE2B8EDE170000BEC0 /* Night Snow Cleats.mp3 in Resources */,
 				4F20DA632B89905500131EA3 /* Ice.wav in Resources */,
 				4FC0183D2BC2DA2200580265 /* DROID DOGLET.mp3 in Resources */,
@@ -874,7 +1308,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -915,7 +1349,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
