@@ -1,0 +1,104 @@
+{
+  "identifier" : "8255C9A6",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+
+  ],
+  "settings" : {
+    "_applicationInternalID" : "6498393933",
+    "_developerTeamID" : "5GXCSWGLQN",
+    "_failTransactionsEnabled" : false,
+    "_lastSynchronizedDate" : 735080561.05130804,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Verification"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Store Sync"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Subscription Status"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Transaction"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Manage Subscriptions Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Refund Request Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Offer Code Redeem Sheet"
+      }
+    ]
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "21477595",
+      "localizations" : [
+
+      ],
+      "name" : "Customizable List colors, fonts, and deletion sounds",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "3.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "6498718659",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Customizable List colors, fonts, and deletion",
+              "displayName" : "Customizable Lists",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "Ecocapsule5K",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Customizable List colors, fonts, and deletion sounds",
+          "subscriptionGroupID" : "21477595",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}
